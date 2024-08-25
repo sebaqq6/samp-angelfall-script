@@ -4,13 +4,13 @@
 //DIALOGI
 #define INFO_DIALOG 111
 //Attach SLOT------------------------------------
-//si³ka: 0,1
+//siÅ‚ka: 0,1
 #define GYM_ATTACH_INDEX1 (0)
 #define GYM_ATTACH_INDEX2 (1)
 #define GYM_ATTACH_INDEX3 (0)
 //bandana :
 #define BANDANA_SLOT 2
-//#wêdka: 3
+//#wÄ™dka: 3
 //okulary: 4
 #define OKULARY_SLOT 4
 //#zombie corpse: 5
@@ -19,9 +19,9 @@
 //bronie: 8,9
 //#LIMITY
 #undef MAX_OBJECTS
-#define MAX_OBJECTS 15000//maxymalna iloœæ obiektów 
+#define MAX_OBJECTS 15000//maxymalna iloÅ›Ä‡ obiektÃ³w 
 #define MAX_DOORS 100
-#define MAX_SPAMID 5//Maxymalna iloœæ spam ID
+#define MAX_SPAMID 5//Maxymalna iloÅ›Ä‡ spam ID
 #define MAX_ACTOR 50
 #define MAX_QUESTS 10
 //APARTAMENTY

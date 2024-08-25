@@ -55,7 +55,7 @@ stock CreateGroup(playerid, nazwa[], tag[])
 CMD:gpanel(playerid, params[])
 {
 	if(Spam(playerid, SPAM_CMD, 5)) return 1;
-	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie naleøysz do grupy.");
+	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie nale≈ºysz do grupy.");
 	mq_format("SELECT * FROM `Grupy` WHERE `id`='%d';", gracz[playerid][OrgID]);
 	mq_send("QGPanel", "d", playerid);
 	return 1;
@@ -69,7 +69,7 @@ public QGPanel(playerid)
 	{
 		new str_header[256];
 		new str_gpanel[2048];
-		format(str_header, 256, ""COL_ORANGE"ª "COL_WHITE"Panel grupy ["COL_BLUE"%s"COL_WHITE"]"COL_BLUE"%s", gracz[playerid][group_tag], gracz[playerid][group_name]);
+		format(str_header, 256, ""COL_ORANGE"¬ª "COL_WHITE"Panel grupy ["COL_BLUE"%s"COL_WHITE"]"COL_BLUE"%s", gracz[playerid][group_tag], gracz[playerid][group_name]);
 		format(str_gpanel, 2048, ""COL_GREY"Nazwa grupy:\t"COL_EASY"%s", gracz[playerid][group_name]);
 		format(str_gpanel, 2048, "%s\n"COL_GREY"TAG grupy:\t"COL_WHITE"["COL_ORANGE"%s"COL_WHITE"]", str_gpanel, gracz[playerid][group_tag]);
 		new days_expire = (cache_get_field_content_int(0, "expire")-serwer[time_timestamp])/60/60/24;
@@ -87,7 +87,7 @@ public QGPanel(playerid)
 		new Cache:QGetMembers = mysql_query(MySQL, mQuery);
 		new members_count = cache_get_row_count();
 		cache_delete(QGetMembers);
-		format(str_gpanel, 2048, "%s\n"COL_GREY"IloúÊ osÛb w grupie:\t"COL_RED"%d"COL_WHITE"/"COL_GREEN"10", str_gpanel, members_count);
+		format(str_gpanel, 2048, "%s\n"COL_GREY"Ilo≈õƒá os√≥b w grupie:\t"COL_RED"%d"COL_WHITE"/"COL_GREEN"10", str_gpanel, members_count);
 		cache_set_active(cache_cache);
 		new g_exp = cache_get_field_content_int(0, "exp");
 		new g_level = 1;
@@ -111,7 +111,7 @@ public QGPanel(playerid)
 				format(str_gpanel, 2048, "%s\n"COL_GREY"Baza grupy wygasa za:\t"COL_RED"%d dni", str_gpanel, baza_expire);
 			}
 		}
-		Dialog_Show(playerid, GPANEL, DIALOG_STYLE_TABLIST, str_header, str_gpanel, "Wybierz", "Wyjdü");
+		Dialog_Show(playerid, GPANEL, DIALOG_STYLE_TABLIST, str_header, str_gpanel, "Wybierz", "Wyjd≈∫");
 		cache_delete(cache_cache);
 	}
 	return 1;
@@ -136,7 +136,7 @@ Dialog:GPANEL(playerid, response, listitem, inputtext[])
 
 CMD:gmembers(playerid, params[])
 {
-	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie naleøysz do grupy.");
+	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie nale≈ºysz do grupy.");
 	new listgroup_str[2048];
 	format(listgroup_str, 2048, "ID\tNick\tRanga\n");
 	for(new p = PlayerPoolSize(); p != -1; p--)
@@ -147,42 +147,42 @@ CMD:gmembers(playerid, params[])
 			{
 				if(gracz[p][SzefORG] == gracz[playerid][OrgID]) format(listgroup_str, 2048, "%s\n"COL_BLACK"%d\t"COL_GREY"%s\t"COL_RED"Lider", listgroup_str, p, nick(p));
 				else if(gracz[p][SzefORG] == gracz[playerid][OrgID]) format(listgroup_str, 2048, "%s\n"COL_BLACK"%d\t"COL_GREY"%s\t"COL_YELLOW"V-ce Lider", listgroup_str, p, nick(p));
-				else format(listgroup_str, 2048, "%s\n"COL_BLACK"%d\t"COL_GREY"%s\t"COL_GREEN"Cz≥onek", listgroup_str, p, nick(p));
+				else format(listgroup_str, 2048, "%s\n"COL_BLACK"%d\t"COL_GREY"%s\t"COL_GREEN"Cz≈Çonek", listgroup_str, p, nick(p));
 			}
 		}
 	}
-	Dialog_Show(playerid, GMEMBERS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_GREY"Lista graczy "COL_GREEN"ONLINE"COL_GREY", naleøπcych do Twoje grupy", listgroup_str, "OK", "");
+	Dialog_Show(playerid, GMEMBERS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_GREY"Lista graczy "COL_GREEN"ONLINE"COL_GREY", nale≈ºƒÖcych do Twoje grupy", listgroup_str, "OK", "");
 	return 1;
 }
 
 CMD:ginvite(playerid, params[])
 {
-	if(!gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG]) return Error(playerid, "Brak uprawnieÒ.");
+	if(!gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG]) return Error(playerid, "Brak uprawnie≈Ñ.");
 	new targetid;
-	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"UØYJ: /invite [idgracza]");
+	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"U≈ªYJ: /invite [idgracza]");
 	if(!gracz[targetid][loggedin]) return Error(playerid, "Ten gracz nie jest zalogowany.");
-	if(targetid == playerid) return Error(playerid, "Nie moøesz zaprosic samego siebie");
-	if(gracz[targetid][OrgID]) return Error(playerid, "Ten gracz naleøy do innej grupy.");
+	if(targetid == playerid) return Error(playerid, "Nie mo≈ºesz zaprosic samego siebie");
+	if(gracz[targetid][OrgID]) return Error(playerid, "Ten gracz nale≈ºy do innej grupy.");
 	mq_format("SELECT `OrgID` FROM `Konta` WHERE `OrgID`='%d';", gracz[playerid][OrgID]);
 	new Cache:QGetMembers = mysql_query(MySQL, mQuery);
 	new members_count = cache_get_row_count();
 	cache_delete(QGetMembers);
-	if(members_count >= 10) return Error(playerid, "W Twojej grupie jest juø maxymalna iloúÊ osÛb.");
+	if(members_count >= 10) return Error(playerid, "W Twojej grupie jest ju≈º maxymalna ilo≈õƒá os√≥b.");
 	gracz[targetid][group_join] = gracz[playerid][OrgID];
 	format(gracz[targetid][group_name], 128, "%s", gracz[playerid][group_name]);
 	format(gracz[targetid][group_tag], 8, "%s", gracz[playerid][group_tag]);
-	SendClientMessageEx(playerid, -1, "((Wys≥ano zaproszenie do: "COL_BLUE"%s"COL_WHITE"[%d]. Poinformuj zaproszonego aby wpisa≥: "COL_RED"/gjoin %d"COL_WHITE"))", nick(targetid), targetid, gracz[targetid][group_join]);
+	SendClientMessageEx(playerid, -1, "((Wys≈Çano zaproszenie do: "COL_BLUE"%s"COL_WHITE"[%d]. Poinformuj zaproszonego aby wpisa≈Ç: "COL_RED"/gjoin %d"COL_WHITE"))", nick(targetid), targetid, gracz[targetid][group_join]);
 	return 1;
 }
 
 CMD:gkick(playerid, params[])
 {
-	if(!gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG]) return Error(playerid, "Brak uprawnieÒ.");
+	if(!gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG]) return Error(playerid, "Brak uprawnie≈Ñ.");
 	new targetid;
-	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"UØYJ: /gkick [idgracza]");
+	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"U≈ªYJ: /gkick [idgracza]");
 	if(!gracz[targetid][loggedin]) return Error(playerid, "Ten gracz nie jest zalogowany.");
-	if(targetid == playerid) return Error(playerid, "Nie moøesz wyrzuciÊ samego siebie");
-	if(gracz[targetid][OrgID] != gracz[playerid][OrgID]) return Error(playerid, "Ten gracz nie naleøy do Twojej grupy.");
+	if(targetid == playerid) return Error(playerid, "Nie mo≈ºesz wyrzuciƒá samego siebie");
+	if(gracz[targetid][OrgID] != gracz[playerid][OrgID]) return Error(playerid, "Ten gracz nie nale≈ºy do Twojej grupy.");
 	if(gracz[targetid][SzefORG]) return Error(playerid, "Ten gracz jest liderem!");
 	for(new p = PlayerPoolSize(); p != -1; p--)
 	{
@@ -190,7 +190,7 @@ CMD:gkick(playerid, params[])
 		{
 			if(gracz[p][OrgID] == gracz[targetid][OrgID] && p != targetid)
 			{
-				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" zosta≥ "COL_RED"wyrzucony"COL_WHITE" z Twojej grupy!))", nick(targetid), targetid);
+				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" zosta≈Ç "COL_RED"wyrzucony"COL_WHITE" z Twojej grupy!))", nick(targetid), targetid);
 			}
 		}
 	}
@@ -198,26 +198,26 @@ CMD:gkick(playerid, params[])
 	gracz[targetid][ViceSzefORG] = 0;
 	mq_format("UPDATE `Konta` SET `OrgID`='%d', `ViceSzefORG`='%d' WHERE `id`='%d';", gracz[targetid][OrgID], gracz[targetid][ViceSzefORG], gracz[targetid][UID]);
 	mq_send("QKickGroup");
-	SendClientMessageEx(targetid, -1, "((Zosta≥eú "COL_RED"wyrzucony"COL_WHITE" z grupy "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
+	SendClientMessageEx(targetid, -1, "((Zosta≈Çe≈õ "COL_RED"wyrzucony"COL_WHITE" z grupy "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
 	return 1;
 }
 
 CMD:gjoin(playerid, params[])
 {
-	if(!gracz[playerid][group_join]) return Error(playerid, "Nie otrzyma≥eú zaproszenia.");
+	if(!gracz[playerid][group_join]) return Error(playerid, "Nie otrzyma≈Çe≈õ zaproszenia.");
 	new groupid;
-	if(sscanf(params,"d", groupid)) return SendClientMessage(playerid, -1, ""COL_GREY"UØYJ: /join [idgrupy]");
-	if(gracz[playerid][group_join] != groupid) return Error(playerid, "Nie dosta≥eú zaproszenia od tej grupy.");
+	if(sscanf(params,"d", groupid)) return SendClientMessage(playerid, -1, ""COL_GREY"U≈ªYJ: /join [idgrupy]");
+	if(gracz[playerid][group_join] != groupid) return Error(playerid, "Nie dosta≈Çe≈õ zaproszenia od tej grupy.");
 	gracz[playerid][OrgID] = gracz[playerid][group_join];
 	gracz[playerid][group_join] = 0;
-	SendClientMessageEx(playerid, -1, "((Do≥πczy≥eú do grupy: "COL_GREEN"[%s]"COL_RED"%s"COL_WHITE". Wszelkie komendy znajdziesz pod "COL_YELLOW"/pomoc"COL_WHITE".))", gracz[playerid][group_tag], gracz[playerid][group_name]);
+	SendClientMessageEx(playerid, -1, "((Do≈ÇƒÖczy≈Çe≈õ do grupy: "COL_GREEN"[%s]"COL_RED"%s"COL_WHITE". Wszelkie komendy znajdziesz pod "COL_YELLOW"/pomoc"COL_WHITE".))", gracz[playerid][group_tag], gracz[playerid][group_name]);
 	for(new p = PlayerPoolSize(); p != -1; p--)
 	{
 		if(gracz[p][loggedin])
 		{
 			if(gracz[p][OrgID] == gracz[playerid][OrgID] && p != playerid)
 			{
-				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" "COL_GREEN"do≥πczy≥"COL_WHITE" do Twojej grupy!))", nick(playerid), playerid);
+				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" "COL_GREEN"do≈ÇƒÖczy≈Ç"COL_WHITE" do Twojej grupy!))", nick(playerid), playerid);
 			}
 		}
 	}
@@ -228,16 +228,16 @@ CMD:gjoin(playerid, params[])
 
 CMD:gleave(playerid, params[])
 {
-	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie naleøysz do grupy.");
-	if(gracz[playerid][SzefORG]) return Error(playerid, "Jesteú liderem, nie moøesz opuúciÊ grupy.");
-	SendClientMessageEx(playerid, -1, "((Opuúci≥eú grupÍ: "COL_GREEN"[%s]"COL_RED"%s"COL_WHITE".))", gracz[playerid][group_tag], gracz[playerid][group_name]);
+	if(!gracz[playerid][OrgID]) return Error(playerid, "Nie nale≈ºysz do grupy.");
+	if(gracz[playerid][SzefORG]) return Error(playerid, "Jeste≈õ liderem, nie mo≈ºesz opu≈õciƒá grupy.");
+	SendClientMessageEx(playerid, -1, "((Opu≈õci≈Çe≈õ grupƒô: "COL_GREEN"[%s]"COL_RED"%s"COL_WHITE".))", gracz[playerid][group_tag], gracz[playerid][group_name]);
 	for(new p = PlayerPoolSize(); p != -1; p--)
 	{
 		if(gracz[p][loggedin])
 		{
 			if(gracz[p][OrgID] == gracz[playerid][OrgID] && p != playerid)
 			{
-				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" "COL_RED"opuúci≥"COL_WHITE" Twojπ grupÍ!))", nick(playerid), playerid);
+				SendClientMessageEx(p, -1, "((Gracz "COL_BLUE"%s[%d]"COL_WHITE" "COL_RED"opu≈õci≈Ç"COL_WHITE" TwojƒÖ grupƒô!))", nick(playerid), playerid);
 			}
 		}
 	}
@@ -250,24 +250,24 @@ CMD:gleave(playerid, params[])
 
 CMD:gsetvld(playerid, params[])
 {
-	if(!gracz[playerid][SzefORG]) return Error(playerid, "Brak uprawnieÒ.");
+	if(!gracz[playerid][SzefORG]) return Error(playerid, "Brak uprawnie≈Ñ.");
 	new targetid;
-	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"UØYJ: /gsetvld [idgracza]");
+	if(sscanf(params,"d", targetid)) return SendClientMessage(playerid, -1, ""COL_GREY"U≈ªYJ: /gsetvld [idgracza]");
 	if(!gracz[targetid][loggedin]) return Error(playerid, "Ten gracz nie jest zalogowany.");
-	if(targetid == playerid) return Error(playerid, "Nie moøesz uøyÊ tej komendy na sobie.");
-	if(gracz[targetid][OrgID] != gracz[playerid][OrgID]) return Error(playerid, "Ten gracz nie naleøy do Twojej grupy.");
+	if(targetid == playerid) return Error(playerid, "Nie mo≈ºesz u≈ºyƒá tej komendy na sobie.");
+	if(gracz[targetid][OrgID] != gracz[playerid][OrgID]) return Error(playerid, "Ten gracz nie nale≈ºy do Twojej grupy.");
 	if(gracz[targetid][SzefORG]) return Error(playerid, "Ten gracz jest liderem!");
 	if(gracz[targetid][ViceSzefORG])
 	{
 		gracz[targetid][ViceSzefORG] = 0;
 		SendClientMessageEx(playerid, -1, "(("COL_RED"Zabrano"COL_WHITE" V-ce Lidera dla gracza "COL_BLUE"%s"COL_WHITE"[%d].))", nick(targetid), targetid);
-		SendClientMessageEx(targetid, -1, "((Zosta≥a Tobie "COL_RED"odebrana"COL_WHITE" ranga V-ce Lidera grupy: "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
+		SendClientMessageEx(targetid, -1, "((Zosta≈Ça Tobie "COL_RED"odebrana"COL_WHITE" ranga V-ce Lidera grupy: "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
 	}
 	else
 	{
 		gracz[targetid][ViceSzefORG] = gracz[playerid][OrgID];
 		SendClientMessageEx(playerid, -1, "(("COL_GREEN"Nadano"COL_WHITE" V-ce Lidera dla gracza "COL_BLUE"%s"COL_WHITE"[%d].))", nick(targetid), targetid);
-		SendClientMessageEx(targetid, -1, "((Zosta≥a Tobie "COL_GREEN"nadana"COL_WHITE" ranga V-ce Lidera grupy: "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
+		SendClientMessageEx(targetid, -1, "((Zosta≈Ça Tobie "COL_GREEN"nadana"COL_WHITE" ranga V-ce Lidera grupy: "COL_PURPLE"%s"COL_WHITE".))", gracz[playerid][group_name]);
 	}
 	mq_format("UPDATE `Konta` SET `ViceSzefORG`='%d' WHERE `id`='%d';", gracz[targetid][ViceSzefORG], gracz[targetid][UID]);
 	mq_send("QSetVLDGroup");
@@ -277,7 +277,7 @@ CMD:gsetvld(playerid, params[])
 CMD:go(playerid, params[])
 {
 	new groupid = gracz[playerid][OrgID];
-	if(!groupid) return Error(playerid, "Nie naleøysz do grupy.");
+	if(!groupid) return Error(playerid, "Nie nale≈ºysz do grupy.");
 	new baza_id = GetGroupBaseID(groupid);
 	if(baza_id == -1) return Error(playerid, "Twoja grupa nie posiada bazy.");
 	Baza_OpenGate(baza_id);
@@ -288,7 +288,7 @@ CMD:go(playerid, params[])
 CMD:gc(playerid, params[])
 {
 	new groupid = gracz[playerid][OrgID];
-	if(!groupid) return Error(playerid, "Nie naleøysz do grupy.");
+	if(!groupid) return Error(playerid, "Nie nale≈ºysz do grupy.");
 	new baza_id = GetGroupBaseID(groupid);
 	if(baza_id == -1) return Error(playerid, "Twoja grupa nie posiada bazy.");
 	Baza_CloseGate(baza_id);

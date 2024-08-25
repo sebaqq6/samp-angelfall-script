@@ -1,7 +1,7 @@
 //***********************************************************************************************************************************CONFIG
-#define ZMB_UPDATERATE 50 //co ile MS ma wykonywaæ siê Zombie_Kolejka(czym mniejsza liczba tym szybciej)(domyœlnie: 50)
-#define ZMB_COUNTONE 15 //ile botów ma aktualizowaæ za ka¿d¹ kolejk¹(domyœlnie: 30)
-#define RESPAWN_TIME 60000//MS po ilu zombiak wraca do œwiata ¿ywych
+#define ZMB_UPDATERATE 50 //co ile MS ma wykonywaÄ‡ siÄ™ Zombie_Kolejka(czym mniejsza liczba tym szybciej)(domyÅ›lnie: 50)
+#define ZMB_COUNTONE 15 //ile botÃ³w ma aktualizowaÄ‡ za kaÅ¼dÄ… kolejkÄ…(domyÅ›lnie: 30)
+#define RESPAWN_TIME 60000//MS po ilu zombiak wraca do Å›wiata Å¼ywych
 //***********************************************************************************************************************************CONFIG END
 new Float:SpawnZombie[][] = 
 {
@@ -112,7 +112,7 @@ enum zombieinfo
     Float:wx,//aktualna pozycja
     Float:wy,//aktualna pozycja
     Float:wz,//aktualna pozycja
-    bool:use_anim,//czy u¿ywa animacji
+    bool:use_anim,//czy uÅ¼ywa animacji
     autoZ_time,
     autoZ_action,
     can_spawn
@@ -167,7 +167,7 @@ public UpdateZombieMovement(j)
 {
 	if(FCNPC_IsDead(j)) return 1;
 	if(!IsPlayerAttachedObjectSlotUsed(j, 2)) SetPlayerAttachedObject(j, 2, 2907, 1, 0.038000,0.051000,0.027000,-94.999984, -0.299995, 89.399932, 1.0, 0.739000, 1.211000);
-	//if(!IsPlayerAttachedObjectSlotUsed(j, 3)) SetPlayerAttachedObject(j, 3, 19065, 2, 0.120000, 0.040000, -0.003500, 0, 100, 100, 1.4, 1.4, 1.4);//czpaka œwi¹teczn
+	//if(!IsPlayerAttachedObjectSlotUsed(j, 3)) SetPlayerAttachedObject(j, 3, 19065, 2, 0.120000, 0.040000, -0.003500, 0, 100, 100, 1.4, 1.4, 1.4);//czpaka Å›wiÄ…teczn
 	//if(j == mikolajid) return 1;
 	for(new i = PlayerPoolSize(); i != -1; i--)
 	{
@@ -376,7 +376,7 @@ public FCNPC_OnCreate(npcid)
 		}
 	}
 	new string_podpis[32];
-	format(string_podpis, 32, "{3f3f3f}SZWÊDACZ");
+	format(string_podpis, 32, "{3f3f3f}SZWÄ˜DACZ");
 	CreateDynamic3DTextLabel(string_podpis, 0x99001FAA, 0.0, 0.0, 0.0, 30.0, npcid);
 	new rand1=random(2),rand2=random(2);
 	if(rand1==0) zXrand=zX+7+float(random(7));
@@ -406,7 +406,7 @@ public FCNPC_OnCreate(npcid)
 	return 1;
 }
 
-//******************************************************************************************funkcja aktualizuj±ca boty <3
+//******************************************************************************************funkcja aktualizujÂ±ca boty <3
 forward Zombie_Kolejka();
 public Zombie_Kolejka()
 {
@@ -498,19 +498,19 @@ stock FCNPC_GoToFixZ(n, Float:x, Float:y, Float:z, type = MOVE_TYPE_AUTO, Float:
 {
 	if(Zombie_system[spacer])
 	{
-		SendClientMessage(playerid, -1, "AutoZ zosta³o wy³¹czone.");
+		SendClientMessage(playerid, -1, "AutoZ zostaÅ‚o wyÅ‚Ä…czone.");
 		Zombie_system[spacer] = false;
 	}
 	else
 	{
-		SendClientMessage(playerid, -1, "AutoZ zosta³o w³¹czone.");
+		SendClientMessage(playerid, -1, "AutoZ zostaÅ‚o wÅ‚Ä…czone.");
 		Zombie_system[spacer] = true;
 	}
 	return 1;
 }
 CMD:respawnzm(playerid, params[])
 {
-	SendClientMessage(playerid, -1, "Wszystkie zombie wróci³y na swoje miejsce spawnu.");
+	SendClientMessage(playerid, -1, "Wszystkie zombie wrÃ³ciÅ‚y na swoje miejsce spawnu.");
 	for (new i = 0; i<MAX_PLAYERS; i++)
 	{
 		if(IsPlayerNPC(i))

@@ -22,8 +22,8 @@ stock Init_Football()
     new sterowanie[1024];
     format(sterowanie, 1024, ""COL_EASY"["COL_LIME"STEROWANIE"COL_EASY"]"COL_WHITE"");
     format(sterowanie, 1024, "%s\n"COL_GREEN"LALT"COL_EASY" - Wrzuta", sterowanie);
-    format(sterowanie, 1024, "%s\n"COL_GREEN"ENTER/F"COL_EASY" - Strza≥", sterowanie);
-    format(sterowanie, 1024, "%s\n"COL_GREEN"LPM"COL_EASY" - PrzyjÍcie", sterowanie);
+    format(sterowanie, 1024, "%s\n"COL_GREEN"ENTER/F"COL_EASY" - Strza≈Ç", sterowanie);
+    format(sterowanie, 1024, "%s\n"COL_GREEN"LPM"COL_EASY" - Przyjƒôcie", sterowanie);
     format(sterowanie, 1024, "%s\n"COL_GREEN"PPM"COL_EASY" - Podanie", sterowanie);
     CreateDynamic3DTextLabel(sterowanie, -1, 2676.2441,-1746.9526,422.8280, 10.0);
     return 1;
@@ -96,7 +96,7 @@ stock fb_LoadCollisions()
     // Pole
     PHY_CreateCylinder(2701.92, -1747.10, 0.3, _, _, 425.87);
     PHY_CreateCylinder(2711.89, -1747.10, 0.3, _, _, 425.87);
-    //s≥upy przy úcianach
+    //s≈Çupy przy ≈õcianach
     PHY_CreateCylinder(2744.5193, -1840.2107, 1.5, _, _, 500.0);
     PHY_CreateCylinder(2744.3826,-1815.0947, 1.5, _, _, 500.0);
     PHY_CreateCylinder(2744.5232,-1790.2849, 1.5, _, _, 500.0);
@@ -163,7 +163,7 @@ public PHY_OnObjectUpdate(objectid)
                 {
                     if(IsPlayerInBoisko(p))
                     {
-                        SendClientMessage(p, -1, "(("COL_LIME"Pi≥ka zosta≥a zrespawnowana - "COL_BLUE"naroønik"COL_LIME"."COL_WHITE"))");
+                        SendClientMessage(p, -1, "(("COL_LIME"Pi≈Çka zosta≈Ça zrespawnowana - "COL_BLUE"naro≈ºnik"COL_LIME"."COL_WHITE"))");
                     }
                 }
             }
@@ -195,7 +195,7 @@ stock RespawnBall()
         {
             if(IsPlayerInBoisko(p))
             {
-                SendClientMessage(p, -1, "(("COL_LIME"Pi≥ka zosta≥a zrespawnowana - "COL_BLUE"úrodek boiska"COL_LIME"."COL_WHITE"))");
+                SendClientMessage(p, -1, "(("COL_LIME"Pi≈Çka zosta≈Ça zrespawnowana - "COL_BLUE"≈õrodek boiska"COL_LIME"."COL_WHITE"))");
             }
         }
     }

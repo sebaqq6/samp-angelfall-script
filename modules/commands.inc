@@ -11,7 +11,7 @@ public OnPlayerCommandPerformed(playerid, cmd[], params[], result, flags)
 	if(result == -1)
 	{
 		new str[127];
-		format(str, 127, "Komenda "COL_ORANGE"/%s"COL_WHITE" jest niedostêpna. Dostêpne komendy:"COL_GREEN" /pomoc", cmd);
+		format(str, 127, "Komenda "COL_ORANGE"/%s"COL_WHITE" jest niedostÄ™pna. DostÄ™pne komendy:"COL_GREEN" /pomoc", cmd);
 		Error(playerid, str);
 		return 0;
 	}
@@ -21,9 +21,9 @@ public OnPlayerCommandPerformed(playerid, cmd[], params[], result, flags)
 //QUIT SAFE
 CMD:qs(playerid, params[])
 {
-	if(!gracz[playerid][loggedin]) return Error(playerid, "Nie jesteœ zalogowany!");
+	if(!gracz[playerid][loggedin]) return Error(playerid, "Nie jesteÅ› zalogowany!");
 	Disconnect(playerid);
-	SendClientMessage(playerid, -1, "(("COL_BLUE"Za chwilê zostaniesz "COL_GREEN"bezpiecznie"COL_RED" roz³¹czony "COL_BLUE"z serwerem."COL_WHITE"))");
+	SendClientMessage(playerid, -1, "(("COL_BLUE"Za chwilÄ™ zostaniesz "COL_GREEN"bezpiecznie"COL_RED" rozÅ‚Ä…czony "COL_BLUE"z serwerem."COL_WHITE"))");
 	SetTimerEx("KickExRun", 1000, false, "d", playerid);
 	return 1;
 }
@@ -35,7 +35,7 @@ CMD:pomoc(playerid, params[])
 	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Komendy czatu"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
 	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Podstawowe komendy gracza"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
 	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Komendy grup"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
-	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Komendy edytora obiektów"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
+	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Komendy edytora obiektÃ³w"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
 	strcat(listhelp,""COL_WHITE"("COL_GREEN"?"COL_WHITE")\t"COL_EASY"Klawiszologia"COL_WHITE"\t("COL_GREEN"?"COL_WHITE")\n");
 	strcat(listhelp,""COL_WHITE"("COL_RED"$"COL_WHITE")\t"COL_YELLOW"PREMIUM"COL_WHITE"\t("COL_RED"$"COL_WHITE")\n");
 	Dialog_Show(playerid, POMOC, DIALOG_STYLE_TABLIST, ""COL_WHITE"Centrum Pomocy - "COL_GREEN"AngelFall.pl"COL_WHITE"", listhelp, "Wybierz", "Anuluj");
@@ -49,46 +49,46 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 	{
 		case 0:
 		{
-			strcat(listcmd,""COL_GREY"Witaj w œwiecie postapokalipsy {64000d}Angel Fall"COL_GREY"! \n");
-			strcat(listcmd,""COL_GREY"Zdobywaj {6f3e9c}doœwiadczenie"COL_GREY" w œwiecie postapokalipsy, rywalizuj¹c z innymi graczami. \n");
-			strcat(listcmd,""COL_GREY"{6f3e9c}Doœwiadczenie"COL_GREY" zdobywasz zabijaj¹c szwêdaczy (zombie), zabójstwa innych graczy oraz eksploruj¹c mapê.\n");
-			strcat(listcmd,""COL_GREY"Zdobyte doœwiadczenie zamieniane jest na poziom, do 20 poziomu trwa rozwój specjalizacji dla postaci. \n");
-			strcat(listcmd,""COL_GREY"{0d6400}Punkty specjalizacji"COL_GREY" mo¿esz przydzielaæ wciskaj¹c klawisz "COL_RED"Y"COL_GREY" oraz wybieraj¹c opcje {0d6400}Specjalizacje"COL_GREY" w GUI.\n");
+			strcat(listcmd,""COL_GREY"Witaj w Å›wiecie postapokalipsy {64000d}Angel Fall"COL_GREY"! \n");
+			strcat(listcmd,""COL_GREY"Zdobywaj {6f3e9c}doÅ›wiadczenie"COL_GREY" w Å›wiecie postapokalipsy, rywalizujÄ…c z innymi graczami. \n");
+			strcat(listcmd,""COL_GREY"{6f3e9c}DoÅ›wiadczenie"COL_GREY" zdobywasz zabijajÄ…c szwÄ™daczy (zombie), zabÃ³jstwa innych graczy oraz eksplorujÄ…c mapÄ™.\n");
+			strcat(listcmd,""COL_GREY"Zdobyte doÅ›wiadczenie zamieniane jest na poziom, do 20 poziomu trwa rozwÃ³j specjalizacji dla postaci. \n");
+			strcat(listcmd,""COL_GREY"{0d6400}Punkty specjalizacji"COL_GREY" moÅ¼esz przydzielaÄ‡ wciskajÄ…c klawisz "COL_RED"Y"COL_GREY" oraz wybierajÄ…c opcje {0d6400}Specjalizacje"COL_GREY" w GUI.\n");
 			strcat(listcmd,""COL_GREY"Eksploruj najskrytsze zakamarki {0d644e}Whetstone"COL_GREY"/{0d644e}Back O' Beyond"COL_GREY" i znajduj {1d4a64}przedmioty"COL_GREY" koniecznie do przetrwania.\n");
-			strcat(listcmd,""COL_GREY""COL_GREEN"Aby podnieœæ przedmioty"COL_GREY" le¿¹ce wokó³ Twojej postaci wciœnij klawisz "COL_RED"N"COL_GREY". \n");
-			strcat(listcmd,""COL_GREY"{5db579}Handluj"COL_GREY" przedmiotami z innymi graczami b¹dŸ z sprzedawcami w {d44531}hali targowej"COL_GREY", która znajduje siê {d44531}krypcie"COL_GREY". \n");
-			strcat(listcmd,""COL_GREY""COL_CYAN"¯etony"COL_GREY", czyli walutê serwerow¹ mo¿na zdobyæ tylko przez {d44531}handel na hali targowej"COL_GREY".\n");
-			strcat(listcmd,""COL_GREY"{3cff00}Przez pierwsze 3 godziny"COL_GREY" rozgrywki, jeœli zginiesz to Twój ekwipunek "COL_GREEN"nie rozsypie siê na ziemiê"COL_GREY".\n");
-			strcat(listcmd,""COL_GREY"Jest to czas na zapoznanie siê z serwerem, wykorzystaj go dobrze!\n");
-			strcat(listcmd,""COL_GREY"Na serwerze "COL_RED"nie ma czatu globalnego"COL_GREY", jeœli chcesz mieæ kontakt z reszt¹ œwiata zaopatrz siê w "COL_RED"krótkofalówkê"COL_GREY".\n");
-			strcat(listcmd,""COL_GREY"Pocz¹tki bywaj¹ trudne, dla pocz¹tkuj¹cych graczy "COL_GREY"zalecamy wydaæ pierwszy punkt w specjalizacje "COL_ORANGE"rusznikarstwo"COL_GREY" i zaopatrzyæ siê w {1d4a64}Colt 45"COL_GREY". \n");
-			strcat(listcmd,""COL_GREY"Wszelkie {642500}BH/sprint"COL_RED" nie jest wskazane"COL_GREY", postaæ szybko siê mêczy. Aby "COL_GREEN"zregenerowaæ kondycjê"COL_GREY" zatrzymaj siê na chwilê b¹dŸ "COL_LIME"przejdŸ w tryb\n");
-			strcat(listcmd,""COL_LIME"skradania"COL_GREY" wciskaj¹c klawisz "COL_RED"C"COL_GREY". Przechodz¹c w ten tryb "COL_GREEN"generujesz niski poziom ha³asu"COL_GREY", przez co staniesz siê "COL_GREEN"niewidoczny dla szwêdaczy"COL_GREY". \n");
-			strcat(listcmd,""COL_RED"Walka ze szwêdaczami za pomoc¹ piêœci jest bardzo niebezpieczna!"COL_GREY" Dopóki nie zaopatrzysz siê w {1d4a64}broñ"COL_RED" omijaj walk z {2a5a5b}szwêdaczem"COL_GREY", "COL_LIME"przechodz¹c w tryb skradania"COL_GREY". \n");
+			strcat(listcmd,""COL_GREY""COL_GREEN"Aby podnieÅ›Ä‡ przedmioty"COL_GREY" leÅ¼Ä…ce wokÃ³Å‚ Twojej postaci wciÅ›nij klawisz "COL_RED"N"COL_GREY". \n");
+			strcat(listcmd,""COL_GREY"{5db579}Handluj"COL_GREY" przedmiotami z innymi graczami bÄ…dÅº z sprzedawcami w {d44531}hali targowej"COL_GREY", ktÃ³ra znajduje siÄ™ {d44531}krypcie"COL_GREY". \n");
+			strcat(listcmd,""COL_GREY""COL_CYAN"Å»etony"COL_GREY", czyli walutÄ™ serwerowÄ… moÅ¼na zdobyÄ‡ tylko przez {d44531}handel na hali targowej"COL_GREY".\n");
+			strcat(listcmd,""COL_GREY"{3cff00}Przez pierwsze 3 godziny"COL_GREY" rozgrywki, jeÅ›li zginiesz to TwÃ³j ekwipunek "COL_GREEN"nie rozsypie siÄ™ na ziemiÄ™"COL_GREY".\n");
+			strcat(listcmd,""COL_GREY"Jest to czas na zapoznanie siÄ™ z serwerem, wykorzystaj go dobrze!\n");
+			strcat(listcmd,""COL_GREY"Na serwerze "COL_RED"nie ma czatu globalnego"COL_GREY", jeÅ›li chcesz mieÄ‡ kontakt z resztÄ… Å›wiata zaopatrz siÄ™ w "COL_RED"krÃ³tkofalÃ³wkÄ™"COL_GREY".\n");
+			strcat(listcmd,""COL_GREY"PoczÄ…tki bywajÄ… trudne, dla poczÄ…tkujÄ…cych graczy "COL_GREY"zalecamy wydaÄ‡ pierwszy punkt w specjalizacje "COL_ORANGE"rusznikarstwo"COL_GREY" i zaopatrzyÄ‡ siÄ™ w {1d4a64}Colt 45"COL_GREY". \n");
+			strcat(listcmd,""COL_GREY"Wszelkie {642500}BH/sprint"COL_RED" nie jest wskazane"COL_GREY", postaÄ‡ szybko siÄ™ mÄ™czy. Aby "COL_GREEN"zregenerowaÄ‡ kondycjÄ™"COL_GREY" zatrzymaj siÄ™ na chwilÄ™ bÄ…dÅº "COL_LIME"przejdÅº w tryb\n");
+			strcat(listcmd,""COL_LIME"skradania"COL_GREY" wciskajÄ…c klawisz "COL_RED"C"COL_GREY". PrzechodzÄ…c w ten tryb "COL_GREEN"generujesz niski poziom haÅ‚asu"COL_GREY", przez co staniesz siÄ™ "COL_GREEN"niewidoczny dla szwÄ™daczy"COL_GREY". \n");
+			strcat(listcmd,""COL_RED"Walka ze szwÄ™daczami za pomocÄ… piÄ™Å›ci jest bardzo niebezpieczna!"COL_GREY" DopÃ³ki nie zaopatrzysz siÄ™ w {1d4a64}broÅ„"COL_RED" omijaj walk z {2a5a5b}szwÄ™daczem"COL_GREY", "COL_LIME"przechodzÄ…c w tryb skradania"COL_GREY". \n");
 			strcat(listcmd,""COL_GREY"{64000d}Powodzenia"COL_GREY"! \n");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"» "COL_GREEN"Pomoc"COL_GREY" dotycz¹ca rozgrywki.", listcmd,"OK","");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"Â» "COL_GREEN"Pomoc"COL_GREY" dotyczÄ…ca rozgrywki.", listcmd,"OK","");
 		}
 		case 1:
 		{
-			strcat(listcmd,""COL_GREEN"/b "COL_EASY"- Czat lokalny, bardzo bliskiego zasiêgu. \n");
-			strcat(listcmd,""COL_GREEN"/do "COL_EASY"- Opisywanie akcji otoczenia wzglêdem gracza. \n");
+			strcat(listcmd,""COL_GREEN"/b "COL_EASY"- Czat lokalny, bardzo bliskiego zasiÄ™gu. \n");
+			strcat(listcmd,""COL_GREEN"/do "COL_EASY"- Opisywanie akcji otoczenia wzglÄ™dem gracza. \n");
 			strcat(listcmd,""COL_GREEN"/l "COL_EASY"- Szept. \n");
 			strcat(listcmd,""COL_GREEN"/me "COL_EASY"- Opisywanie akcji gracza. \n");
-			strcat(listcmd,""COL_GREEN"/o "COL_EASY"- Czat globalny. "COL_RED"(zwykle pozostaje wy³¹czony) \n");
-			strcat(listcmd,""COL_GREEN"/pm | /w "COL_EASY"- Prywatna wiadomoœæ. \n");
-			strcat(listcmd,""COL_GREEN"/re "COL_EASY"- Odpisujesz do osoby, która ostatnio napisa³a do Ciebie na PW. \n");
+			strcat(listcmd,""COL_GREEN"/o "COL_EASY"- Czat globalny. "COL_RED"(zwykle pozostaje wyÅ‚Ä…czony) \n");
+			strcat(listcmd,""COL_GREEN"/pm | /w "COL_EASY"- Prywatna wiadomoÅ›Ä‡. \n");
+			strcat(listcmd,""COL_GREEN"/re "COL_EASY"- Odpisujesz do osoby, ktÃ³ra ostatnio napisaÅ‚a do Ciebie na PW. \n");
 			strcat(listcmd,""COL_GREEN"/k "COL_EASY"- Krzyk. \n");
-			strcat(listcmd,""COL_GREEN"! "COL_EASY"- u¿ywanie krótkofalówki. \n");
+			strcat(listcmd,""COL_GREEN"! "COL_EASY"- uÅ¼ywanie krÃ³tkofalÃ³wki. \n");
 			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Komendy czatu", listcmd,"OK","");
 		}
 		case 2:
 		{
-			strcat(listcmd,""COL_GREEN"/autorzy "COL_EASY"- Ludzie którzy zaanga¿owali siê w powstanie projektu Angel Fall. \n");
-			strcat(listcmd,""COL_GREEN"/admins "COL_EASY"- Lista Administratorów online. \n");
+			strcat(listcmd,""COL_GREEN"/autorzy "COL_EASY"- Ludzie ktÃ³rzy zaangaÅ¼owali siÄ™ w powstanie projektu Angel Fall. \n");
+			strcat(listcmd,""COL_GREEN"/admins "COL_EASY"- Lista AdministratorÃ³w online. \n");
 			//strcat(listcmd,""COL_GREEN"/animlist "COL_EASY"- Lista animacji. \n");
 			strcat(listcmd,""COL_GREEN"/pomoc "COL_EASY"- Pomoc. \n");
 			strcat(listcmd,""COL_GREEN"/report "COL_EASY"- Reportujesz gracza. \n");
-			strcat(listcmd,""COL_GREEN"/stats "COL_EASY"- Wyœwietlanie statystyk. \n");
+			strcat(listcmd,""COL_GREEN"/stats "COL_EASY"- WyÅ›wietlanie statystyk. \n");
 			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Podstawowe komendy gracza", listcmd,"OK","");
 		}
 		case 3:
@@ -97,10 +97,10 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 			strcat(listcmd,""COL_GREEN"/ginvite "COL_EASY"- Zapraszasz gracza do swojej grupy. \n");
 			strcat(listcmd,""COL_GREEN"/gkick "COL_EASY"- Wyrzucasz gracza ze swojej grupy. \n");
 			strcat(listcmd,""COL_GREEN"/gsetvld "COL_EASY"- Nadajesz/Zdejmujesz V-ce Lidera grupy."COL_RED" [Tylko lider!] \n");
-			strcat(listcmd,""COL_GREY"Komendy cz³onków: \n");
-			strcat(listcmd,""COL_GREEN"/gmembers "COL_EASY"- Lista cz³onków ONLINE twojej grupy. \n");
+			strcat(listcmd,""COL_GREY"Komendy czÅ‚onkÃ³w: \n");
+			strcat(listcmd,""COL_GREEN"/gmembers "COL_EASY"- Lista czÅ‚onkÃ³w ONLINE twojej grupy. \n");
 			strcat(listcmd,""COL_GREEN"/gpanel "COL_EASY"- Informacje o grupie. \n");
-			strcat(listcmd,""COL_GREEN"/gleave "COL_EASY"- Opuszczasz grupê. \n");
+			strcat(listcmd,""COL_GREEN"/gleave "COL_EASY"- Opuszczasz grupÄ™. \n");
 			strcat(listcmd,""COL_GREEN"/go "COL_EASY"- Otwieranie bramy bazy. \n");
 			strcat(listcmd,""COL_GREEN"/gc "COL_EASY"- Otwieranie bramy bazy. \n");
 			strcat(listcmd,""COL_GREEN"# "COL_EASY"- Czat grupowy. \n");
@@ -114,7 +114,7 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 			strcat(listcmd,""COL_GREEN"/mry "COL_EASY"- Ustawienie obrotu osi Y obiektu. \n");
 			strcat(listcmd,""COL_GREEN"/mrz "COL_EASY"- Ustawienie obrotu osi Z obiektu. \n");
 			strcat(listcmd,""COL_GREY"Inne funkcje: \n");
-			strcat(listcmd,""COL_GREEN"GPS "COL_EASY"- Widzisz cz³onków swojej grupy na mapie. \n");
+			strcat(listcmd,""COL_GREEN"GPS "COL_EASY"- Widzisz czÅ‚onkÃ³w swojej grupy na mapie. \n");
 			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Komendy grup", listcmd,"OK","");
 		}
 		case 4:
@@ -122,7 +122,7 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 			if(gracz[playerid][MapperLvl] >= 2) 
 			{
 				strcat(listcmd,""COL_GREEN"/mmc "COL_EASY"- Przydatne obiekty. \n");
-				strcat(listcmd,""COL_GREEN"/mtool "COL_EASY"- Narzêdzia mappera. \n");
+				strcat(listcmd,""COL_GREEN"/mtool "COL_EASY"- NarzÄ™dzia mappera. \n");
 			}
 			strcat(listcmd,""COL_GREEN"/mc "COL_EASY"- Tworzenie obiektu. \n");
 			strcat(listcmd,""COL_GREEN"/msel "COL_EASY"- Wybieranie obiektu. \n");
@@ -132,15 +132,15 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 			strcat(listcmd,""COL_GREEN"/mrx "COL_EASY"- Ustawienie obrotu osi X obiektu. \n");
 			strcat(listcmd,""COL_GREEN"/mry "COL_EASY"- Ustawienie obrotu osi Y obiektu. \n");
 			strcat(listcmd,""COL_GREEN"/mrz "COL_EASY"- Ustawienie obrotu osi Z obiektu. \n");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Komendy edytora obiektów", listcmd,"OK","");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Komendy edytora obiektÃ³w", listcmd,"OK","");
 		}
 		case 5:
 		{
-			strcat(listcmd,""COL_GREY"Poni¿sza klawiszlogia obowi¹zuje na domyœlnych ustawieniach sterowania GTA:SA. \n");
-			strcat(listcmd,""COL_GREY"Za pomoc¹ danych klawiszy, mo¿esz uruchomiæ nastêpuj¹ce funkcjonalnoœci: \n");
-			strcat(listcmd,""COL_GREEN"Klawisz Y "COL_EASY"- Wyœwietlanie ekwipunku/spechakuzachu. \n");
-			strcat(listcmd,""COL_GREEN"Klawisz N "COL_EASY"- Wyœwietlanie listy przedmiotów le¿¹cych wokó³ Ciebie. \n");
-			strcat(listcmd,""COL_GREEN"LALT "COL_EASY"- Zarz¹dzanie pojazdem. \n");
+			strcat(listcmd,""COL_GREY"PoniÅ¼sza klawiszlogia obowiÄ…zuje na domyÅ›lnych ustawieniach sterowania GTA:SA. \n");
+			strcat(listcmd,""COL_GREY"Za pomocÄ… danych klawiszy, moÅ¼esz uruchomiÄ‡ nastÄ™pujÄ…ce funkcjonalnoÅ›ci: \n");
+			strcat(listcmd,""COL_GREEN"Klawisz Y "COL_EASY"- WyÅ›wietlanie ekwipunku/spechakuzachu. \n");
+			strcat(listcmd,""COL_GREEN"Klawisz N "COL_EASY"- WyÅ›wietlanie listy przedmiotÃ³w leÅ¼Ä…cych wokÃ³Å‚ Ciebie. \n");
+			strcat(listcmd,""COL_GREEN"LALT "COL_EASY"- ZarzÄ…dzanie pojazdem. \n");
 			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "Klawiszologia", listcmd,"OK","");
 		}
 		case 6:
@@ -153,29 +153,29 @@ Dialog:POMOC(playerid, response, listitem, inputtext[])
 
 CMD:report(playerid, params[])
 {
-	if(gettime() - GetPVarInt(playerid, "ReportSpam") < 20) return Error(playerid, "Odczekaj trochê zanim wyœlesz kolejny report.");
+	if(gettime() - GetPVarInt(playerid, "ReportSpam") < 20) return Error(playerid, "Odczekaj trochÄ™ zanim wyÅ›lesz kolejny report.");
 	new targetid, reason[256];
-	if(sscanf(params,"ds[256]", targetid, reason)) return SendClientMessage(playerid, -1, ""COL_GREY"U¯YJ: /report [idgracza] [powód]");
-	if(targetid == playerid) return Error(playerid, "Nie mo¿esz zreportowaæ siebie samego.");
+	if(sscanf(params,"ds[256]", targetid, reason)) return SendClientMessage(playerid, -1, ""COL_GREY"UÅ»YJ: /report [idgracza] [powÃ³d]");
+	if(targetid == playerid) return Error(playerid, "Nie moÅ¼esz zreportowaÄ‡ siebie samego.");
 	if(!gracz[playerid][loggedin]) return Error(playerid, "Ten gracz nie jest zalogowany.");
 	SetPVarInt(playerid, "ReportSpam", gettime());
 	for(new a; a <= GetPlayerPoolSize(); a++)
 	{
 		if(gracz[a][loggedin] && gracz[a][AdminLevel])
 		{
-			SendClientMessageEx(a, 0xFF0000FF, "|REPORT| "COL_GREEN"%s[%d]"COL_WHITE" >> "COL_RED"%s[%d]"COL_WHITE" | Powód: %s", nick(playerid), playerid, nick(targetid), targetid, reason);
+			SendClientMessageEx(a, 0xFF0000FF, "|REPORT| "COL_GREEN"%s[%d]"COL_WHITE" >> "COL_RED"%s[%d]"COL_WHITE" | PowÃ³d: %s", nick(playerid), playerid, nick(targetid), targetid, reason);
 		}
 	}
 	mysql_escape_string(reason, reason, MySQL, 256);
 	mq_format("INSERT INTO `player_report` (`uid`, `targetuid`, `reason`) VALUES ('%d', '%d', '%s');", gracz[playerid][UID], gracz[targetid][UID], reason);
 	mq_send("REPORTQUERY");
-	SendClientMessageEx(playerid, -1, "(("COL_GREEN"Report na gracza "COL_RED"%s"COL_GREEN" zosta³ wys³any! Dziêki!"COL_WHITE"))", nick(targetid));
+	SendClientMessageEx(playerid, -1, "(("COL_GREEN"Report na gracza "COL_RED"%s"COL_GREEN" zostaÅ‚ wysÅ‚any! DziÄ™ki!"COL_WHITE"))", nick(targetid));
 	return 1;
 }
 
 CMD:tankuj(playerid, params[])
 {
-	if(IsPlayerInAnyVehicle(playerid)) return Error(playerid, "Nie mo¿esz u¿ywaæ tej komendy bêd¹c w pojeŸdzie.");
+	if(IsPlayerInAnyVehicle(playerid)) return Error(playerid, "Nie moÅ¼esz uÅ¼ywaÄ‡ tej komendy bÄ™dÄ…c w pojeÅºdzie.");
 	if(IsRangeOfDistributor(playerid))
 	{
 		new list_veh[1024];
@@ -197,7 +197,7 @@ CMD:tankuj(playerid, params[])
 		}
 		if(detected_vehs)
 		{
-			Dialog_Show(playerid, REFUELDIS, DIALOG_STYLE_TABLIST_HEADERS, "Który pojazd chcesz zatankowaæ?", list_veh, "Wybierz", "Anuluj");
+			Dialog_Show(playerid, REFUELDIS, DIALOG_STYLE_TABLIST_HEADERS, "KtÃ³ry pojazd chcesz zatankowaÄ‡?", list_veh, "Wybierz", "Anuluj");
 		}
 		else
 		{
@@ -206,7 +206,7 @@ CMD:tankuj(playerid, params[])
 	}
 	else
 	{
-		Error(playerid, "Musisz byæ przy sprawnym dystrybutorze.");
+		Error(playerid, "Musisz byÄ‡ przy sprawnym dystrybutorze.");
 	}
 	return 1;
 }
@@ -259,11 +259,11 @@ CMD:admins(playerid, params[])
 	}
 	if(liczae == 0)
 	{
-		ShowPlayerDialog(playerid,INFO_DIALOG,DIALOG_STYLE_MSGBOX,""COL_RED"»"COL_GREY" Administracja "COL_GREEN"na s³u¿bie", "{FFAF00}Brak Administracji ONLINE!","OK","");
+		ShowPlayerDialog(playerid,INFO_DIALOG,DIALOG_STYLE_MSGBOX,""COL_RED"Â»"COL_GREY" Administracja "COL_GREEN"na sÅ‚uÅ¼bie", "{FFAF00}Brak Administracji ONLINE!","OK","");
 	} 
 	else
 	{
-		ShowPlayerDialog(playerid,INFO_DIALOG,DIALOG_STYLE_MSGBOX,""COL_RED"»"COL_GREY" Administracja "COL_GREEN"na s³u¿bie",string,"OK","");
+		ShowPlayerDialog(playerid,INFO_DIALOG,DIALOG_STYLE_MSGBOX,""COL_RED"Â»"COL_GREY" Administracja "COL_GREEN"na sÅ‚uÅ¼bie",string,"OK","");
 	}
 	return 1;
 }
@@ -272,34 +272,34 @@ CMD:stats(playerid, params[])
 {
 	new str_header[128];
 	new str_stats[2048];
-	format(str_header, 128, "{7e6644}» "COL_GREY"Statystyki postaci:{0d644e} %s", nick(playerid));
-	format(str_stats, 2048, "Statystyka\tWartoœæ");
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Nick\t"COL_EASY"%s", str_stats, nick(playerid));
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"UID postaci\t"COL_EASY"%d", str_stats, gracz[playerid][UID]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Konto master\t"COL_EASY"%s", str_stats, gracz[playerid][master_nick]);
-	format(str_stats, 2048, "%s\n{6f3e9c}» "COL_GREY"Poziom\t{6f3e9c}%d", str_stats, gracz[playerid][level]);
-	format(str_stats, 2048, "%s\n{6f3e9c}» "COL_GREY"Doœwiadczenie\t"COL_GREEN"%d{6f3e9c}/"COL_RED"%d", str_stats, gracz[playerid][exp], gracz[playerid][need_exp]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Zabitych szwêdaczy\t%d", str_stats, gracz[playerid][KillZombies]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Zabójstwa\t%d", str_stats, gracz[playerid][KillHumans]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Przegrano\t%02d godzin, %02d minut, %02d sekund", str_stats, gracz[playerid][PGodz], gracz[playerid][PMin], gracz[playerid][PSek]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_CYAN"¯etony\t"COL_GREY"%d", str_stats, gracz[playerid][zetony]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_YELLOW"¯etony premium\t"COL_GREY"%d", str_stats, gracz[playerid][gold]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Si³a\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][sila]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"G³ód\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][Glod]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Pragnienie\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][Pragn]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Napromieniowanie\t"COL_RED"%d"COL_GREY"/100", str_stats, gracz[playerid][rads]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Spec: "COL_ORANGE"Rusznikarstwo\t"COL_GREEN"%d"COL_GREY"/17", str_stats, gracz[playerid][rusznikarstwo]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Spec: "COL_DBLUE"Motoryzacja\t"COL_GREEN"%d"COL_GREY"/11", str_stats, gracz[playerid][motoryzacja]);
-	format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Spec: "COL_BLUE"Medycyna\t"COL_GREEN"%d"COL_GREY"/17", str_stats, gracz[playerid][medycyna]);
+	format(str_header, 128, "{7e6644}Â» "COL_GREY"Statystyki postaci:{0d644e} %s", nick(playerid));
+	format(str_stats, 2048, "Statystyka\tWartoÅ›Ä‡");
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Nick\t"COL_EASY"%s", str_stats, nick(playerid));
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"UID postaci\t"COL_EASY"%d", str_stats, gracz[playerid][UID]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Konto master\t"COL_EASY"%s", str_stats, gracz[playerid][master_nick]);
+	format(str_stats, 2048, "%s\n{6f3e9c}Â» "COL_GREY"Poziom\t{6f3e9c}%d", str_stats, gracz[playerid][level]);
+	format(str_stats, 2048, "%s\n{6f3e9c}Â» "COL_GREY"DoÅ›wiadczenie\t"COL_GREEN"%d{6f3e9c}/"COL_RED"%d", str_stats, gracz[playerid][exp], gracz[playerid][need_exp]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Zabitych szwÄ™daczy\t%d", str_stats, gracz[playerid][KillZombies]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"ZabÃ³jstwa\t%d", str_stats, gracz[playerid][KillHumans]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Przegrano\t%02d godzin, %02d minut, %02d sekund", str_stats, gracz[playerid][PGodz], gracz[playerid][PMin], gracz[playerid][PSek]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_CYAN"Å»etony\t"COL_GREY"%d", str_stats, gracz[playerid][zetony]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_YELLOW"Å»etony premium\t"COL_GREY"%d", str_stats, gracz[playerid][gold]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"SiÅ‚a\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][sila]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"GÅ‚Ã³d\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][Glod]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Pragnienie\t"COL_GREEN"%d"COL_GREY"/100", str_stats, gracz[playerid][Pragn]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Napromieniowanie\t"COL_RED"%d"COL_GREY"/100", str_stats, gracz[playerid][rads]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Spec: "COL_ORANGE"Rusznikarstwo\t"COL_GREEN"%d"COL_GREY"/17", str_stats, gracz[playerid][rusznikarstwo]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Spec: "COL_DBLUE"Motoryzacja\t"COL_GREEN"%d"COL_GREY"/11", str_stats, gracz[playerid][motoryzacja]);
+	format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Spec: "COL_BLUE"Medycyna\t"COL_GREEN"%d"COL_GREY"/17", str_stats, gracz[playerid][medycyna]);
 	if(gracz[playerid][OrgID]) 
 	{
-		format(str_stats, 2048, "%s\n{77fd04}» "COL_GREY"Grupa\t"COL_RED"["COL_GREY"%s"COL_RED"]"COL_GREY"%s", str_stats, gracz[playerid][group_tag] , gracz[playerid][group_name]);
+		format(str_stats, 2048, "%s\n{77fd04}Â» "COL_GREY"Grupa\t"COL_RED"["COL_GREY"%s"COL_RED"]"COL_GREY"%s", str_stats, gracz[playerid][group_tag] , gracz[playerid][group_name]);
 	}
 	if(isvip(playerid))
 	{
 		new dd, hh, mm, ss;
 		SecToTime(gracz[playerid][vip]-serwer[time_timestamp], dd, hh, mm, ss);
-		format(str_stats, 2048, "%s\n{77fd04}» "COL_ORANGE"Konto premium\t"COL_GREY"%02d dni, %02d godzin, %02d minut, %02d sekund", str_stats, dd, hh, mm, ss);
+		format(str_stats, 2048, "%s\n{77fd04}Â» "COL_ORANGE"Konto premium\t"COL_GREY"%02d dni, %02d godzin, %02d minut, %02d sekund", str_stats, dd, hh, mm, ss);
 	}
 	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_TABLIST_HEADERS, str_header, str_stats,"Zamknij","");
 	return 1;
@@ -323,7 +323,7 @@ public QStartFishing(playerid)
 	}
 	else
 	{
-		Error(playerid, "Brak wêdki w ekwipunku.");
+		Error(playerid, "Brak wÄ™dki w ekwipunku.");
 	}
 	return 1;
 }

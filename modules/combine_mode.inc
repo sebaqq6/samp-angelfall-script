@@ -543,7 +543,7 @@ stock Process_CombineMode(playerid)
 					if(RemoveItemFromPlayer(playerid, 54, 1))
 					{
 						CreateItemForPlayer(playerid, 55, 1);
-						PC_EmulateCommand(playerid, "/me uzupe≥nia kanister.");
+						PC_EmulateCommand(playerid, "/me uzupe≈Çnia kanister.");
 						LeftNotifyShow(playerid, "info", "~y~Kanister~w~ zostal ~g~uzupelniony~w~.");
 					}
 				}
@@ -640,13 +640,13 @@ stock Process_CombineMode(playerid)
 										case 0:
 										{
 											new tool_str[1024];
-											format(tool_str, 1024, "Uk≥ad\tKondycja");
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Uk≥ad elektryczny\t%s", tool_str, text_bar(procent(pojazd[v][v_uElektryczny], WORLDV_UELEKT)));
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Uk≥ad zasilania\t%s", tool_str, text_bar(procent(pojazd[v][v_uZasilania], WORLDV_ZASIL)));
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Uk≥ad smarowania\t%s", tool_str, text_bar(procent(pojazd[v][v_uSmarowania], WORLDV_SMAR)));
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Uk≥ad ch≥odzenia\t%s", tool_str, text_bar(procent(pojazd[v][v_uChlodzenia], WORLDV_CHLOD)));
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Uk≥ad korbowy\t%s", tool_str, text_bar(procent(pojazd[v][v_uKorbowy], WORLDV_KORB)));
-											format(tool_str, 1024, "%s\n"COL_WHITE"ª"COL_BLUE" Paliwo\t%s", tool_str, text_bar(procent(pojazd[v][v_paliwo], 1000)));
+											format(tool_str, 1024, "Uk≈Çad\tKondycja");
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Uk≈Çad elektryczny\t%s", tool_str, text_bar(procent(pojazd[v][v_uElektryczny], WORLDV_UELEKT)));
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Uk≈Çad zasilania\t%s", tool_str, text_bar(procent(pojazd[v][v_uZasilania], WORLDV_ZASIL)));
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Uk≈Çad smarowania\t%s", tool_str, text_bar(procent(pojazd[v][v_uSmarowania], WORLDV_SMAR)));
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Uk≈Çad ch≈Çodzenia\t%s", tool_str, text_bar(procent(pojazd[v][v_uChlodzenia], WORLDV_CHLOD)));
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Uk≈Çad korbowy\t%s", tool_str, text_bar(procent(pojazd[v][v_uKorbowy], WORLDV_KORB)));
+											format(tool_str, 1024, "%s\n"COL_WHITE"¬ª"COL_BLUE" Paliwo\t%s", tool_str, text_bar(procent(pojazd[v][v_paliwo], 1000)));
 											ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_TABLIST_HEADERS, "Wynik diagonostyki pojazdu:", tool_str, "OK", "");
 											LeftNotifyShow(playerid, "Sukces!", "~y~Diagnostyka zakonczona~w~.", LN_GREEN);
 										}
@@ -655,7 +655,7 @@ stock Process_CombineMode(playerid)
 											if(RemoveItemFromPlayer(playerid, 69, VehNeed_uElektryczny(pojazd[v][v_model])))
 											{
 												new cmd_str[128];
-												format(cmd_str, 128, "/me zakoÒczy≥ remont uk≥adu elektrycznego dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
+												format(cmd_str, 128, "/me zako≈Ñczy≈Ç remont uk≈Çadu elektrycznego dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
 												PC_EmulateCommand(playerid, cmd_str);
 												pojazd[v][v_uElektryczny] = WORLDV_UELEKT;
 												LeftNotifyShow(playerid, "Sukces!", "~y~Uklad elektryczny~w~ zostal ~g~wyremontowany~w~.", LN_GREEN);
@@ -666,7 +666,7 @@ stock Process_CombineMode(playerid)
 											if(RemoveItemFromPlayer(playerid, 70, VehNeed_uZasilania(pojazd[v][v_model])))
 											{
 												new cmd_str[128];
-												format(cmd_str, 128, "/me zakoÒczy≥ remont uk≥adu zasilania dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
+												format(cmd_str, 128, "/me zako≈Ñczy≈Ç remont uk≈Çadu zasilania dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
 												PC_EmulateCommand(playerid, cmd_str);
 												pojazd[v][v_uZasilania] = WORLDV_ZASIL;
 												LeftNotifyShow(playerid, "Sukces!", "~y~Uklad zasilania~w~ zostal ~g~wyremontowany~w~.", LN_GREEN);
@@ -677,7 +677,7 @@ stock Process_CombineMode(playerid)
 											if(RemoveItemFromPlayer(playerid, 71, VehNeed_uSmarowania(pojazd[v][v_model])))
 											{
 												new cmd_str[128];
-												format(cmd_str, 128, "/me zakoÒczy≥ remont uk≥adu smarowania dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
+												format(cmd_str, 128, "/me zako≈Ñczy≈Ç remont uk≈Çadu smarowania dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
 												PC_EmulateCommand(playerid, cmd_str);
 												pojazd[v][v_uSmarowania] = WORLDV_SMAR;
 												LeftNotifyShow(playerid, "Sukces!", "~y~Uklad smarowania~w~ zostal ~g~wyremontowany~w~.", LN_GREEN);
@@ -688,7 +688,7 @@ stock Process_CombineMode(playerid)
 											if(RemoveItemFromPlayer(playerid, 72, VehNeed_uChlodzenia(pojazd[v][v_model])))
 											{
 												new cmd_str[128];
-												format(cmd_str, 128, "/me zakoÒczy≥ remont uk≥adu ch≥odzenia dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
+												format(cmd_str, 128, "/me zako≈Ñczy≈Ç remont uk≈Çadu ch≈Çodzenia dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
 												PC_EmulateCommand(playerid, cmd_str);
 												pojazd[v][v_uChlodzenia] = WORLDV_CHLOD;
 												LeftNotifyShow(playerid, "Sukces!", "~y~Uklad chlodzenia~w~ zostal ~g~wyremontowany~w~.", LN_GREEN);
@@ -699,7 +699,7 @@ stock Process_CombineMode(playerid)
 											if(RemoveItemFromPlayer(playerid, 73, VehNeed_uKorbowy(pojazd[v][v_model])))
 											{
 												new cmd_str[128];
-												format(cmd_str, 128, "/me zakoÒczy≥ remont uk≥adu korbowego dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
+												format(cmd_str, 128, "/me zako≈Ñczy≈Ç remont uk≈Çadu korbowego dla pojazdu '%s'.", GetVehicleName(pojazd[v][v_model]));
 												PC_EmulateCommand(playerid, cmd_str);
 												pojazd[v][v_uKorbowy] = WORLDV_KORB;
 												LeftNotifyShow(playerid, "Sukces!", "~y~Uklad korbowy~w~ zostal ~g~wyremontowany~w~.", LN_GREEN);
@@ -887,7 +887,7 @@ stock Process_CombineMode(playerid)
 						SyncWeaponCDNToEQ(playerid);
 						LeftNotifyShow(playerid, "Sukces!", "~y~Bron~w~ zostala ~g~wyremontowana~w~.", LN_GREEN);
 						new cmd_str[64];
-						format(cmd_str, 64, "/me zakoÒczy≥/a remont broni '%s'.", ItemName[gracz[playerid][actual_weapon]]);
+						format(cmd_str, 64, "/me zako≈Ñczy≈Ç/a remont broni '%s'.", ItemName[gracz[playerid][actual_weapon]]);
 						PC_EmulateCommand(playerid, cmd_str);
 						RefreshAmmo(playerid);
 					}
@@ -947,10 +947,10 @@ stock Process_CombineMode(playerid)
 								{
 									if(combine_mode[playerid][c_key][k] == CKEY_LEFT) format(combine_str, 64, "%s|lewo", combine_str);
 									else if(combine_mode[playerid][c_key][k] == CKEY_RIGHT) format(combine_str, 64, "%s|prawo", combine_str);
-									else if(combine_mode[playerid][c_key][k] == CKEY_UP) format(combine_str, 64, "%s|gÛra", combine_str);
-									else if(combine_mode[playerid][c_key][k] == CKEY_DOWN) format(combine_str, 64, "%s|dÛ≥", combine_str);
+									else if(combine_mode[playerid][c_key][k] == CKEY_UP) format(combine_str, 64, "%s|g√≥ra", combine_str);
+									else if(combine_mode[playerid][c_key][k] == CKEY_DOWN) format(combine_str, 64, "%s|d√≥≈Ç", combine_str);
 								}
-								SendClientMessageEx(playerid, -1, ""COL_GREY"Teraz, aby "COL_GREEN"uruchomiÊ silnik"COL_GREY", wymagana jest kombinacja: "COL_PURPLE"%s|"COL_GREY".", combine_str);
+								SendClientMessageEx(playerid, -1, ""COL_GREY"Teraz, aby "COL_GREEN"uruchomiƒá silnik"COL_GREY", wymagana jest kombinacja: "COL_PURPLE"%s|"COL_GREY".", combine_str);
 								SetVehicleCombine(v, combine_mode[playerid][c_key][0], combine_mode[playerid][c_key][1], combine_mode[playerid][c_key][2], combine_mode[playerid][c_key][3], combine_mode[playerid][c_key][4], combine_mode[playerid][c_key][5]);
 							}
 							else
@@ -997,10 +997,10 @@ stock Process_CombineMode(playerid)
 							{
 								if(combine_mode[playerid][c_key][k] == CKEY_LEFT) format(combine_str, 64, "%s|lewo", combine_str);
 								else if(combine_mode[playerid][c_key][k] == CKEY_RIGHT) format(combine_str, 64, "%s|prawo", combine_str);
-								else if(combine_mode[playerid][c_key][k] == CKEY_UP) format(combine_str, 64, "%s|gÛra", combine_str);
-								else if(combine_mode[playerid][c_key][k] == CKEY_DOWN) format(combine_str, 64, "%s|dÛ≥", combine_str);
+								else if(combine_mode[playerid][c_key][k] == CKEY_UP) format(combine_str, 64, "%s|g√≥ra", combine_str);
+								else if(combine_mode[playerid][c_key][k] == CKEY_DOWN) format(combine_str, 64, "%s|d√≥≈Ç", combine_str);
 							}
-							SendClientMessageEx(playerid, -1, ""COL_GREY"Teraz, aby "COL_GREEN"uruchomiÊ silnik"COL_GREY", wymagana jest kombinacja: "COL_PURPLE"%s|"COL_GREY".", combine_str);
+							SendClientMessageEx(playerid, -1, ""COL_GREY"Teraz, aby "COL_GREEN"uruchomiƒá silnik"COL_GREY", wymagana jest kombinacja: "COL_PURPLE"%s|"COL_GREY".", combine_str);
 							SetVehicleCombine(v, combine_mode[playerid][c_key][0], combine_mode[playerid][c_key][1], combine_mode[playerid][c_key][2], combine_mode[playerid][c_key][3], combine_mode[playerid][c_key][4], combine_mode[playerid][c_key][5]);
 						}
 						else
@@ -1211,7 +1211,7 @@ stock combine_OnPlayerKeyStateChange(playerid, key, axis)
 			}
 		}
 	}
-	else//gÛra dÛ≥
+	else//g√≥ra d√≥≈Ç
 	{
 		if(combine_mode[playerid][c_mode] == 2)
 		{

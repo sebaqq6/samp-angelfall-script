@@ -1,7 +1,7 @@
 /**
  *  Progress Bar 1.3.1.0
  *  Copyright 2007-2010 Infernus' Group,
- *  Fl·vio Toribio (flavio_toibio@hotmail.com)
+ *  Fl√°vio Toribio (flavio_toibio@hotmail.com)
  *
  *  Updated by Southclaw for use with the PlayerTextDraws of 0.3e
  *  Updated by Southclaw again with some minor fixes and improvements

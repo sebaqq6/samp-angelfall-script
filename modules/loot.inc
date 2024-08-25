@@ -100,12 +100,12 @@ stock ClearItemsForWorld()
 
 stock PickItemForPlayer(playerid, first_time = 1)
 {
-	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","Jesteœ ciê¿ko ranny - nie mo¿esz podnosiæ przedmiotów.","OK","");
-	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","Jesteœ w trybie kombinacji - nie mo¿esz podnosiæ przedmiotów.","OK","");
-	if(IsPlayerInAnyVehicle(playerid)) return MessageGUI(playerid,"Informacja","Znajduj¹c siê w pojeŸdzie nie posiadasz mo¿liwoœci podnoszenia przedmiotu!","OK","");
+	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","JesteÅ› ciÄ™Å¼ko ranny - nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w.","OK","");
+	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","JesteÅ› w trybie kombinacji - nie moÅ¼esz podnosiÄ‡ przedmiotÃ³w.","OK","");
+	if(IsPlayerInAnyVehicle(playerid)) return MessageGUI(playerid,"Informacja","ZnajdujÄ…c siÄ™ w pojeÅºdzie nie posiadasz moÅ¼liwoÅ›ci podnoszenia przedmiotu!","OK","");
 	new str[2000];
 	new detected_items;
-	format(str,sizeof(str),"UID\tNazwa\tIloœæ\tKondycja", str);
+	format(str,sizeof(str),"UID\tNazwa\tIloÅ›Ä‡\tKondycja", str);
 	for(new i = 0; i < MAX_WORLD_ITEMS; i++)
 	{
 		if(Przedmiot[i][i_vw] != GetPlayerVirtualWorld(playerid)) continue;
@@ -117,11 +117,11 @@ stock PickItemForPlayer(playerid, first_time = 1)
 	}
 	if(detected_items > 0)
 	{
-		Dialog_Show(playerid, LOOT, DIALOG_STYLE_TABLIST_HEADERS,"Lista przedmiotów znajduj¹cych siê wokó³ ciebie:", str,"Podnieœ","Anuluj");
+		Dialog_Show(playerid, LOOT, DIALOG_STYLE_TABLIST_HEADERS,"Lista przedmiotÃ³w znajdujÄ…cych siÄ™ wokÃ³Å‚ ciebie:", str,"PodnieÅ›","Anuluj");
 	}
 	else if(first_time)
 	{
-		MessageGUI(playerid,"Informacja","Wokó³ Ciebie nie znajduje siê ¿aden przedmiot.","OK","");
+		MessageGUI(playerid,"Informacja","WokÃ³Å‚ Ciebie nie znajduje siÄ™ Å¼aden przedmiot.","OK","");
 	}
 	return 1;
 }
@@ -130,7 +130,7 @@ Dialog:LOOT(playerid, response, listitem, inputtext[])
 {
 	if(!response) return 1;
 	new w_uid = strval(inputtext);
-	if(!Przedmiot[w_uid][Drop]) return MessageGUI(playerid,"Informacja","Ktoœ inny podniós³ ten przedmiot.","OK","");
+	if(!Przedmiot[w_uid][Drop]) return MessageGUI(playerid,"Informacja","KtoÅ› inny podniÃ³sÅ‚ ten przedmiot.","OK","");
 	if(CreateItemForPlayer(playerid,Przedmiot[w_uid][Item],Przedmiot[w_uid][Value], Przedmiot[w_uid][icdn], Przedmiot[w_uid][icdn_max]))
 	{
 		mq_format("INSERT INTO `loot_history` (`userid`, `itemid`, `value`) VALUES ('%d', '%d', '%d');", gracz[playerid][UID], Przedmiot[w_uid][Item], Przedmiot[w_uid][Value]);
@@ -142,7 +142,7 @@ Dialog:LOOT(playerid, response, listitem, inputtext[])
 	}
 	return 1 ;
 }
-//SYSTEM ROZRZUTU PRZEDMIOTÓW NA MAPIE
+//SYSTEM ROZRZUTU PRZEDMIOTÃ“W NA MAPIE
 forward Process_ReLootMap(action);
 public Process_ReLootMap(action)
 {
@@ -154,7 +154,7 @@ public Process_ReLootMap(action)
 			{
 				serwer[time_relootmap] = serwer[time_timestamp]+60*60;//godzina
 				SetTimerEx("Process_ReLootMap", 1000*30, false, "d", 1);
-				SendClientMessageToAll(-1, ""COL_RED"(({510009}Za 30 sekund nast¹pi respawn przedmiotów..."COL_RED"))");
+				SendClientMessageToAll(-1, ""COL_RED"(({510009}Za 30 sekund nastÄ…pi respawn przedmiotÃ³w..."COL_RED"))");
 			}
 		}
 		case 1:
@@ -255,7 +255,7 @@ public StartLootSystem()
 						else CreateItemForWorld(ItemProbably[rand_procent][0], MRandRange(1, ItemProbably[rand_procent][1]), 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					}
 				}
-				else if(TYP == 1)//roœlina - pod wod¹
+				else if(TYP == 1)//roÅ›lina - pod wodÄ…
 				{
 					count_created++;
 					static plant_underwater;
@@ -265,31 +265,31 @@ public StartLootSystem()
 					CreateItemForWorld(plant_underwater, 1, 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					break;
 				}
-				else if(TYP == 2)//roœlina - góry
+				else if(TYP == 2)//roÅ›lina - gÃ³ry
 				{
 					count_created++;
 					CreateItemForWorld(131, 1, 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					break;
 				}
-				else if(TYP == 3)//roœlina - piasek
+				else if(TYP == 3)//roÅ›lina - piasek
 				{
 					count_created++;
 					CreateItemForWorld(126, 1, 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					break;
 				}
-				else if(TYP == 4)//roœlina - woda
+				else if(TYP == 4)//roÅ›lina - woda
 				{
 					count_created++;
 					CreateItemForWorld(132, 1, 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					break;
 				}
-				else if(TYP == 5)//roœlina - bagna
+				else if(TYP == 5)//roÅ›lina - bagna
 				{
 					count_created++;
 					CreateItemForWorld(124, 1, 2000, 2000, pos[0], pos[1], pos[2], 0, 0);
 					break;
 				}
-				else if(TYP == 6)//roœlina - las
+				else if(TYP == 6)//roÅ›lina - las
 				{
 					static plant_forest;
 					if(plant_forest == 0) plant_forest = 127;
@@ -305,7 +305,7 @@ public StartLootSystem()
 			i++;
 		}
 	}
-	SendClientMessageToAllEx(-1, ""COL_RED"(({510009}Stworzono "COL_WHITE"%d{510009} przedmiotów na mapie. Kolejny respawn za godzinê."COL_RED"))", count_created);
-	printf("[LOOT]Stworzono %d przedmiotów na mapie!", count_created);
+	SendClientMessageToAllEx(-1, ""COL_RED"(({510009}Stworzono "COL_WHITE"%d{510009} przedmiotÃ³w na mapie. Kolejny respawn za godzinÄ™."COL_RED"))", count_created);
+	printf("[LOOT]Stworzono %d przedmiotÃ³w na mapie!", count_created);
 	return 1;
 }

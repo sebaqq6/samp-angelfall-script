@@ -4,7 +4,7 @@
 #define DEFAULT_OBJECT 1575
 new ItemName[MAX_ITEMS][] =
 {
-    {" "}, // 0 - WystÍpuje b≥πd
+    {" "}, // 0 - Wystƒôpuje b≈ÇƒÖd
     {"Kastet"}, // 1
     {"Kij golfowy"}, // 2
     {"Palka policyjna"}, // 3
@@ -59,9 +59,9 @@ new ItemName[MAX_ITEMS][] =
     {"Amunicja: Mac 10 Ingram"}, // 52
     {"Drewno"}, // 53
     {"Pusty kanister"}, // 54
-    {"Pe≥ny kanister"}, // 55
+    {"Pe≈Çny kanister"}, // 55
     {"wolny_slot_przedmiotu2"}, // 56
-    {"Øelazo"}, //57
+    {"≈ªelazo"}, //57
     {"Amunicja: Hk MP5N"}, //58
     {"Amunicja: TEC-DC9"}, //59
     {"Amunicja: AK-47"}, //60
@@ -72,7 +72,7 @@ new ItemName[MAX_ITEMS][] =
     {"Amunicja: M134 Minigun"}, //65
     {"Batonik proteinowy"}, //66
     {"Karnet"},//67
-    {"Karnet(niewaøny)"},//68
+    {"Karnet(niewa≈ºny)"},//68
     {"Element u.elektrycznego"},//69
     {"Element u.zasilana"},//70
     {"Element u.smarowania"},//71
@@ -137,13 +137,13 @@ new ItemName[MAX_ITEMS][] =
     {"Dzika Ankrecja"},//130
     {"Xadricaria srebrzysta"},//131
     {"Kiew wodnisty"},//132
-    {"KrÛtkofalÛwka"},//133
+    {"Kr√≥tkofal√≥wka"},//133
     {"Gruz"},//134
     {"Zgnieciona puszka"},//135
     {"Modul elektryczny"},//136
     {"Zlom"},//137
     {"Gumowy kalosz"},//138
-    {"Zniszczone pude≥ko"},//139
+    {"Zniszczone pude≈Çko"},//139
     {"Papier toaletowy"},//140
     {"Stara deskorolka"},//141
     {"Miotla"},//142
@@ -167,7 +167,7 @@ new ItemName[MAX_ITEMS][] =
     {"Bandana: zielona"},//160
     {"Bandana: niebieska"}, //161
     {"Bandana: czarna"}, //162
-    {"Bandana: bia≥a"}, //163
+    {"Bandana: bia≈Ça"}, //163
     {"Okulary owalne: czerwone"},//164
     {"Okulary owalne: pomaranczowe"},//165
     {"Okulary owalne: zielone"},//166
@@ -210,30 +210,30 @@ new ItemName[MAX_ITEMS][] =
 };
 new ObjectItem[MAX_ITEMS] =
 {
-    -1,          //B≥πd, 0
+    -1,          //B≈ÇƒÖd, 0
     331,         //Kastet, 1
     333,         //Kij golfowy, 2
-    334,         //Pa≥ka policyjna, 3
-    335,         //NÛø, 4
+    334,         //Pa≈Çka policyjna, 3
+    335,         //N√≥≈º, 4
     336,         //Baseball, 5
-    337,         //£opata, 6
+    337,         //≈Åopata, 6
     338,         //Kij bilardowy, 7
     339,         //Katana, 8
-    341,         //Pi≥a mechaniczna, 9
+    341,         //Pi≈Ça mechaniczna, 9
     321,         //Fioletowy Dildo, 10
-    322,         //Duøy Bia≥y Vibrator, 11
-    323,         //åredni Bia≥y Vibrator, 12
-    324,         //Ma≥y Bia≥y Vibrator, 13
+    322,         //Du≈ºy Bia≈Çy Vibrator, 11
+    323,         //≈öredni Bia≈Çy Vibrator, 12
+    324,         //Ma≈Çy Bia≈Çy Vibrator, 13
     325,         //Kwiaty, 14
     326,         //Laska, 15
-    342,         //Granat od≥amkowy, 16
+    342,         //Granat od≈Çamkowy, 16
     343,         //Granat dymny, 17
     344,         //Koktajl molotova, 18
-    -1,          //B≥πd, 19
-    -1,          //B≥πd, 20
-    -1,          //B≥πd, 21
+    -1,          //B≈ÇƒÖd, 19
+    -1,          //B≈ÇƒÖd, 20
+    -1,          //B≈ÇƒÖd, 21
     346,         //Colt 45, 22
-    347,         //Colt 45 (Z t≥umikiem), 23
+    347,         //Colt 45 (Z t≈Çumikiem), 23
     348,         //Desert Eagle, 24
     349,         //Shotgun, 25
     350,         //Sawnoff Shotgun, 26
@@ -249,10 +249,10 @@ new ObjectItem[MAX_ITEMS] =
     360,         //Wyrzutnia rakiet z autonamierzaniem, 36
     361,         //Miotacz ognia, 37
     362,         //Minigun, 38
-    363,         //£adunek wybuchowy, 39
+    363,         //≈Åadunek wybuchowy, 39
     364,         //Detonator, 40
     365,         //Spray, 41
-    366,         //Gaúnica, 42
+    366,         //Ga≈õnica, 42
     367,         //Aparat fotograficzny, 43
     368,         //Noktowizor, 44
     369,         //Termowizor, 45
@@ -265,9 +265,9 @@ new ObjectItem[MAX_ITEMS] =
     19832,        //Amunicja: Mac 10 Ingram, 52
     19793,		 //Drewno, 53
     1650,		 //Pusty kanister, 54
-    1650,		 //Pe≥ny kanister, 55
+    1650,		 //Pe≈Çny kanister, 55
     1668,		 //wolny_slot_przedmiotu2, 56
-    19772,	 	 //Øelazo, 57
+    19772,	 	 //≈ªelazo, 57
     19832, 		 //Amunicja: Hk MP5N, 58
     19832, 		 //Amunicja: TEC-DC9, 59
     19832, 		 //Amunicja: AK-47, 60
@@ -278,7 +278,7 @@ new ObjectItem[MAX_ITEMS] =
     2006,		 //Amunicja: M134 Minigun, 65
     11742,                   //Batonik proteinowy, 66
     19792,                   //Karnet, 67
-    19792,                   //Karnet[niewaøny], 68
+    19792,                   //Karnet[niewa≈ºny], 68
     DEFAULT_OBJECT,//Element u.elektrycznego, 69
     DEFAULT_OBJECT,//Element u.zasilana, 70
     DEFAULT_OBJECT,//Element u.smarowania, 71
@@ -286,7 +286,7 @@ new ObjectItem[MAX_ITEMS] =
     DEFAULT_OBJECT, //Element u.korbowego, 73
     19921,//Zestaw narzedzi(Pojazd), 74
     11739,//Konserwa rybna, 75
-    19575,//Zgni≥e jab≥ko, 76
+    19575,//Zgni≈Çe jab≈Çko, 76
     19578,//Zgnily banan, 77
     19582,//Skazone mieso, 78
     19847,//Upieczone mieso, 79
@@ -310,7 +310,7 @@ new ObjectItem[MAX_ITEMS] =
     1546,//Sprunk, 97
     1950,//Apo-Cola, 98
     19822,//Apo-Cola Tiger, 99
-    1912,//Øeton, 100
+    1912,//≈ªeton, 100
     19564,//Sok jablkowy, 101
     19563,//Sok pomaranczowy, 102
     19823,//Whisky, 103
@@ -343,11 +343,11 @@ new ObjectItem[MAX_ITEMS] =
     859,//Dzika Ankrecja, 130
     2249,//Xadricaria srebrzysta, 131
     804,//Kiew wodnisty, 132
-    2966,//KrÛtkofalÛwka, 133
+    2966,//Kr√≥tkofal√≥wka, 133
     854,//Napromieniowany gruz, 134
     2647,//Zgnieciona puszka, 135
-    18875,//Modu≥ elektryczny, 136
-    849,//Z≥om, 137
+    18875,//Modu≈Ç elektryczny, 136
+    849,//Z≈Çom, 137
     11735,//Gumowy kalosz, 138
     928,//Karton, 139        
     19873,//Papier toaletowy, 140
@@ -369,11 +369,11 @@ new ObjectItem[MAX_ITEMS] =
     1668,//Syrop AntiRad 50, 156
     1668,//Syrop na wytrzymalosc, 157
     DEFAULT_OBJECT,//Ubranie, 158
-    18632,//WÍdka, 159
+    18632,//Wƒôdka, 159
     18913,//Bandana: zielona, 160
     18917, //Bandana niebieska, 161
     18912, //Bandana czarna, 162
-    18919, //Bandana bia≥a, 163
+    18919, //Bandana bia≈Ça, 163
     19006,//Okulary owalne: czerwone, 164
     19007,//Okulary owalne: pomaranczowe, 165
     19008,//Okulary owalne: zielone, 166
@@ -416,30 +416,30 @@ new ObjectItem[MAX_ITEMS] =
 };
 new Float:ObjectItemFloat[MAX_ITEMS][4] =
 {
-    {0.0, 0.0, 0.0, 0.0}, //B≥πd, 0
+    {0.0, 0.0, 0.0, 0.0}, //B≈ÇƒÖd, 0
     {1.0, 85.0, -809.0, 0.0}, //Kastet, 1
     {1.0, 85.0, -809.0, 0.0}, //Kij golfowy, 2
-    {1.0, 85.0, -809.0, 0.0}, //Pa≥ka policyjna, 3
-    {1.0, 85.0, -809.0, 0.0}, //NÛø, 4
+    {1.0, 85.0, -809.0, 0.0}, //Pa≈Çka policyjna, 3
+    {1.0, 85.0, -809.0, 0.0}, //N√≥≈º, 4
     {1.0, 85.0, -809.0, 0.0}, //Baseball,, 5
-    {1.0, 85.0, 0.0, 0.0}, //£opata, 6
+    {1.0, 85.0, 0.0, 0.0}, //≈Åopata, 6
     {1.0, 85.0, -809.0, 0.0}, //Kij bilardowy, 7
     {1.0, 85.0, -809.0, 0.0}, //Katana, 8
-    {1.0, 85.0, -809.0, 0.0}, //Pi≥a mechaniczna, 9
+    {1.0, 85.0, -809.0, 0.0}, //Pi≈Ça mechaniczna, 9
     {1.0, 85.0, -809.0, 0.0}, //Fioletowy Dildo, 10
-    {1.0, 85.0, -809.0, 0.0}, //Duøy Bia≥y Vibrator, 11
-    {1.0, 85.0, -809.0, 0.0}, //åredni Bia≥y Vibrator, 11
-    {1.0, 85.0, -809.0, 0.0}, //Ma≥y Bia≥y Vibrator,, 13
+    {1.0, 85.0, -809.0, 0.0}, //Du≈ºy Bia≈Çy Vibrator, 11
+    {1.0, 85.0, -809.0, 0.0}, //≈öredni Bia≈Çy Vibrator, 11
+    {1.0, 85.0, -809.0, 0.0}, //Ma≈Çy Bia≈Çy Vibrator,, 13
     {1.0, 85.0, -809.0, 0.0}, //Kwiaty, 1
     {1.0, 85.0, -809.0, 0.0}, //Laska, 15
-    {1.0, 85.0, -809.0, 0.0}, //Granat od≥amkowy,, 16
+    {1.0, 85.0, -809.0, 0.0}, //Granat od≈Çamkowy,, 16
     {1.0, 85.0, -809.0, 0.0}, //Granat dymny, 17
     {1.0, 85.0, -809.0, 0.0}, //Koktajl molotova, 18
-    {0.0, 0.0, 0.0, 0.0}, //B≥πd, 19
-    {0.0, 0.0, 0.0, 0.0}, //B≥πd, 20
-    {0.0, 0.0, 0.0, 0.0}, //B≥πd, 21
+    {0.0, 0.0, 0.0, 0.0}, //B≈ÇƒÖd, 19
+    {0.0, 0.0, 0.0, 0.0}, //B≈ÇƒÖd, 20
+    {0.0, 0.0, 0.0, 0.0}, //B≈ÇƒÖd, 21
     {1.0, 85.0, -809.0, 0.0}, //Colt 45, 22
-    {1.0, 85.0, -809.0, 0.0}, //Colt 45 (Z t≥umikiem), 23
+    {1.0, 85.0, -809.0, 0.0}, //Colt 45 (Z t≈Çumikiem), 23
     {1.0, 85.0, -809.0, 0.0}, //Desert Eagle, 24
     {1.0, 85.0, -809.0, 0.0}, //Shotgun, 25
     {1.0, 85.0, -809.0, 0.0}, //Sawnoff Shotgun, 26
@@ -455,10 +455,10 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {1.0, 85.0, -809.0, 0.0}, //Wyrzutnia rakiet z autonamierzaniem, 36
     {1.0, 85.0, -809.0, 0.0}, //Miotacz ognia, 37
     {1.0, 85.0, -809.0, 0.0}, //Minigun, 38
-    {1.0, 85.0, -809.0, 0.0}, //£adunek wybuchowy, 39
+    {1.0, 85.0, -809.0, 0.0}, //≈Åadunek wybuchowy, 39
     {1.0, 85.0, -809.0, 0.0}, //Detonator, 40
     {1.0, 85.0, -809.0, 0.0}, //Spray, 41
-    {1.0, 85.0, -809.0, 0.0}, //Gaúnica, 42
+    {1.0, 85.0, -809.0, 0.0}, //Ga≈õnica, 42
     {1.0, 85.0, -809.0, 0.0}, //Aparat fotograficzny, 43
     {1.0, 85.0, -809.0, 0.0}, //Noktowizor, 44
     {1.0, 85.0, -809.0, 0.0}, //Termowizor, 45
@@ -471,9 +471,9 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {1.0, 0.0, 0.0, 0.0}, //Amunicja: Mac 10 Ingram, 52
     {0.9, 0.0, 0.0, 0.0}, //Drewno, 53
     {0.7, 0.0, 0.0, 0.0}, //Pusty kanister, 54
-    {0.7, 0.0, 0.0, 0.0}, //Pe≥ny kanister, 55
+    {0.7, 0.0, 0.0, 0.0}, //Pe≈Çny kanister, 55
     {0.8, 0.0, 0.0, 0.0}, //wolny_slot_przedmiotu2, 56
-    {1.0, 0.0, 0.0, 0.0}, //Øelazo, 57
+    {1.0, 0.0, 0.0, 0.0}, //≈ªelazo, 57
     {1.0, 0.0, 0.0, 0.0}, //Amunicja: Hk MP5N, 58
     {1.0, 0.0, 0.0, 0.0}, //Amunicja: TEC-DC9, 59
     {1.0, 0.0, 0.0, 0.0}, //Amunicja: AK-47, 60
@@ -484,7 +484,7 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {0.9, 0.0, 0.0, 0.0}, //Amunicja: M134 Minigun, 65
     {1.0, 0.0, 0.0, 0.0}, //Batonik proteinowy, 66
     {0.9, 0.0, 0.0, 0.0}, //Karnet, 67
-    {0.9, 0.0, 0.0, 0.0}, //Karnet[niewaøny], 68
+    {0.9, 0.0, 0.0, 0.0}, //Karnet[niewa≈ºny], 68
     {1.0, 0.0, 0.0, 0.0},//Element u.elektrycznego, 69
     {1.0, 0.0, 0.0, 0.0},//Element u.zasilana, 70
     {1.0, 0.0, 0.0, 0.0},//Element u.smarowania, 71
@@ -492,7 +492,7 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {1.0, 0.0, 0.0, 0.0},//Element u.korbowego, 73
     {0.9, 0.0, 0.0, 0.0},//Zestaw narzedzi(Pojazd), 74
     {1.0, 0.0, 0.0, 0.0},//Konserwa rybna, 75
-    {0.9, 0.0, 0.0, 0.0},//Zgni≥e jab≥ko, 76
+    {0.9, 0.0, 0.0, 0.0},//Zgni≈Çe jab≈Çko, 76
     {0.9, 0.0, 0.0, 0.0},//Zgnily banan, 77
     {0.9, 0.0, 0.0, 0.0},//Skazone mieso, 78
     {0.9, 0.0, 0.0, 0.0},//Upieczone mieso, 79
@@ -516,7 +516,7 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {0.8, 0.0, 0.0, 0.0},//Sprunk, 97
     {0.8, 0.0, 0.0, 0.0},//Apo-Cola, 98
     {1.0, 0.0, 0.0, 0.0},//Apo-Cola Tiger, 99
-    {1.0, 0.0, 0.0, 0.0},//Øeton, 100
+    {1.0, 0.0, 0.0, 0.0},//≈ªeton, 100
     {1.0, 0.0, 0.0, 0.0},//Sok jablkowy, 101
     {1.0, 0.0, 0.0, 0.0},//Sok pomaranczowy, 102
     {1.0, 0.0, 0.0, 0.0},//Whisky, 103
@@ -549,11 +549,11 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {1.0, 0.0, 0.0, 0.0},//Dzika Ankrecja, 130
     {0.6, 0.0, 0.0, 0.0},//Xadricaria srebrzysta, 131
     {0.2, 0.0, 0.0, 0.0},//Kiew wodnisty, 132
-    {0.9, 0.0, 0.0, 0.0},//KrÛtkofalÛwka, 133
+    {0.9, 0.0, 0.0, 0.0},//Kr√≥tkofal√≥wka, 133
     {1.0, 0.0, 0.0, 0.0},//Napromieniowany gruz, 134
     {0.9, 90.0, 90.0, 0.0},//Zgnieciona puszka, 135
-    {0.9, 0.0, 0.0, 0.0},//Modu≥ elektryczny, 136
-    {1.0, 0.0, 0.0, 0.0},//Z≥om, 137
+    {0.9, 0.0, 0.0, 0.0},//Modu≈Ç elektryczny, 136
+    {1.0, 0.0, 0.0, 0.0},//Z≈Çom, 137
     {0.9, 0.0, 90.0, 0.0},//Gumowy kalosz, 138
     {0.7, 0.0, 0.0, 0.0},//Karton, 139
     {0.8, 0.0, 0.0, 0.0},//Papier toaletowy, 140
@@ -575,11 +575,11 @@ new Float:ObjectItemFloat[MAX_ITEMS][4] =
     {0.8, 0.0, 0.0, 0.0},//Syrop AntiRad 50, 156
     {0.8, 0.0, 0.0, 0.0},//Syrop na wytrzymalosc, 157
     {1.0, 0.0, 0.0, 0.0},//Ubranie, 158
-    {1.0, 0.0, 0.0, 0.0},//WÍdka, 159
+    {1.0, 0.0, 0.0, 0.0},//Wƒôdka, 159
     {1.0, 0.0, 0.0, 0.0},//Bandana zielona, 160
     {1.0, 0.0, 0.0, 0.0}, //Bandana niebieska, 161
     {1.0, 0.0, 0.0, 0.0}, //Bandana czarna, 162
-    {1.0, 0.0, 0.0, 0.0}, //Bandana bia≥a, 163
+    {1.0, 0.0, 0.0, 0.0}, //Bandana bia≈Ça, 163
     {1.0, 0.0, 0.0, 0.0},//Okulary owalne: czerwone, 164
     {1.0, 0.0, 0.0, 0.0},//Okulary owalne: pomaranczowe, 165
     {1.0, 0.0, 0.0, 0.0},//Okulary owalne: zielone, 166
@@ -636,11 +636,11 @@ stock StackedItem(item_id)//0 - nie stackujacy, 1 - stackujacy
     return 1;
 }
 
-stock ItemCanConfig(item_id)//1 - konfigurowalny(w menu zamiast przestaÒ uøywaÊ jest 'konfiguruj'), 0 - niekonfigurowalny 
+stock ItemCanConfig(item_id)//1 - konfigurowalny(w menu zamiast przesta≈Ñ u≈ºywaƒá jest 'konfiguruj'), 0 - niekonfigurowalny 
 {
     switch(item_id)
     {
-        case 133: return 1;//KrÛtkofalÛwka
+        case 133: return 1;//Kr√≥tkofal√≥wka
         case 150: return 1;//GPS
         case 160..163: return 1;//Bandany
         case 164..189: return 1;//Okularki

@@ -4,8 +4,8 @@ stock ListItems(playerid)
 	{
 		eq_select[playerid][r] = 0;
 	}
-	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","Jesteœ ciê¿ko ranny - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
-	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","Jesteœ w trybie kombinacji - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
+	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","JesteÅ› ciÄ™Å¼ko ranny - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
+	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","JesteÅ› w trybie kombinacji - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
 	SyncAmmoToEQ(playerid);
 	SyncWeaponCDNToEQ(playerid);
 	SyncZetony(playerid);
@@ -19,14 +19,14 @@ new list_items[4000];
 forward ShowItemsDB(playerid);
 public ShowItemsDB(playerid)
 {
-	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","Jesteœ ciê¿ko ranny - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
-	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","Jesteœ w trybie kombinacji - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
+	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","JesteÅ› ciÄ™Å¼ko ranny - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
+	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","JesteÅ› w trybie kombinacji - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
 	new t_id, t_itemid, t_count, t_cdn, t_cdn_max, t_used;
 	mq_getdata();
 	if(rekordy)
 	{
 		new i;
-		format(list_items, 4000, "UID\tNazwa przedmiotu\tIloœæ\tKondycja");
+		format(list_items, 4000, "UID\tNazwa przedmiotu\tIloÅ›Ä‡\tKondycja");
 		while(i < rekordy)
 		{
 			t_id = cache_get_field_content_int(i, "id");
@@ -50,12 +50,12 @@ public ShowItemsDB(playerid)
 			i++;
 		}
 		new titlestr[110];
-		format(titlestr, 110, ""COL_WHITE"Ekwipunek - ["COL_BLUE"Zu¿yte sloty: "COL_RED"%d"COL_WHITE"/"COL_GREEN"%d"COL_WHITE"]", rekordy, GetPlayerEQSize(playerid));
+		format(titlestr, 110, ""COL_WHITE"Ekwipunek - ["COL_BLUE"ZuÅ¼yte sloty: "COL_RED"%d"COL_WHITE"/"COL_GREEN"%d"COL_WHITE"]", rekordy, GetPlayerEQSize(playerid));
 		Dialog_Show(playerid, EKWIPUNEK, DIALOG_STYLE_TABLIST_HEADERS, titlestr, list_items, "Wybierz", "Anuluj");
 	}
 	else
 	{
-		MessageGUI(playerid,"Informacja","Twój ekwipunek jest pusty!","OK","");
+		MessageGUI(playerid,"Informacja","TwÃ³j ekwipunek jest pusty!","OK","");
 	}
 	return 1;
 }
@@ -80,8 +80,8 @@ Dialog:EKWIPUNEK(playerid, response, listitem, inputtext[])
 	if(eq_select[playerid][s_used])
 	{
 		//tego ifa trzeba na funkcje..
-		if(ItemCanConfig(eq_select[playerid][s_itemid])) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_ORANGE"Konfiguruj", "Wybierz", "Wróæ");
-		else Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_RED"Przestañ u¿ywaæ", "Wybierz", "Wróæ");
+		if(ItemCanConfig(eq_select[playerid][s_itemid])) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_ORANGE"Konfiguruj", "Wybierz", "WrÃ³Ä‡");
+		else Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_RED"PrzestaÅ„ uÅ¼ywaÄ‡", "Wybierz", "WrÃ³Ä‡");
 	}
 	else
 	{
@@ -106,9 +106,9 @@ Dialog:EKWIPUNEK(playerid, response, listitem, inputtext[])
 			}
 			cache_delete(itemquery);
 		}
-		if(range_szafka) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"U¿yj\n"COL_WHITE"2. "COL_RED"Wyrzuæ\n"COL_WHITE"3. "COL_RED"Zniszcz\n"COL_WHITE"4. "COL_CYAN"Schowaj do szafki", "Wybierz", "Wróæ");
-		else if(IsPlayerRangeOfMagazine(playerid)) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"U¿yj\n"COL_WHITE"2. "COL_RED"Wyrzuæ\n"COL_WHITE"3. "COL_RED"Zniszcz\n"COL_WHITE"4. "COL_CYAN"Schowaj do magazynu", "Wybierz", "Wróæ");
-		else Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"U¿yj\n"COL_WHITE"2. "COL_RED"Wyrzuæ\n"COL_WHITE"3. "COL_RED"Zniszcz", "Wybierz", "Wróæ");
+		if(range_szafka) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"UÅ¼yj\n"COL_WHITE"2. "COL_RED"WyrzuÄ‡\n"COL_WHITE"3. "COL_RED"Zniszcz\n"COL_WHITE"4. "COL_CYAN"Schowaj do szafki", "Wybierz", "WrÃ³Ä‡");
+		else if(IsPlayerRangeOfMagazine(playerid)) Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"UÅ¼yj\n"COL_WHITE"2. "COL_RED"WyrzuÄ‡\n"COL_WHITE"3. "COL_RED"Zniszcz\n"COL_WHITE"4. "COL_CYAN"Schowaj do magazynu", "Wybierz", "WrÃ³Ä‡");
+		else Dialog_Show(playerid, EQAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), "1. "COL_GREEN"UÅ¼yj\n"COL_WHITE"2. "COL_RED"WyrzuÄ‡\n"COL_WHITE"3. "COL_RED"Zniszcz", "Wybierz", "WrÃ³Ä‡");
 	}
 	
 	return 1;
@@ -131,17 +131,17 @@ Dialog:EQAKCJA(playerid, response, listitem, inputtext[])
 			}
 			else
 			{
-				Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciæ na ziemiê?", "Wyrzuæ", "Wróæ");
+				Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciÄ‡ na ziemiÄ™?", "WyrzuÄ‡", "WrÃ³Ä‡");
 			}
 		}
 		case 2:
 		{
-			Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz zniszczyæ?", "Zniszcz!", "Wróæ");
+			Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz zniszczyÄ‡?", "Zniszcz!", "WrÃ³Ä‡");
 		}
 		case 3:
 		{
-			if(IsPlayerRangeOfMagazine(playerid)) Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do magazynu?", "Schowaj", "Wróæ");
-			else Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do szafki?", "Schowaj", "Wróæ");
+			if(IsPlayerRangeOfMagazine(playerid)) Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do magazynu?", "Schowaj", "WrÃ³Ä‡");
+			else Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do szafki?", "Schowaj", "WrÃ³Ä‡");
 		}
 	}
 	return 1;
@@ -153,7 +153,7 @@ Dialog:EQDROP(playerid, response, listitem, inputtext[])
 	new ilosc = strval(inputtext);
 	if(ilosc < 1 || ilosc > 5000)
 	{
-		Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciæ na ziemiê?\n"COL_RED"B³¹d! Niepoprawna iloœæ towaru(min: 1 | max: 5000).", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciÄ‡ na ziemiÄ™?\n"COL_RED"BÅ‚Ä…d! Niepoprawna iloÅ›Ä‡ towaru(min: 1 | max: 5000).", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	else if(eq_select[playerid][s_count] >= ilosc)
 	{
@@ -164,12 +164,12 @@ Dialog:EQDROP(playerid, response, listitem, inputtext[])
 		}
 		else
 		{
-			MessageGUI(playerid,"Informacja","W chwili obecnej nie da sie wyrzuciæ przedmiotu na ziemiê. Powód: zbyt du¿o przedmiotów na mapie.","OK","");
+			MessageGUI(playerid,"Informacja","W chwili obecnej nie da sie wyrzuciÄ‡ przedmiotu na ziemiÄ™. PowÃ³d: zbyt duÅ¼o przedmiotÃ³w na mapie.","OK","");
 		}
 	}
 	else
 	{
-		Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciæ na ziemiê?\n"COL_RED"B³¹d! Brak takiej iloœci towaru.", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQDROP, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciÄ‡ na ziemiÄ™?\n"COL_RED"BÅ‚Ä…d! Brak takiej iloÅ›ci towaru.", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	return 1;
 }
@@ -180,7 +180,7 @@ Dialog:EQDESTROY(playerid, response, listitem, inputtext[])
 	new ilosc = strval(inputtext);
 	if(ilosc < 1)
 	{
-		Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz zniszczyæ?\n"COL_RED"B³¹d! Nie wykryto wprowadzonej iloœci.", "Zniszcz!", "Wróæ");
+		Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz zniszczyÄ‡?\n"COL_RED"BÅ‚Ä…d! Nie wykryto wprowadzonej iloÅ›ci.", "Zniszcz!", "WrÃ³Ä‡");
 	}
 	else if(eq_select[playerid][s_count] >= ilosc)
 	{
@@ -189,7 +189,7 @@ Dialog:EQDESTROY(playerid, response, listitem, inputtext[])
 	}
 	else
 	{
-		Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciæ na ziemiê?\n"COL_RED"B³¹d! Brak takiej iloœci towaru.", "Zniszcz!", "Wróæ");
+		Dialog_Show(playerid, EQDESTROY, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyrzuciÄ‡ na ziemiÄ™?\n"COL_RED"BÅ‚Ä…d! Brak takiej iloÅ›ci towaru.", "Zniszcz!", "WrÃ³Ä‡");
 	}
 	return 1;
 }
@@ -200,7 +200,7 @@ Dialog:EQSZSCHOWAJ(playerid, response, listitem, inputtext[])
 	new ilosc = strval(inputtext);
 	if(ilosc < 1 || ilosc > 5000)
 	{
-		Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do szafki?\n"COL_RED"B³¹d! Niepoprawna iloœæ towaru(min: 1 | max: 5000).", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do szafki?\n"COL_RED"BÅ‚Ä…d! Niepoprawna iloÅ›Ä‡ towaru(min: 1 | max: 5000).", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	else if(eq_select[playerid][s_count] >= ilosc)
 	{
@@ -212,7 +212,7 @@ Dialog:EQSZSCHOWAJ(playerid, response, listitem, inputtext[])
 	}
 	else
 	{
-		Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do szafki?\n"COL_RED"B³¹d! Brak takiej iloœci towaru.", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQSZSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do szafki?\n"COL_RED"BÅ‚Ä…d! Brak takiej iloÅ›ci towaru.", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	return 1;
 }
@@ -224,7 +224,7 @@ Dialog:EQMGSCHOWAJ(playerid, response, listitem, inputtext[])
 	new ilosc = strval(inputtext);
 	if(ilosc < 1 || ilosc > 5000)
 	{
-		Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do magazynu?\n"COL_RED"B³¹d! Niepoprawna iloœæ towaru(min: 1 | max: 5000).", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do magazynu?\n"COL_RED"BÅ‚Ä…d! Niepoprawna iloÅ›Ä‡ towaru(min: 1 | max: 5000).", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	else if(eq_select[playerid][s_count] >= ilosc)
 	{
@@ -236,7 +236,7 @@ Dialog:EQMGSCHOWAJ(playerid, response, listitem, inputtext[])
 	}
 	else
 	{
-		Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaæ do magazynu?\n"COL_RED"B³¹d! Brak takiej iloœci towaru.", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, EQMGSCHOWAJ, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz schowaÄ‡ do magazynu?\n"COL_RED"BÅ‚Ä…d! Brak takiej iloÅ›ci towaru.", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	return 1;
 }
@@ -281,7 +281,7 @@ stock CreateItemForPlayer(playerid, item_id, item_count, item_cdn = 100, item_cd
 }
 
 
-stock RemoveItemFromPlayer(playerid, item_id, item_count)//wed³ug ITEMID
+stock RemoveItemFromPlayer(playerid, item_id, item_count)//wedÅ‚ug ITEMID
 {
 	if(item_count < 1) return 0;
 	SyncAmmoToEQ(playerid);
@@ -293,8 +293,8 @@ stock RemoveItemFromPlayer(playerid, item_id, item_count)//wed³ug ITEMID
 		new t_count = cache_get_field_content_int(0, "count");
 		if(item_count > t_count)
 		{
-			if(item_id == 100) MessageGUI(playerid,"Informacja",""COL_GREY"Nie posiadasz takiej iloœci "COL_CYAN"¿etonów"COL_GREY".","OK","");
-			else MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+			if(item_id == 100) MessageGUI(playerid,"Informacja",""COL_GREY"Nie posiadasz takiej iloÅ›ci "COL_CYAN"Å¼etonÃ³w"COL_GREY".","OK","");
+			else MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 			cache_delete(itemquery,MySQL);
 			SyncEQToAmmo(playerid);
 			SyncZetony(playerid);
@@ -319,15 +319,15 @@ stock RemoveItemFromPlayer(playerid, item_id, item_count)//wed³ug ITEMID
 			return 1;
 		}
 	}
-	if(item_id == 100) MessageGUI(playerid,"Informacja",""COL_GREY"Nie posiadasz takiej iloœci "COL_CYAN"¿etonów"COL_GREY".","OK","");
-	else MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+	if(item_id == 100) MessageGUI(playerid,"Informacja",""COL_GREY"Nie posiadasz takiej iloÅ›ci "COL_CYAN"Å¼etonÃ³w"COL_GREY".","OK","");
+	else MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 	cache_delete(itemquery,MySQL);
 	SyncEQToAmmo(playerid);	
 	return 0;
 }
 
 
-stock RemoveItemFromPlayerEx(playerid, t_id, item_count)//wed³ug ID
+stock RemoveItemFromPlayerEx(playerid, t_id, item_count)//wedÅ‚ug ID
 {
 	if(item_count < 1) return 0;
 	SyncAmmoToEQ(playerid);
@@ -338,7 +338,7 @@ stock RemoveItemFromPlayerEx(playerid, t_id, item_count)//wed³ug ID
 		new t_count = cache_get_field_content_int(0, "count");
 		if(item_count > t_count)
 		{
-			MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+			MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 			cache_delete(itemquery,MySQL);
 			SyncEQToAmmo(playerid);
 			SyncZetony(playerid);
@@ -363,7 +363,7 @@ stock RemoveItemFromPlayerEx(playerid, t_id, item_count)//wed³ug ID
 			return 1;
 		}
 	}
-	MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+	MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 	cache_delete(itemquery,MySQL);
 	SyncEQToAmmo(playerid);
 	return 0;
@@ -372,11 +372,11 @@ stock RemoveItemFromPlayerEx(playerid, t_id, item_count)//wed³ug ID
 stock Title_SelectItem(playerid)
 {
 	new titlestr[200];
-	format(titlestr, 200, ""COL_WHITE"Ekwipunek - ["COL_RED"%s"COL_WHITE"]["COL_GREEN"Iloœæ: "COL_RED"%d"COL_WHITE"]", ItemName[eq_select[playerid][s_itemid]], eq_select[playerid][s_count]);
+	format(titlestr, 200, ""COL_WHITE"Ekwipunek - ["COL_RED"%s"COL_WHITE"]["COL_GREEN"IloÅ›Ä‡: "COL_RED"%d"COL_WHITE"]", ItemName[eq_select[playerid][s_itemid]], eq_select[playerid][s_count]);
 	return titlestr;
 }
 
-stock GetItemValueForPlayer(playerid, item_id)//wed³ugi itemid
+stock GetItemValueForPlayer(playerid, item_id)//wedÅ‚ugi itemid
 {
 	SyncAmmoToEQ(playerid);
 	mq_format("SELECT `count` FROM `przedmioty` WHERE `userid`='%d' AND `itemid`='%d' LIMIT 0,1;", gracz[playerid][UID], item_id);
@@ -391,7 +391,7 @@ stock GetItemValueForPlayer(playerid, item_id)//wed³ugi itemid
 }
 
 /*
-stock GetItemValueForPlayerEx(playerid, t_id)//wed³ug id
+stock GetItemValueForPlayerEx(playerid, t_id)//wedÅ‚ug id
 {
 	SyncAmmoToEQ(playerid);
 	mq_format("SELECT `count` FROM `przedmioty` WHERE `id`='%d' LIMIT 0,1;", t_id);
@@ -418,8 +418,8 @@ stock GetItemValueForPlayerEx(playerid, t_id)//wed³ug id
 stock RemoteUseItem(playerid, itemid, itemuid)
 {
 	new remote_str[256];
-	format(remote_str, 256, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_GREY"WprowadŸ ID gracza, na którym chcesz u¿yæ tego przedmiotu ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
-	Dialog_Show(playerid, ITEMREMOTE, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), remote_str, "U¿yj!", "Anuluj");
+	format(remote_str, 256, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_GREY"WprowadÅº ID gracza, na ktÃ³rym chcesz uÅ¼yÄ‡ tego przedmiotu ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
+	Dialog_Show(playerid, ITEMREMOTE, DIALOG_STYLE_INPUT, Title_SelectItem(playerid), remote_str, "UÅ¼yj!", "Anuluj");
 	SetPVarInt(playerid, "remoteuseitem_itemid", itemid);
 	SetPVarInt(playerid, "remoteuseitem_itemuid", itemuid);
 	return 1;
@@ -827,7 +827,7 @@ public ZetonyUpdate(playerid)
 	}
 	return 1;
 }
-//usuwanie przedmiotów - wszystko cache
+//usuwanie przedmiotÃ³w - wszystko cache
 stock DropItems(playerid, dont_syncw = 0)
 {
 	for(new eq_select_info:r; r < eq_select_info; r++)

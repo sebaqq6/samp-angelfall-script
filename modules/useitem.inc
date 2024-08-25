@@ -1,4 +1,4 @@
-//********************************************************************************************INICJACJA U¯YCIA PRZEDMIOTU
+//********************************************************************************************INICJACJA UÅ»YCIA PRZEDMIOTU
 stock UseItem(playerid, itemid)
 {
 	switch(itemid)
@@ -86,11 +86,11 @@ stock UseItem(playerid, itemid)
 			if(IsPlayerInAnyVehicle(playerid)) return LeftNotifyShow(playerid, "error", "Nie mozesz w pojezdzie uzywac tego przedmiotu.", LN_RED);
 			if(InRangeOfMyCampfire(playerid))
 			{
-				Dialog_Show(playerid, DREWNOAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_GREEN"Rozpal ognisko"COL_GREY" (Koszt: 5 drewna)\n"COL_WHITE"2. "COL_BLUE"Do³ó¿ drewna do ogniska"COL_GREY" (Koszt: 1 drewna - ognisko pali siê o minutê d³u¿ej)", "Wybierz", "Wróæ");
+				Dialog_Show(playerid, DREWNOAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_GREEN"Rozpal ognisko"COL_GREY" (Koszt: 5 drewna)\n"COL_WHITE"2. "COL_BLUE"DoÅ‚Ã³Å¼ drewna do ogniska"COL_GREY" (Koszt: 1 drewna - ognisko pali siÄ™ o minutÄ™ dÅ‚uÅ¼ej)", "Wybierz", "WrÃ³Ä‡");
 			}
 			else
 			{
-				Dialog_Show(playerid, DREWNOAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_GREEN"Rozpal ognisko"COL_GREY" (Koszt: 5 drewna)", "Wybierz", "Wróæ");
+				Dialog_Show(playerid, DREWNOAKCJA, DIALOG_STYLE_LIST, Title_SelectItem(playerid), ""COL_WHITE"1. "COL_GREEN"Rozpal ognisko"COL_GREY" (Koszt: 5 drewna)", "Wybierz", "WrÃ³Ä‡");
 			}
 		}
 		case 54://PUSTY KANISTER
@@ -106,7 +106,7 @@ stock UseItem(playerid, itemid)
 				LeftNotifyShow(playerid, "error", "Aby uzupelnic ~y~kanister~w~ musisz znajdowac sie przy sprawnym dystrybutorze.");
 			}
 		}
-		case 55://PE£NY KANISTER
+		case 55://PEÅNY KANISTER
 		{
 			if(IsPlayerInAnyVehicle(playerid)) return LeftNotifyShow(playerid, "error", "Nie mozesz w pojezdzie uzywac tego przedmiotu.", LN_RED);
 			new list_veh[1024];
@@ -128,7 +128,7 @@ stock UseItem(playerid, itemid)
 			}
 			if(detected_vehs)
 			{
-				Dialog_Show(playerid, REFUEL, DIALOG_STYLE_TABLIST_HEADERS, "Który pojazd chcesz zatankowaæ?", list_veh, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, REFUEL, DIALOG_STYLE_TABLIST_HEADERS, "KtÃ³ry pojazd chcesz zatankowaÄ‡?", list_veh, "Wybierz", "Anuluj");
 			}
 			else
 			{
@@ -139,7 +139,7 @@ stock UseItem(playerid, itemid)
 		{
 			LeftNotifyShow(playerid, "error", "Ten przedmiot uzywa sie automatycznie!");
 		}
-		case 57://¯ELAZO
+		case 57://Å»ELAZO
 		{
 			LeftNotifyShow(playerid, "error", "Ten przedmiot uzywa sie automatycznie!");
 		}
@@ -207,7 +207,7 @@ stock UseItem(playerid, itemid)
 			}
 			if(detected_vehs)
 			{
-				Dialog_Show(playerid, TOOLVEHSEL, DIALOG_STYLE_TABLIST_HEADERS, "Na którym pojeŸdzie chcesz u¿yæ narzêdzi?", list_veh, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, TOOLVEHSEL, DIALOG_STYLE_TABLIST_HEADERS, "Na ktÃ³rym pojeÅºdzie chcesz uÅ¼yÄ‡ narzÄ™dzi?", list_veh, "Wybierz", "Anuluj");
 			}
 			else
 			{
@@ -304,7 +304,7 @@ stock UseItem(playerid, itemid)
 			GivePlayerHP(playerid, 5);
 			RemoveItemFromPlayerEx(playerid, eq_select[playerid][s_id], 1);
 		}
-		case 83://zgni³a pomarancza
+		case 83://zgniÅ‚a pomarancza
 		{
 			format(temp_string, 128, "Zjedzono: ~y~%s~w~.", ItemName[itemid]);
 			LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5);
@@ -511,7 +511,7 @@ stock UseItem(playerid, itemid)
 		case 120:
 		{
 			new tool_str[1024];
-			format(tool_str, 1024, "Czynnoœæ");
+			format(tool_str, 1024, "CzynnoÅ›Ä‡");
 			new temp_useweaptool;
 			//kategoria
 			switch(GetWeaponCategory(gracz[playerid][actual_weapon]))
@@ -569,7 +569,7 @@ stock UseItem(playerid, itemid)
 			if(temp_useweaptool)
 			{
 				format(tool_str, 1024, "%s\n"COL_WHITE"1."COL_GREEN" Napraw "COL_GREY"%s", tool_str, ItemName[gracz[playerid][actual_weapon]]);
-				Dialog_Show(playerid, TOOLWEAPACTION, DIALOG_STYLE_TABLIST_HEADERS, "Co chcesz zrobiæ?", tool_str, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, TOOLWEAPACTION, DIALOG_STYLE_TABLIST_HEADERS, "Co chcesz zrobiÄ‡?", tool_str, "Wybierz", "Anuluj");
 			}
 		}
 		case 122:
@@ -579,15 +579,15 @@ stock UseItem(playerid, itemid)
 			format(str_med, 1024, "%s\n"COL_WHITE"2."COL_PURPLE" Ulecz 10HP", str_med);
 			format(str_med, 1024, "%s\n"COL_WHITE"3."COL_PURPLE" Ulecz 20HP", str_med);
 			format(str_med, 1024, "%s\n"COL_WHITE"4."COL_PURPLE" Ulecz 80HP", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"5."COL_PURPLE" Stwórz: Syrop Haps 10", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"6."COL_PURPLE" Stwórz: Syrop Haps 25", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"7."COL_PURPLE" Stwórz: Syrop Haps 50", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"8."COL_PURPLE" Stwórz: Syrop AntiRad 10", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"9."COL_PURPLE" Stwórz: Syrop AntiRad 25", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"10."COL_PURPLE" Stwórz: Syrop AntiRad 50", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"11."COL_PURPLE" Stwórz: Syrop na wytrzymalosc", str_med);
-			format(str_med, 1024, "%s\n"COL_WHITE"12."COL_PURPLE" WybudŸ gracza z BW", str_med);
-			Dialog_Show(playerid, MEDYKTOOL, DIALOG_STYLE_LIST, "Co chcesz zrobiæ?", str_med, "Wybierz", "Anuluj");
+			format(str_med, 1024, "%s\n"COL_WHITE"5."COL_PURPLE" StwÃ³rz: Syrop Haps 10", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"6."COL_PURPLE" StwÃ³rz: Syrop Haps 25", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"7."COL_PURPLE" StwÃ³rz: Syrop Haps 50", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"8."COL_PURPLE" StwÃ³rz: Syrop AntiRad 10", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"9."COL_PURPLE" StwÃ³rz: Syrop AntiRad 25", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"10."COL_PURPLE" StwÃ³rz: Syrop AntiRad 50", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"11."COL_PURPLE" StwÃ³rz: Syrop na wytrzymalosc", str_med);
+			format(str_med, 1024, "%s\n"COL_WHITE"12."COL_PURPLE" WybudÅº gracza z BW", str_med);
+			Dialog_Show(playerid, MEDYKTOOL, DIALOG_STYLE_LIST, "Co chcesz zrobiÄ‡?", str_med, "Wybierz", "Anuluj");
 		}
 		case 123..132:
 		{
@@ -597,17 +597,17 @@ stock UseItem(playerid, itemid)
 		{
 			new str_kr[512];
 			format(str_kr, 512, "Opcja\tStatus");
-			if(eq_select[playerid][s_used]) format(str_kr, 512, "%s\n"COL_GREEN"W³¹cz"COL_GREY"/"COL_ORANGE"Wy³¹cz\t"COL_GREEN"W³¹czona", str_kr);
-			else format(str_kr, 512, "%s\n"COL_GREEN"W³¹cz"COL_GREY"/"COL_ORANGE"Wy³¹cz\t"COL_RED"Wy³¹czona", str_kr);
-			format(str_kr, 512, "%s\n"COL_GREY"Czêstotliwoœæ\t"COL_YELLOW"%d"COL_GREY" MHz", str_kr, gracz[playerid][KRMHZ]);
-			Dialog_Show(playerid, KROTKOFALOWKA, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"»"COL_GREY" Krótkofalówka", str_kr, "Wybierz", "Anuluj");
+			if(eq_select[playerid][s_used]) format(str_kr, 512, "%s\n"COL_GREEN"WÅ‚Ä…cz"COL_GREY"/"COL_ORANGE"WyÅ‚Ä…cz\t"COL_GREEN"WÅ‚Ä…czona", str_kr);
+			else format(str_kr, 512, "%s\n"COL_GREEN"WÅ‚Ä…cz"COL_GREY"/"COL_ORANGE"WyÅ‚Ä…cz\t"COL_RED"WyÅ‚Ä…czona", str_kr);
+			format(str_kr, 512, "%s\n"COL_GREY"CzÄ™stotliwoÅ›Ä‡\t"COL_YELLOW"%d"COL_GREY" MHz", str_kr, gracz[playerid][KRMHZ]);
+			Dialog_Show(playerid, KROTKOFALOWKA, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"Â»"COL_GREY" KrÃ³tkofalÃ³wka", str_kr, "Wybierz", "Anuluj");
 		}
 		case 144:
 		{
 			new str_clock[64];
 			format(str_clock, 64, "~w~%02d~g~:~w~00", serwer[godzina]);
 			GameTextForPlayer(playerid, str_clock, 3000, 1);
-			format(temp_string, 128, "/me spogl¹da na zegarek.");
+			format(temp_string, 128, "/me spoglÄ…da na zegarek.");
 			PC_EmulateCommand(playerid, temp_string);
 		}
 		case 147://licznik geigera
@@ -631,13 +631,13 @@ stock UseItem(playerid, itemid)
 		{
 			LeftNotifyShow(playerid, "Sukces!", "~y~Mapa ~g~odkryta~w~! Mozesz obejrzec ja pod ESC.");
 			GangZoneHideForPlayer(playerid, serwer[gz_hidemap]);
-			format(temp_string, 128, "/me spogl¹da na mapê.");
+			format(temp_string, 128, "/me spoglÄ…da na mapÄ™.");
 			PC_EmulateCommand(playerid, temp_string);
 		}
 		case 149:
 		{
 			LeftNotifyShow(playerid, "Sukces!", "~y~Minimapa ~g~odkryta~w~!");
-			format(temp_string, 128, "/me spogl¹da na kompas.");
+			format(temp_string, 128, "/me spoglÄ…da na kompas.");
 			PC_EmulateCommand(playerid, temp_string);
 			ShowMinimap(playerid);
 		}
@@ -645,10 +645,10 @@ stock UseItem(playerid, itemid)
 		{
 			new str_gps[512];
 			format(str_gps, 512, "Opcja\tStatus");
-			if(eq_select[playerid][s_used]) format(str_gps, 512, "%s\n"COL_GREEN"W³¹cz"COL_GREY"/"COL_ORANGE"Wy³¹cz\t"COL_GREEN"W³¹czona", str_gps);
-			else format(str_gps, 512, "%s\n"COL_GREEN"W³¹cz"COL_GREY"/"COL_ORANGE"Wy³¹cz\t"COL_RED"Wy³¹czona", str_gps);
-			format(str_gps, 512, "%s\n"COL_GREY"Czêstotliwoœæ\t"COL_YELLOW"%d"COL_GREY" Hz", str_gps, gracz[playerid][gps_hz]);
-			Dialog_Show(playerid, GPS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"»"COL_GREY" GPS", str_gps, "Wybierz", "Anuluj");
+			if(eq_select[playerid][s_used]) format(str_gps, 512, "%s\n"COL_GREEN"WÅ‚Ä…cz"COL_GREY"/"COL_ORANGE"WyÅ‚Ä…cz\t"COL_GREEN"WÅ‚Ä…czona", str_gps);
+			else format(str_gps, 512, "%s\n"COL_GREEN"WÅ‚Ä…cz"COL_GREY"/"COL_ORANGE"WyÅ‚Ä…cz\t"COL_RED"WyÅ‚Ä…czona", str_gps);
+			format(str_gps, 512, "%s\n"COL_GREY"CzÄ™stotliwoÅ›Ä‡\t"COL_YELLOW"%d"COL_GREY" Hz", str_gps, gracz[playerid][gps_hz]);
+			Dialog_Show(playerid, GPS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"Â»"COL_GREY" GPS", str_gps, "Wybierz", "Anuluj");
 		}
 		case 151:
 		{
@@ -656,7 +656,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				GivePlayerHP(playerid, 10);
 			}
@@ -667,7 +667,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				GivePlayerHP(playerid, 25);
 			}
@@ -678,7 +678,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				GivePlayerHP(playerid, 50);
 			}
@@ -689,7 +689,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Napromieniowanie ~g~zredukowano~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				gracz[playerid][rads] -= 10;
 				NormalizeRads(playerid);
@@ -703,7 +703,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Napromieniowanie ~g~zredukowano~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				gracz[playerid][rads] -= 25;
 				NormalizeRads(playerid);
@@ -717,7 +717,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Napromieniowanie ~g~zredukowano~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				gracz[playerid][rads] -= 50;
 				NormalizeRads(playerid);
@@ -731,7 +731,7 @@ stock UseItem(playerid, itemid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Twoja postac nie bedzie sie meczyla przez 10 minut!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				gracz[playerid][stamina_boost] = serwer[time_timestamp]+60*10;
 			}	
@@ -750,10 +750,10 @@ stock UseItem(playerid, itemid)
 			if(eq_select[playerid][s_used])
 			{
 				new str_akc[512];
-				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"Przestañ u¿ywaæ");
+				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"PrzestaÅ„ uÅ¼ywaÄ‡");
 				format(str_akc, 512, "%s\n"COL_WHITE"2. "COL_EASY"Edytuj", str_akc);
 				format(str_akc, 512, "%s\n"COL_WHITE"3. "COL_GREEN"Zresetuj pozycje", str_akc);
-				Dialog_Show(playerid, BANDANACONF, DIALOG_STYLE_LIST, ""COL_BLUE"»"COL_GREY" Bandana", str_akc, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, BANDANACONF, DIALOG_STYLE_LIST, ""COL_BLUE"Â»"COL_GREY" Bandana", str_akc, "Wybierz", "Anuluj");
 			}
 			else
 			{
@@ -775,10 +775,10 @@ stock UseItem(playerid, itemid)
 			if(eq_select[playerid][s_used])
 			{
 				new str_akc[512];
-				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"Przestañ u¿ywaæ");
+				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"PrzestaÅ„ uÅ¼ywaÄ‡");
 				format(str_akc, 512, "%s\n"COL_WHITE"2. "COL_EASY"Edytuj", str_akc);
 				format(str_akc, 512, "%s\n"COL_WHITE"3. "COL_GREEN"Zresetuj pozycje", str_akc);
-				Dialog_Show(playerid, OKULARYCONF, DIALOG_STYLE_LIST, ""COL_BLUE"»"COL_GREY" Okulary", str_akc, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, OKULARYCONF, DIALOG_STYLE_LIST, ""COL_BLUE"Â»"COL_GREY" Okulary", str_akc, "Wybierz", "Anuluj");
 			}
 			else
 			{
@@ -800,10 +800,10 @@ stock UseItem(playerid, itemid)
 			if(eq_select[playerid][s_used])
 			{
 				new str_akc[512];
-				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"Przestañ u¿ywaæ");
+				format(str_akc, 512, ""COL_WHITE"1. "COL_RED"PrzestaÅ„ uÅ¼ywaÄ‡");
 				format(str_akc, 512, "%s\n"COL_WHITE"2. "COL_EASY"Edytuj", str_akc);
 				format(str_akc, 512, "%s\n"COL_WHITE"3. "COL_GREEN"Zresetuj pozycje", str_akc);
-				Dialog_Show(playerid, CZAPKACONF, DIALOG_STYLE_LIST, ""COL_BLUE"»"COL_GREY" Czapka", str_akc, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, CZAPKACONF, DIALOG_STYLE_LIST, ""COL_BLUE"Â»"COL_GREY" Czapka", str_akc, "Wybierz", "Anuluj");
 			}
 			else
 			{
@@ -838,8 +838,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Krwawienie ~g~zatrzymane~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				GivePlayerHP(targetid, 1);
@@ -851,8 +851,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				GivePlayerHP(targetid, 30);
@@ -864,8 +864,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				GivePlayerHP(targetid, 50);
@@ -877,8 +877,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Napromieniowanie ~g~zredukowano~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				gracz[targetid][rads] -= 20;
 				NormalizeRads(targetid);
@@ -892,8 +892,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				GivePlayerHP(targetid, 100);
 				FeedPlayer(targetid, 100);
@@ -906,8 +906,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Krwawienie ~g~zatrzymane~w~!", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				GivePlayerHP(targetid, 2);
@@ -919,8 +919,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Przywrocono HP.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				GivePlayerHP(targetid, 100);
 			}   
@@ -931,8 +931,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Przez najblizsza godzine, postac nie bedzie krwawila.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				gracz[targetid][time_antiblood] = serwer[time_timestamp]+(60*60);
@@ -946,8 +946,8 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 			{
 				format(temp_string, 128, "Uzyto: ~y~%s~w~. Przez najblizsze 2 godziny, postac nie bedzie krwawila.", ItemName[itemid]);
 				LeftNotifyShow(playerid, "Sukces!", temp_string, _, 5); 
-				if(targetid != playerid) format(temp_string, 128, "/me u¿ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
-				else format(temp_string, 128, "/me u¿ywa '%s'.", ItemName[itemid]);
+				if(targetid != playerid) format(temp_string, 128, "/me uÅ¼ywa '%s' na postaci '%s'.", ItemName[itemid], nick(targetid));
+				else format(temp_string, 128, "/me uÅ¼ywa '%s'.", ItemName[itemid]);
 				PC_EmulateCommand(playerid, temp_string);
 				StopBlooding(targetid);
 				gracz[targetid][time_antiblood] = serwer[time_timestamp]+(60*60)*2;
@@ -958,7 +958,7 @@ stock UseRemoteItem(playerid, targetid, itemid, itemuid)
 	}
 	return 1;
 }
-//********************************************************************************************************************************************************£ADOWANIE U¯YWANYCH PRZEDMIOTÓW
+//********************************************************************************************************************************************************ÅADOWANIE UÅ»YWANYCH PRZEDMIOTÃ“W
 stock LoadUsedItems(playerid)
 {
 	LoadUsedWeapons(playerid);
@@ -970,8 +970,8 @@ stock LoadUsedItems(playerid)
 	SyncZetony(playerid);
 	return 1;
 }
-//********************************************************************************************************************************************************SKRYPTY ROZWIJAJ¥CE
-//BROÑ
+//********************************************************************************************************************************************************SKRYPTY ROZWIJAJÄ„CE
+//BROÅƒ
 stock LoadUsedWeapons(playerid)
 {
 	RemovePlayerAttachedObject(playerid, 9);
@@ -1101,7 +1101,7 @@ stock IsRangeOfDistributor(playerid)
 	if(IsPlayerInRangeOfPoint(playerid, 3.0, -11.9189,-2522.2725,36.6555)) return 1;
 	return 0;
 }
-//PE£NY KANISTER
+//PEÅNY KANISTER
 Dialog:REFUEL(playerid, response, listitem, inputtext[])
 {
 	if(!response) return ListItems(playerid);
@@ -1148,7 +1148,7 @@ Dialog:DREWNOAKCJA(playerid, response, listitem, inputtext[])
 			}
 			else
 			{
-				Dialog_Show(playerid, OGNISKOZNISZCZ, DIALOG_STYLE_MSGBOX, ""COL_WHITE"Czy chcesz "COL_RED"zniszczyæ"COL_WHITE" swoje poprzednie ognisko?", "System wykry³, ¿e na mapie jest ju¿ jedno stworzone przez Ciebie ognisko.\n"COL_YELLOW"Czy chcesz je zniszczyæ by móc rozpaliæ nowe?", "Tak", "Nie");
+				Dialog_Show(playerid, OGNISKOZNISZCZ, DIALOG_STYLE_MSGBOX, ""COL_WHITE"Czy chcesz "COL_RED"zniszczyÄ‡"COL_WHITE" swoje poprzednie ognisko?", "System wykryÅ‚, Å¼e na mapie jest juÅ¼ jedno stworzone przez Ciebie ognisko.\n"COL_YELLOW"Czy chcesz je zniszczyÄ‡ by mÃ³c rozpaliÄ‡ nowe?", "Tak", "Nie");
 			}
 		}
 		case 1:
@@ -1165,7 +1165,7 @@ Dialog:DREWNOAKCJA(playerid, response, listitem, inputtext[])
 					ognisko[ownerid][o_status] = add_campfire;
 					if(ownerid != playerid)
 					{
-						SendClientMessage(playerid, -1, "(("COL_RED"Uwaga!"COL_EASY" Do³o¿y³eœ drewna do cudzego ogniska. Pamiêtaj, ¿e w³aœciciel mo¿e je zniszczyæ."COL_WHITE"))");
+						SendClientMessage(playerid, -1, "(("COL_RED"Uwaga!"COL_EASY" DoÅ‚oÅ¼yÅ‚eÅ› drewna do cudzego ogniska. PamiÄ™taj, Å¼e wÅ‚aÅ›ciciel moÅ¼e je zniszczyÄ‡."COL_WHITE"))");
 					}
 					LeftNotifyShow(playerid, "Sukces!", "~g~Dolozono~w~ drewna do ogniska. Ognisko bedzie sie palic o ~g~minute dluzej~w~.");
 					ApplyAnimation(playerid, "BOMBER", "BOM_Plant", 4.0, 0, 0, 0, 0, 0);
@@ -1280,16 +1280,16 @@ Dialog:TOOLVEHSEL(playerid, response, listitem, inputtext[])
 		{
 			SetPVarInt(playerid, "world_toolvehsel", v);
 			new tool_str[1024];
-			format(tool_str, 1024, "Czynnoœæ\tWymagania iloœæ czêœci");
-			format(tool_str, 1024, "%s\n"COL_WHITE"1."COL_PURPLE" PrzeprowadŸ diagnostykê\t"COL_ORANGE"-", tool_str);
-			format(tool_str, 1024, "%s\n"COL_WHITE"2."COL_PURPLE" Remontuj uk³ad elektryczny\t"COL_ORANGE"%d czêœci", tool_str, VehNeed_uElektryczny(pojazd[v][v_model]));
-			format(tool_str, 1024, "%s\n"COL_WHITE"3."COL_PURPLE" Remontuj uk³ad zasilania\t"COL_ORANGE"%d czêœci", tool_str, VehNeed_uZasilania(pojazd[v][v_model]));
-			format(tool_str, 1024, "%s\n"COL_WHITE"4."COL_PURPLE" Remontuj uk³ad smarowania\t"COL_ORANGE"%d czêœci", tool_str, VehNeed_uSmarowania(pojazd[v][v_model]));
-			format(tool_str, 1024, "%s\n"COL_WHITE"5."COL_PURPLE" Remontuj uk³ad ch³odzenia\t"COL_ORANGE"%d czêœci", tool_str, VehNeed_uChlodzenia(pojazd[v][v_model]));
-			format(tool_str, 1024, "%s\n"COL_WHITE"6."COL_PURPLE" Remontuj uk³ad korbowy\t"COL_ORANGE"%d czêœci", tool_str, VehNeed_uKorbowy(pojazd[v][v_model]));
-			format(tool_str, 1024, "%s\n"COL_WHITE"7."COL_PURPLE" Zmieñ sekwencje zap³onu (kodowanie)\t"COL_ORANGE"-", tool_str);
-			format(tool_str, 1024, "%s\n"COL_WHITE"8."COL_PURPLE" Ustaw domyœln¹ sewkencje zap³onu (zdekodowanie)\t"COL_ORANGE"-", tool_str);
-			Dialog_Show(playerid, TOOLVEHACTION, DIALOG_STYLE_TABLIST_HEADERS, "Co chcesz zrobiæ?", tool_str, "Wybierz", "Anuluj");
+			format(tool_str, 1024, "CzynnoÅ›Ä‡\tWymagania iloÅ›Ä‡ czÄ™Å›ci");
+			format(tool_str, 1024, "%s\n"COL_WHITE"1."COL_PURPLE" PrzeprowadÅº diagnostykÄ™\t"COL_ORANGE"-", tool_str);
+			format(tool_str, 1024, "%s\n"COL_WHITE"2."COL_PURPLE" Remontuj ukÅ‚ad elektryczny\t"COL_ORANGE"%d czÄ™Å›ci", tool_str, VehNeed_uElektryczny(pojazd[v][v_model]));
+			format(tool_str, 1024, "%s\n"COL_WHITE"3."COL_PURPLE" Remontuj ukÅ‚ad zasilania\t"COL_ORANGE"%d czÄ™Å›ci", tool_str, VehNeed_uZasilania(pojazd[v][v_model]));
+			format(tool_str, 1024, "%s\n"COL_WHITE"4."COL_PURPLE" Remontuj ukÅ‚ad smarowania\t"COL_ORANGE"%d czÄ™Å›ci", tool_str, VehNeed_uSmarowania(pojazd[v][v_model]));
+			format(tool_str, 1024, "%s\n"COL_WHITE"5."COL_PURPLE" Remontuj ukÅ‚ad chÅ‚odzenia\t"COL_ORANGE"%d czÄ™Å›ci", tool_str, VehNeed_uChlodzenia(pojazd[v][v_model]));
+			format(tool_str, 1024, "%s\n"COL_WHITE"6."COL_PURPLE" Remontuj ukÅ‚ad korbowy\t"COL_ORANGE"%d czÄ™Å›ci", tool_str, VehNeed_uKorbowy(pojazd[v][v_model]));
+			format(tool_str, 1024, "%s\n"COL_WHITE"7."COL_PURPLE" ZmieÅ„ sekwencje zapÅ‚onu (kodowanie)\t"COL_ORANGE"-", tool_str);
+			format(tool_str, 1024, "%s\n"COL_WHITE"8."COL_PURPLE" Ustaw domyÅ›lnÄ… sewkencje zapÅ‚onu (zdekodowanie)\t"COL_ORANGE"-", tool_str);
+			Dialog_Show(playerid, TOOLVEHACTION, DIALOG_STYLE_TABLIST_HEADERS, "Co chcesz zrobiÄ‡?", tool_str, "Wybierz", "Anuluj");
 		}
 		else
 		{
@@ -1388,7 +1388,7 @@ Dialog:TOOLVEHACTION(playerid, response, listitem, inputtext[])
 	}
 	return 1;
 }
-//************************************************************************************************************************************************************************KRÓTKOFALÓWKA
+//************************************************************************************************************************************************************************KRÃ“TKOFALÃ“WKA
 stock LoadUsedKrotkofalowka(playerid)
 {
 	mq_format("SELECT `id` FROM `przedmioty` WHERE `itemid`='133' AND `userid`='%d' AND `used`='1' LIMIT 0,1;", gracz[playerid][UID]);
@@ -1436,10 +1436,10 @@ Dialog:KROTKOFALOWKA(playerid, response, listitem, inputtext[])
 	case 1:
 	{
 	  new str_kr[512];
-	  format(str_kr, 512, ""COL_GREY"Aktualna czêstotliwoœæ: "COL_YELLOW"%d"COL_GREY" MHz", gracz[playerid][KRMHZ]);
-	  format(str_kr, 512, "%s\n"COL_GREY"(("COL_EASY"Domyœlna"COL_GREY" czêstotliwoœæ: "COL_GREEN"%d"COL_GREY" MHz))", str_kr, gracz[playerid][KRMHZ]);
-	  format(str_kr, 512, "%s\n\n"COL_GREY"WprowadŸ now¹ czêstotliwoœæ("COL_GREEN"400 MHz"COL_GREY" - "COL_RED"500 MHz"COL_GREY"): ", str_kr, gracz[playerid][KRMHZ]);
-	  Dialog_Show(playerid, FALOWKAMHZ, DIALOG_STYLE_INPUT, ""COL_BLUE"»"COL_GREY" Krótkofalówka", str_kr, "Ustaw", "Anuluj");  
+	  format(str_kr, 512, ""COL_GREY"Aktualna czÄ™stotliwoÅ›Ä‡: "COL_YELLOW"%d"COL_GREY" MHz", gracz[playerid][KRMHZ]);
+	  format(str_kr, 512, "%s\n"COL_GREY"(("COL_EASY"DomyÅ›lna"COL_GREY" czÄ™stotliwoÅ›Ä‡: "COL_GREEN"%d"COL_GREY" MHz))", str_kr, gracz[playerid][KRMHZ]);
+	  format(str_kr, 512, "%s\n\n"COL_GREY"WprowadÅº nowÄ… czÄ™stotliwoÅ›Ä‡("COL_GREEN"400 MHz"COL_GREY" - "COL_RED"500 MHz"COL_GREY"): ", str_kr, gracz[playerid][KRMHZ]);
+	  Dialog_Show(playerid, FALOWKAMHZ, DIALOG_STYLE_INPUT, ""COL_BLUE"Â»"COL_GREY" KrÃ³tkofalÃ³wka", str_kr, "Ustaw", "Anuluj");  
 	}
   }
   return 1;
@@ -1692,10 +1692,10 @@ Dialog:GPS(playerid, response, listitem, inputtext[])
 		case 1:
 		{
 			new str_gps[512];
-			format(str_gps, 512, ""COL_GREY"Podaj czêstotliwoœæ nadajnika.\nOsoby maj¹ce w³¹czone nadajniki i ustawion¹ t¹ sam¹ czêstotliwoœæ\nbêd¹ widoczne dla Ciebie na mapie, a Ty dla nich.");
-			format(str_gps, 512, "%s\n"COL_GREY"Aktualna czêstotliwoœæ: "COL_YELLOW"%d"COL_GREY" Hz", str_gps, gracz[playerid][gps_hz]);
-			format(str_gps, 512, "%s\n\n"COL_GREY"WprowadŸ now¹ czêstotliwoœæ("COL_GREEN"50 Hz"COL_GREY" - "COL_RED"1000 Hz"COL_GREY"): ", str_gps, gracz[playerid][KRMHZ]);
-			Dialog_Show(playerid, GPSSET, DIALOG_STYLE_INPUT, ""COL_BLUE"»"COL_GREY" GPS", str_gps, "Ustaw", "Anuluj");  
+			format(str_gps, 512, ""COL_GREY"Podaj czÄ™stotliwoÅ›Ä‡ nadajnika.\nOsoby majÄ…ce wÅ‚Ä…czone nadajniki i ustawionÄ… tÄ… samÄ… czÄ™stotliwoÅ›Ä‡\nbÄ™dÄ… widoczne dla Ciebie na mapie, a Ty dla nich.");
+			format(str_gps, 512, "%s\n"COL_GREY"Aktualna czÄ™stotliwoÅ›Ä‡: "COL_YELLOW"%d"COL_GREY" Hz", str_gps, gracz[playerid][gps_hz]);
+			format(str_gps, 512, "%s\n\n"COL_GREY"WprowadÅº nowÄ… czÄ™stotliwoÅ›Ä‡("COL_GREEN"50 Hz"COL_GREY" - "COL_RED"1000 Hz"COL_GREY"): ", str_gps, gracz[playerid][KRMHZ]);
+			Dialog_Show(playerid, GPSSET, DIALOG_STYLE_INPUT, ""COL_BLUE"Â»"COL_GREY" GPS", str_gps, "Ustaw", "Anuluj");  
 		}
 	}
 	return 1;
@@ -1758,8 +1758,8 @@ Dialog:MEDYKTOOL(playerid, response, listitem, inputtext[])
 			if(MedSkill(playerid, 6))
 			{
 				SetPVarInt(playerid, "HealMode", listitem);
-				format(str, 512, ""COL_GREY"WprowadŸ ID gracza którego chcesz uleczyæ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
-				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyæ?", str, "Ulecz!", "Anuluj");
+				format(str, 512, ""COL_GREY"WprowadÅº ID gracza ktÃ³rego chcesz uleczyÄ‡ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
+				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyÄ‡?", str, "Ulecz!", "Anuluj");
 			}
 		}
 		case 1:
@@ -1767,8 +1767,8 @@ Dialog:MEDYKTOOL(playerid, response, listitem, inputtext[])
 			if(MedSkill(playerid, 7))
 			{
 				SetPVarInt(playerid, "HealMode", listitem);
-				format(str, 512, ""COL_GREY"WprowadŸ ID gracza którego chcesz uleczyæ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
-				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyæ?", str, "Ulecz!", "Anuluj");
+				format(str, 512, ""COL_GREY"WprowadÅº ID gracza ktÃ³rego chcesz uleczyÄ‡ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
+				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyÄ‡?", str, "Ulecz!", "Anuluj");
 			}
 		}
 		case 2:
@@ -1776,8 +1776,8 @@ Dialog:MEDYKTOOL(playerid, response, listitem, inputtext[])
 			if(MedSkill(playerid, 8))
 			{
 				SetPVarInt(playerid, "HealMode", listitem);
-				format(str, 512, ""COL_GREY"WprowadŸ ID gracza którego chcesz uleczyæ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
-				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyæ?", str, "Ulecz!", "Anuluj");
+				format(str, 512, ""COL_GREY"WprowadÅº ID gracza ktÃ³rego chcesz uleczyÄ‡ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
+				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyÄ‡?", str, "Ulecz!", "Anuluj");
 			}
 		}
 		case 3:
@@ -1785,8 +1785,8 @@ Dialog:MEDYKTOOL(playerid, response, listitem, inputtext[])
 			if(MedSkill(playerid, 9))
 			{
 				SetPVarInt(playerid, "HealMode", listitem);
-				format(str, 512, ""COL_GREY"WprowadŸ ID gracza którego chcesz uleczyæ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
-				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyæ?", str, "Ulecz!", "Anuluj");
+				format(str, 512, ""COL_GREY"WprowadÅº ID gracza ktÃ³rego chcesz uleczyÄ‡ ("COL_GREEN"Twoje ID: "COL_RED"%d"COL_GREY"):", playerid);
+				Dialog_Show(playerid, MEDYKHEAL, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz uleczyÄ‡?", str, "Ulecz!", "Anuluj");
 			}
 		}
 		case 4:
@@ -1821,8 +1821,8 @@ Dialog:MEDYKTOOL(playerid, response, listitem, inputtext[])
 		{
 			if(MedSkill(playerid, 17))
 			{
-				format(str, 512, ""COL_GREY"WprowadŸ ID gracza którego chcesz wybudziæ:", playerid);
-				Dialog_Show(playerid, MEDYKUNBW, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz wybudziæ?", str, "WybudŸ!", "Anuluj");
+				format(str, 512, ""COL_GREY"WprowadÅº ID gracza ktÃ³rego chcesz wybudziÄ‡:", playerid);
+				Dialog_Show(playerid, MEDYKUNBW, DIALOG_STYLE_INPUT, ""COL_BLUE"Kogo chcesz wybudziÄ‡?", str, "WybudÅº!", "Anuluj");
 			}
 		}
 	}
@@ -1860,7 +1860,7 @@ public SyropCraft(playerid, syropid, step, begin_craft)
 		mq_format("SELECT `count`,`itemid` FROM `przedmioty` WHERE (`itemid`>='123' AND `itemid`<='132' OR `itemid`='95' OR `itemid`='96') AND `userid`='%d';", gracz[playerid][UID]);
 		mq_send("SyropCraft", "dddd", playerid, syropid, 1, begin_craft);
 	}
-	else if(step == 1)//zasysanie materia³ów
+	else if(step == 1)//zasysanie materiaÅ‚Ã³w
 	{
 		new Woda,
 		Mleko,

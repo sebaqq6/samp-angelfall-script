@@ -1,4 +1,4 @@
-//z³, numer, ¿etony
+//zÅ‚, numer, Å¼etony
 new Float:sms_cennik[][3] =
 {
 	{0.61, 7055.0, 25.0},
@@ -11,22 +11,22 @@ new Float:sms_cennik[][3] =
 	{23.37, 91955.0, 950.0},
 	{30.75, 92555.0, 1250.0}
 };
-//cennik us³ug w ¿etonach premium:
+//cennik usÅ‚ug w Å¼etonach premium:
 #define CENA_VIP 450
 #define CENA_GRUPA 250
 
 stock ShowPremiumMenu(playerid)
 {
 	new str_menu[1000];
-	strcat(str_menu, ""COL_WHITE"("COL_CYAN"SMS"COL_WHITE")\t"COL_GREY"Kup "COL_ORANGE"¿"COL_GREY"etony "COL_ORANGE"p"COL_GREY"remium"COL_WHITE"\t("COL_CYAN"SMS"COL_WHITE")\n");
-	strcat(str_menu, ""COL_WHITE"("COL_RED"450 "COL_ORANGE"¿p"COL_WHITE")\t"COL_GREY"Konto premium"COL_WHITE"\t("COL_RED"30 dni"COL_WHITE")\n");
-	strcat(str_menu, ""COL_WHITE"("COL_RED"250 "COL_ORANGE"¿p"COL_WHITE")\t"COL_GREY"Grupa"COL_WHITE"\t("COL_RED"30 dni"COL_WHITE")\n");
+	strcat(str_menu, ""COL_WHITE"("COL_CYAN"SMS"COL_WHITE")\t"COL_GREY"Kup "COL_ORANGE"Å¼"COL_GREY"etony "COL_ORANGE"p"COL_GREY"remium"COL_WHITE"\t("COL_CYAN"SMS"COL_WHITE")\n");
+	strcat(str_menu, ""COL_WHITE"("COL_RED"450 "COL_ORANGE"Å¼p"COL_WHITE")\t"COL_GREY"Konto premium"COL_WHITE"\t("COL_RED"30 dni"COL_WHITE")\n");
+	strcat(str_menu, ""COL_WHITE"("COL_RED"250 "COL_ORANGE"Å¼p"COL_WHITE")\t"COL_GREY"Grupa"COL_WHITE"\t("COL_RED"30 dni"COL_WHITE")\n");
 	new str_header[100];
-	format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
-	Dialog_Show(playerid, PREMIUM, DIALOG_STYLE_TABLIST, str_header, str_menu, "Wybierz", "Wróæ");
+	format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
+	Dialog_Show(playerid, PREMIUM, DIALOG_STYLE_TABLIST, str_header, str_menu, "Wybierz", "WrÃ³Ä‡");
 	return 1;
 }
-//Do³adowanie
+//DoÅ‚adowanie
 Dialog:PREMIUM(playerid, response, listitem, inputtext[])
 {
 	if(!response) return PC_EmulateCommand(playerid, "/pomoc");
@@ -36,33 +36,33 @@ Dialog:PREMIUM(playerid, response, listitem, inputtext[])
 		{
 			new str_sms[2048];
 			new str_header[100];
-			format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
-			format(str_sms, 2048, "Cena\tIloœæ");
+			format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
+			format(str_sms, 2048, "Cena\tIloÅ›Ä‡");
 			for(new s; s < sizeof(sms_cennik); s++)
 			{
-				format(str_sms, 2048, "%s\n"COL_GREY"» "COL_WHITE"%.02f "COL_GREY"z³\t"COL_GREEN"+"COL_GREY"%d "COL_ORANGE"¿p", str_sms, sms_cennik[s][0], floatround(sms_cennik[s][2]));
+				format(str_sms, 2048, "%s\n"COL_GREY"Â» "COL_WHITE"%.02f "COL_GREY"zÅ‚\t"COL_GREEN"+"COL_GREY"%d "COL_ORANGE"Å¼p", str_sms, sms_cennik[s][0], floatround(sms_cennik[s][2]));
 			}
-			Dialog_Show(playerid, BUYSMS, DIALOG_STYLE_TABLIST_HEADERS, str_header, str_sms, "Wybierz", "Wróæ");
+			Dialog_Show(playerid, BUYSMS, DIALOG_STYLE_TABLIST_HEADERS, str_header, str_sms, "Wybierz", "WrÃ³Ä‡");
 		}
 		case 1://vip
 		{
 			new str_vip[2048];
 			new str_header[100];
-			format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
+			format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
 			format(str_vip, 2048, "%s\n"COL_GREY"Cechy konta premium:", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Wyró¿niony nick pod TAB (kolor: z³oty).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Wyró¿niony kolor nad skinem (kolor: z³oty).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Zmieniony domyœlny status nad g³ow¹.", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Bonus do si³y na si³owni ("COL_GREEN"+"COL_GREY"2 punkty).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Bonus EXP ("COL_GREEN"+"COL_GREY"3 exp).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Skrócony czas BW (60 sekund).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Zwiêkszenie slotów w ekwipunku ("COL_GREEN"+"COL_GREY"6 slotów).", str_vip);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"¿etonów premium"COL_GREY".", str_vip, CENA_VIP);
-			format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"Konto premium jest wa¿na przez "COL_RED"30 dni"COL_GREY".", str_vip);
-			//format(str_vip, 2048, "%s\n{a90000}» "COL_GREY"x", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"WyrÃ³Å¼niony nick pod TAB (kolor: zÅ‚oty).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"WyrÃ³Å¼niony kolor nad skinem (kolor: zÅ‚oty).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"Zmieniony domyÅ›lny status nad gÅ‚owÄ….", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"Bonus do siÅ‚y na siÅ‚owni ("COL_GREEN"+"COL_GREY"2 punkty).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"Bonus EXP ("COL_GREEN"+"COL_GREY"3 exp).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"SkrÃ³cony czas BW (60 sekund).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"ZwiÄ™kszenie slotÃ³w w ekwipunku ("COL_GREEN"+"COL_GREY"6 slotÃ³w).", str_vip);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium"COL_GREY".", str_vip, CENA_VIP);
+			format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"Konto premium jest waÅ¼na przez "COL_RED"30 dni"COL_GREY".", str_vip);
+			//format(str_vip, 2048, "%s\n{a90000}Â» "COL_GREY"x", str_vip);
 			format(str_vip, 2048, "%s\n", str_vip);
-			format(str_vip, 2048, "%s\n"COL_GREY"Czy chcesz zakupiæ konto premium?", str_vip);
-			Dialog_Show(playerid, BUYVIP, DIALOG_STYLE_MSGBOX, str_header, str_vip, "Kup!", "Wróæ");
+			format(str_vip, 2048, "%s\n"COL_GREY"Czy chcesz zakupiÄ‡ konto premium?", str_vip);
+			Dialog_Show(playerid, BUYVIP, DIALOG_STYLE_MSGBOX, str_header, str_vip, "Kup!", "WrÃ³Ä‡");
 		}
 		case 2://grupa
 		{
@@ -70,40 +70,40 @@ Dialog:PREMIUM(playerid, response, listitem, inputtext[])
 			new str_header[100];
 			if(!gracz[playerid][OrgID] && !gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG])
 			{
-				format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
-				format(str_cgroup, 2048, ""COL_GREY"Rozpoczêto proces "COL_GREEN"tworzenia"COL_GREY" grupy...");
+				format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
+				format(str_cgroup, 2048, ""COL_GREY"RozpoczÄ™to proces "COL_GREEN"tworzenia"COL_GREY" grupy...");
 				format(str_cgroup, 2048, "%s\n"COL_GREY"Cechy grupy:", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"W grupie moze byæ max: "COL_RED"10 graczy"COL_GREY".", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Rywalizacja z innymi grupami (levelowanie)", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Darmowa krótkofalówka - czat grupowy.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» {00B403}Darmowy GPS"COL_GREY" - widzisz na mapie gdzie znajduj¹ siê cz³onkowie Twojej grupy.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Mo¿liwoœæ dokupienia siedziby.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"¿etonów premium"COL_GREY".", str_cgroup, CENA_GRUPA);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Grupa jest wa¿na przez "COL_RED"30 dni"COL_GREY".", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Wszelkie komendy znajduj¹ siê pod /pomoc", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"W grupie moze byÄ‡ max: "COL_RED"10 graczy"COL_GREY".", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Rywalizacja z innymi grupami (levelowanie)", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Darmowa krÃ³tkofalÃ³wka - czat grupowy.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» {00B403}Darmowy GPS"COL_GREY" - widzisz na mapie gdzie znajdujÄ… siÄ™ czÅ‚onkowie Twojej grupy.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"MoÅ¼liwoÅ›Ä‡ dokupienia siedziby.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium"COL_GREY".", str_cgroup, CENA_GRUPA);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Grupa jest waÅ¼na przez "COL_RED"30 dni"COL_GREY".", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Wszelkie komendy znajdujÄ… siÄ™ pod /pomoc", str_cgroup);
 				format(str_cgroup, 2048, "%s\n", str_cgroup);
-				format(str_cgroup, 2048, "%s\n"COL_GREY"WprowadŸ pe³n¹ nazwê grupy (max: 30 znaków): ", str_cgroup);
-				Dialog_Show(playerid, BUYGROUP, DIALOG_STYLE_INPUT, str_header, str_cgroup, "Dalej", "Wróæ");
+				format(str_cgroup, 2048, "%s\n"COL_GREY"WprowadÅº peÅ‚nÄ… nazwÄ™ grupy (max: 30 znakÃ³w): ", str_cgroup);
+				Dialog_Show(playerid, BUYGROUP, DIALOG_STYLE_INPUT, str_header, str_cgroup, "Dalej", "WrÃ³Ä‡");
 			}
 			else if(gracz[playerid][OrgID] && !gracz[playerid][SzefORG] && !gracz[playerid][ViceSzefORG])
 			{
-				Error(playerid, "Musisz opuœciæ swoj¹ dotychczasow¹ grupê, by móc stworzyæ swoj¹.");
+				Error(playerid, "Musisz opuÅ›ciÄ‡ swojÄ… dotychczasowÄ… grupÄ™, by mÃ³c stworzyÄ‡ swojÄ….");
 			}
 			else if(gracz[playerid][SzefORG] || gracz[playerid][ViceSzefORG])
 			{
-				format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
-				format(str_cgroup, 2048, ""COL_GREY"Rozpoczêto proces "COL_RED"przed³u¿ania"COL_GREY" grupy...");
+				format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
+				format(str_cgroup, 2048, ""COL_GREY"RozpoczÄ™to proces "COL_RED"przedÅ‚uÅ¼ania"COL_GREY" grupy...");
 				format(str_cgroup, 2048, "%s\n"COL_GREY"Cechy grupy:", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"W grupie moze byæ max: "COL_RED"10 graczy"COL_GREY".", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Rywalizacja z innymi grupami (levelowanie)", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Darmowa krótkofalówka grupowa - czat grupowy.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» {00B403}Darmowy GPS"COL_GREY" - widzisz na mapie gdzie znajduj¹ siê cz³onkowie Twojej grupy.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Mo¿liwoœæ dokupienia siedziby.", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"¿etonów premium"COL_GREY".", str_cgroup, CENA_GRUPA);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Grupa jest wa¿na przez "COL_RED"30 dni"COL_GREY".", str_cgroup);
-				format(str_cgroup, 2048, "%s\n{a90000}» "COL_GREY"Wszelkie komendy znajduj¹ siê pod /pomoc", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"W grupie moze byÄ‡ max: "COL_RED"10 graczy"COL_GREY".", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Rywalizacja z innymi grupami (levelowanie)", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Darmowa krÃ³tkofalÃ³wka grupowa - czat grupowy.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» {00B403}Darmowy GPS"COL_GREY" - widzisz na mapie gdzie znajdujÄ… siÄ™ czÅ‚onkowie Twojej grupy.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"MoÅ¼liwoÅ›Ä‡ dokupienia siedziby.", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Koszt: "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium"COL_GREY".", str_cgroup, CENA_GRUPA);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Grupa jest waÅ¼na przez "COL_RED"30 dni"COL_GREY".", str_cgroup);
+				format(str_cgroup, 2048, "%s\n{a90000}Â» "COL_GREY"Wszelkie komendy znajdujÄ… siÄ™ pod /pomoc", str_cgroup);
 				format(str_cgroup, 2048, "%s\n", str_cgroup);
-				format(str_cgroup, 2048, "%s\n"COL_GREEN"Czy chcesz przed³u¿yæ swoj¹ grupê "COL_RED"(%s)"COL_GREEN" o 30 dni?", str_cgroup, gracz[playerid][group_name]);
+				format(str_cgroup, 2048, "%s\n"COL_GREEN"Czy chcesz przedÅ‚uÅ¼yÄ‡ swojÄ… grupÄ™ "COL_RED"(%s)"COL_GREEN" o 30 dni?", str_cgroup, gracz[playerid][group_name]);
 				Dialog_Show(playerid, ADDEXPIREGROUP, DIALOG_STYLE_MSGBOX, str_header, str_cgroup, "TAK", "NIE");
 			}
 		}
@@ -116,18 +116,18 @@ Dialog:BUYSMS(playerid, response, listitem, inputtext[])
 	if(!response) return ShowPremiumMenu(playerid);
 	new str_smsbuy[2048];
 	new str_header[100];
-	format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
-	format(str_smsbuy, 2048, ""COL_GREY"Zakup "COL_RED"%d"COL_GREY" sztuk "COL_ORANGE"¿etonów premium"COL_GREY":", floatround(sms_cennik[listitem][2]));
-	format(str_smsbuy, 2048, "%s\n{a90000}» "COL_GREY"Wyœlij SMS o treœci "COL_BLUE"SIM.ZETONY"COL_GREY" na numer "COL_GREEN"%d"COL_GREY".", str_smsbuy, floatround(sms_cennik[listitem][1]));
-	format(str_smsbuy, 2048, "%s\n{a90000}» "COL_CYAN"Kod zwrotny wprowadŸ w polu poni¿ej.", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\n"COL_GREY"Koszt SMS: "COL_RED"%.02f "COL_GREY"z³ (brutto)", str_smsbuy, sms_cennik[listitem][0]);
+	format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
+	format(str_smsbuy, 2048, ""COL_GREY"Zakup "COL_RED"%d"COL_GREY" sztuk "COL_ORANGE"Å¼etonÃ³w premium"COL_GREY":", floatround(sms_cennik[listitem][2]));
+	format(str_smsbuy, 2048, "%s\n{a90000}Â» "COL_GREY"WyÅ›lij SMS o treÅ›ci "COL_BLUE"SIM.ZETONY"COL_GREY" na numer "COL_GREEN"%d"COL_GREY".", str_smsbuy, floatround(sms_cennik[listitem][1]));
+	format(str_smsbuy, 2048, "%s\n{a90000}Â» "COL_CYAN"Kod zwrotny wprowadÅº w polu poniÅ¼ej.", str_smsbuy);
+	format(str_smsbuy, 2048, "%s\n"COL_GREY"Koszt SMS: "COL_RED"%.02f "COL_GREY"zÅ‚ (brutto)", str_smsbuy, sms_cennik[listitem][0]);
 	format(str_smsbuy, 2048, "%s\n", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\nAdministracja {a90000}Angel Fall"COL_GREY" nie czerpie korzyœci maj¹tkowych ze sprzeda¿y ¿etonów premium na serwerze oraz w panelu gracza {a90000}Angel Fall"COL_GREY".", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\nWszystkie œrodki s¹ przekazywane na utrzymanie forum, serwera TS3, serwera SA:MP oraz op³acenie zak³adki HOSTED.", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\n"COL_GREY"P³atnoœci obs³uguje: {49cc8d}SimPay.pl"COL_GREY"\tReklamacje: {49cc8d}https://simpay.pl/reklamacje", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\n{49cc8d}SimPay"COL_GREY" obs³uguje wszystkie sieci, w tym: {f200e8}T-MOBILE"COL_GREY", {ff6700}ORANGE"COL_GREY", {297a00}PLUS"COL_GREY", {9f00c9}PLAY"COL_GREY", {ec0018}HEYAH"COL_GREY", {f9be02}CYFROWY POLSAT", str_smsbuy);
-	format(str_smsbuy, 2048, "%s\n"COL_GREY"Wiêcej informacji oraz {59e700}inne rodzaje p³atnoœci"COL_GREY" znajdziesz w panelu gracza {a90000}Angel Fall"COL_GREY".", str_smsbuy);
-	Dialog_Show(playerid, BUYSMS2, DIALOG_STYLE_INPUT, str_header, str_smsbuy, "ZatwierdŸ", "Anuluj");
+	format(str_smsbuy, 2048, "%s\nAdministracja {a90000}Angel Fall"COL_GREY" nie czerpie korzyÅ›ci majÄ…tkowych ze sprzedaÅ¼y Å¼etonÃ³w premium na serwerze oraz w panelu gracza {a90000}Angel Fall"COL_GREY".", str_smsbuy);
+	format(str_smsbuy, 2048, "%s\nWszystkie Å›rodki sÄ… przekazywane na utrzymanie forum, serwera TS3, serwera SA:MP oraz opÅ‚acenie zakÅ‚adki HOSTED.", str_smsbuy);
+	format(str_smsbuy, 2048, "%s\n"COL_GREY"PÅ‚atnoÅ›ci obsÅ‚uguje: {49cc8d}SimPay.pl"COL_GREY"\tReklamacje: {49cc8d}https://simpay.pl/reklamacje", str_smsbuy);
+	format(str_smsbuy, 2048, "%s\n{49cc8d}SimPay"COL_GREY" obsÅ‚uguje wszystkie sieci, w tym: {f200e8}T-MOBILE"COL_GREY", {ff6700}ORANGE"COL_GREY", {297a00}PLUS"COL_GREY", {9f00c9}PLAY"COL_GREY", {ec0018}HEYAH"COL_GREY", {f9be02}CYFROWY POLSAT", str_smsbuy);
+	format(str_smsbuy, 2048, "%s\n"COL_GREY"WiÄ™cej informacji oraz {59e700}inne rodzaje pÅ‚atnoÅ›ci"COL_GREY" znajdziesz w panelu gracza {a90000}Angel Fall"COL_GREY".", str_smsbuy);
+	Dialog_Show(playerid, BUYSMS2, DIALOG_STYLE_INPUT, str_header, str_smsbuy, "ZatwierdÅº", "Anuluj");
 	SetPVarInt(playerid, "BuySms_Selected", listitem);
 	return 1;
 }
@@ -135,14 +135,14 @@ Dialog:BUYSMS(playerid, response, listitem, inputtext[])
 Dialog:BUYSMS2(playerid, response, listitem, inputtext[])
 {
 	if(!response) return 1;
-	if(strlen(inputtext) < 6) return Error(playerid, "Podany kod jest za krótki.");
+	if(strlen(inputtext) < 6) return Error(playerid, "Podany kod jest za krÃ³tki.");
 	format(inputtext, 10, inputtext);
 	new selected = GetPVarInt(playerid, "BuySms_Selected");
 	new request[512];
 	format(request, 512, "redtm.pl/api_sms.php?typ=af&sms=%d&kod=%s", floatround(sms_cennik[selected][1]), inputtext);
 	SetPVarString(playerid, "Sms_Code", inputtext);
 	HTTP(playerid, HTTP_GET, request, "", "ValidSMSCode");
-	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "{f0da00}Sprawdzanie...", "Trwa sprawdzanie... Proszê czekaæ...", "OK","");
+	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, "{f0da00}Sprawdzanie...", "Trwa sprawdzanie... ProszÄ™ czekaÄ‡...", "OK","");
 	return 1;
 }
 
@@ -157,7 +157,7 @@ public ValidSMSCode(index, response_code, data[])
 		{
 			case 0:
 			{
-				format(buffer, sizeof(buffer), "Wewnêtrzny b³¹d API.");
+				format(buffer, sizeof(buffer), "WewnÄ™trzny bÅ‚Ä…d API.");
 				Error(index, buffer);
 				Dialog_Close(index);
 			}
@@ -167,8 +167,8 @@ public ValidSMSCode(index, response_code, data[])
 				new selected = GetPVarInt(index, "BuySms_Selected");
 				new add_zetony = floatround(sms_cennik[selected][2]);
 				format(str_successbuy, 512, "{00b415}Sukces!");
-				format(str_successbuy, 512, "%s\n"COL_GREY"Dziêkujemy za dofinansowanie projektu {a90000}Angel Fall"COL_GREY"!", str_successbuy);
-				format(str_successbuy, 512, "%s\n"COL_GREY"W zamian otrzymujesz "COL_GREEN"+"COL_RED"%d"COL_GREY" sztuk "COL_ORANGE"¿etonów premium"COL_GREY" :)", str_successbuy, add_zetony);
+				format(str_successbuy, 512, "%s\n"COL_GREY"DziÄ™kujemy za dofinansowanie projektu {a90000}Angel Fall"COL_GREY"!", str_successbuy);
+				format(str_successbuy, 512, "%s\n"COL_GREY"W zamian otrzymujesz "COL_GREEN"+"COL_RED"%d"COL_GREY" sztuk "COL_ORANGE"Å¼etonÃ³w premium"COL_GREY" :)", str_successbuy, add_zetony);
 				format(str_successbuy, 512, "%s\n"COL_GREY"Pozdrawiamy, ekipa {a90000}Angel Fall"COL_GREY".", str_successbuy);
 				gracz[index][gold] += add_zetony;
 				mq_format("UPDATE `Konta` SET `gold`='%d' WHERE `id`='%d';", gracz[index][gold], gracz[index][UID]);
@@ -182,19 +182,19 @@ public ValidSMSCode(index, response_code, data[])
 			}
 			case 2:
 			{
-				format(buffer, sizeof(buffer), "B³êdny kod.");
+				format(buffer, sizeof(buffer), "BÅ‚Ä™dny kod.");
 				Error(index, buffer);
 				Dialog_Close(index);
 			}
 			case 3..4:
 			{
-				format(buffer, sizeof(buffer), "B³¹d zapytania.");
+				format(buffer, sizeof(buffer), "BÅ‚Ä…d zapytania.");
 				Error(index, buffer);
 				Dialog_Close(index);
 			}
 			case 5:
 			{
-				format(buffer, sizeof(buffer), "Kod zosta³ ju¿ wykorzystany.");
+				format(buffer, sizeof(buffer), "Kod zostaÅ‚ juÅ¼ wykorzystany.");
 				Error(index, buffer);
 				Dialog_Close(index);
 			}
@@ -202,7 +202,7 @@ public ValidSMSCode(index, response_code, data[])
 	}
 	else
 	{
-		format(buffer, sizeof(buffer), "B³¹d po³¹czenia API, kod b³êdu: %d", response_code);
+		format(buffer, sizeof(buffer), "BÅ‚Ä…d poÅ‚Ä…czenia API, kod bÅ‚Ä™du: %d", response_code);
 		Error(index, buffer);
 		Dialog_Close(index);
 		format(buffer, 100, "[HTTP_DATA]: PUID: %d | %s", gracz[index][UID], data);
@@ -216,52 +216,52 @@ public ValidSMSCode(index, response_code, data[])
 Dialog:BUYGROUP(playerid, response, listitem, inputtext[])
 {
 	if(!response) return ShowPremiumMenu(playerid);
-	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za ma³o ¿etonów premium.");
+	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 	if(4 > strlen(inputtext) > 30)
 	{
-		Error(playerid, "Nazwa grupy musi mieæ od 4 do 30 znaków.");
+		Error(playerid, "Nazwa grupy musi mieÄ‡ od 4 do 30 znakÃ³w.");
 		ShowPremiumMenu(playerid);
 		return 1;
 	}
 	if(!CheckAllowedChar(inputtext))
 	{
-		Error(playerid, "W nazwie grupy pojawi³y siê niedozwolone znaki! U¿ywaj tylko od A do Z(bez ogonków) oraz 0-9.");
+		Error(playerid, "W nazwie grupy pojawiÅ‚y siÄ™ niedozwolone znaki! UÅ¼ywaj tylko od A do Z(bez ogonkÃ³w) oraz 0-9.");
 		ShowPremiumMenu(playerid);
 		return 1;
 	}
 	new str_cgroup[2048];
 	new str_header[100];
 	SetPVarString(playerid, "GroupSetName", inputtext);
-	format(str_header, 100, ""COL_YELLOW"»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"¿etonów premium", gracz[playerid][gold]);
+	format(str_header, 100, ""COL_YELLOW"Â»"COL_WHITE"Posiadasz "COL_RED"%d "COL_ORANGE"Å¼etonÃ³w premium", gracz[playerid][gold]);
 	format(str_cgroup, 2048, "%s\n"COL_GREY"Wprowadzona nazwa grupy: "COL_BLUE"%s", str_cgroup, inputtext);
-	format(str_cgroup, 2048, "%s\n"COL_GREY"Aby zakoñczyæ proces tworzenia grupy, musisz wprowadziæ jeszcze jej skrót.", str_cgroup);
-	format(str_cgroup, 2048, "%s\n"COL_GREY"WprowadŸ TAG grupy(max: "COL_RED"3 znaki"COL_GREY", np: "COL_BLUE"ABC"COL_GREY"): ", str_cgroup);
-	Dialog_Show(playerid, BUYGROUPEND, DIALOG_STYLE_INPUT, str_header, str_cgroup, "STWÓRZ!", "Wróæ");
+	format(str_cgroup, 2048, "%s\n"COL_GREY"Aby zakoÅ„czyÄ‡ proces tworzenia grupy, musisz wprowadziÄ‡ jeszcze jej skrÃ³t.", str_cgroup);
+	format(str_cgroup, 2048, "%s\n"COL_GREY"WprowadÅº TAG grupy(max: "COL_RED"3 znaki"COL_GREY", np: "COL_BLUE"ABC"COL_GREY"): ", str_cgroup);
+	Dialog_Show(playerid, BUYGROUPEND, DIALOG_STYLE_INPUT, str_header, str_cgroup, "STWÃ“RZ!", "WrÃ³Ä‡");
 	return 1;
 }
 
 Dialog:BUYGROUPEND(playerid, response, listitem, inputtext[])
 {
 	if(!response) return ShowPremiumMenu(playerid);
-	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za ma³o ¿etonów premium.");
+	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 	if(1 > strlen(inputtext) > 3)
 	{
-		Error(playerid, "Tag musi mieæ od 1 do 3 znaków.");
+		Error(playerid, "Tag musi mieÄ‡ od 1 do 3 znakÃ³w.");
 		ShowPremiumMenu(playerid);
 		return 1;
 	}
 	if(!CheckAllowedChar(inputtext))
 	{
-		Error(playerid, "W TAG'u grupy pojawi³y siê niedozwolone znaki! U¿ywaj tylko od A do Z(bez ogonków) oraz 0-9.");
+		Error(playerid, "W TAG'u grupy pojawiÅ‚y siÄ™ niedozwolone znaki! UÅ¼ywaj tylko od A do Z(bez ogonkÃ³w) oraz 0-9.");
 		ShowPremiumMenu(playerid);
 		return 1;
 	}
-	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za ma³o ¿etonów premium.");
+	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 	new str_cgroup[2048];
 	new str_header[100];
-	format(str_header, 100, ""COL_YELLOW"»"COL_GREEN"Stworzono grupe!", gracz[playerid][gold]);
-	format(str_cgroup, 2048, ""COL_GREEN"Gratulacjê! "COL_GREY"Stworzy³eœ swoj¹ grupê :)");
-	format(str_cgroup, 2048, "%s\n"COL_GREY"Grupa jest wa¿na przez 30 dni, mo¿esz j¹ w ka¿dej chwili przed³u¿yæ u¿ywaj¹c tej samej opcji, co do tworzenia.", str_cgroup);
+	format(str_header, 100, ""COL_YELLOW"Â»"COL_GREEN"Stworzono grupe!", gracz[playerid][gold]);
+	format(str_cgroup, 2048, ""COL_GREEN"GratulacjÄ™! "COL_GREY"StworzyÅ‚eÅ› swojÄ… grupÄ™ :)");
+	format(str_cgroup, 2048, "%s\n"COL_GREY"Grupa jest waÅ¼na przez 30 dni, moÅ¼esz jÄ… w kaÅ¼dej chwili przedÅ‚uÅ¼yÄ‡ uÅ¼ywajÄ…c tej samej opcji, co do tworzenia.", str_cgroup);
 	new gname[30];
 	GetPVarString(playerid, "GroupSetName", gname, 30);
 	format(str_cgroup, 2048, "%s\n"COL_GREY"Nazwa grupy: "COL_BLUE"%s", str_cgroup, gname);
@@ -280,11 +280,11 @@ Dialog:BUYGROUPEND(playerid, response, listitem, inputtext[])
 Dialog:ADDEXPIREGROUP(playerid, response, listitem, inputtext[])
 {
 	if(!response) return ShowPremiumMenu(playerid);
-	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za ma³o ¿etonów premium.");
+	if(gracz[playerid][gold] < CENA_GRUPA) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 	new str_cgroup[2048];
 	new str_header[100];
-	format(str_header, 100, ""COL_YELLOW"»"COL_GREEN"Stworzono grupe!", gracz[playerid][gold]);
-	format(str_cgroup, 2048, ""COL_GREEN"Gratulacjê! "COL_GREY"Przed³u¿y³eœ swoj¹ grupê o 30 dni!");
+	format(str_header, 100, ""COL_YELLOW"Â»"COL_GREEN"Stworzono grupe!", gracz[playerid][gold]);
+	format(str_cgroup, 2048, ""COL_GREEN"GratulacjÄ™! "COL_GREY"PrzedÅ‚uÅ¼yÅ‚eÅ› swojÄ… grupÄ™ o 30 dni!");
 	mq_format("SELECT `expire` FROM `Grupy` WHERE `id`='%d';", gracz[playerid][SzefORG]);
 	new Cache:qGetExpire = mysql_query(MySQL, mQuery);
 	new actual_expire = cache_get_field_content_int(0, "expire");
@@ -304,7 +304,7 @@ Dialog:ADDEXPIREGROUP(playerid, response, listitem, inputtext[])
 Dialog:BUYVIP(playerid, response, listitem, inputtext[])
 {
 	if(!response) return ShowPremiumMenu(playerid);
-	if(gracz[playerid][gold] < CENA_VIP) return Error(playerid, "Za ma³o ¿etonów premium.");
+	if(gracz[playerid][gold] < CENA_VIP) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 	gracz[playerid][gold] -= CENA_VIP;
 	if(isvip(playerid))
 	{
@@ -320,9 +320,9 @@ Dialog:BUYVIP(playerid, response, listitem, inputtext[])
 	mq_send("QZetonLog");
 	new str_successbuy[512];
 	format(str_successbuy, 512, "{00b415}Sukces!");
-	format(str_successbuy, 512, "%s\n"COL_GREY"Dziêkujemy za zakup konta premium na projekcie {a90000}Angel Fall"COL_GREY"!", str_successbuy);
-	format(str_successbuy, 512, "%s\n"COL_GREY"Twoje konto premium na tej postaci jest wa¿ne przez "COL_RED"%d dni"COL_GREY" ("COL_LIME"czas wygaœniêcia jest pod "COL_GREEN"/stats"COL_GREY").", str_successbuy, (gracz[playerid][vip]-serwer[time_timestamp])/60/60/24);
-	format(str_successbuy, 512, "%s\n"COL_GREY"Mo¿esz w ka¿dej chwili przed³u¿yæ wa¿noœæ konta premium u¿ywaj¹c tej samej opcji co do kupna.", str_successbuy);
-	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_YELLOW"»{00b415}Przyznano konto premium!", str_successbuy, "ZAMKNIJ","");
+	format(str_successbuy, 512, "%s\n"COL_GREY"DziÄ™kujemy za zakup konta premium na projekcie {a90000}Angel Fall"COL_GREY"!", str_successbuy);
+	format(str_successbuy, 512, "%s\n"COL_GREY"Twoje konto premium na tej postaci jest waÅ¼ne przez "COL_RED"%d dni"COL_GREY" ("COL_LIME"czas wygaÅ›niÄ™cia jest pod "COL_GREEN"/stats"COL_GREY").", str_successbuy, (gracz[playerid][vip]-serwer[time_timestamp])/60/60/24);
+	format(str_successbuy, 512, "%s\n"COL_GREY"MoÅ¼esz w kaÅ¼dej chwili przedÅ‚uÅ¼yÄ‡ waÅ¼noÅ›Ä‡ konta premium uÅ¼ywajÄ…c tej samej opcji co do kupna.", str_successbuy);
+	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_YELLOW"Â»{00b415}Przyznano konto premium!", str_successbuy, "ZAMKNIJ","");
 	return 1;
 }

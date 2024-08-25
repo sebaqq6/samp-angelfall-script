@@ -410,7 +410,7 @@ stock SecToTime(seconds, &days, &hours, &minutes, &secc)
 	return 1;
 }
 
-//System ha³asu
+//System haÅ‚asu
 /*GetPlayerSpeed(playerid):
 5 = chodzenie
 13 = Chodzenie na kucaka.
@@ -701,7 +701,7 @@ stock GetPlayerForumName(uid)
 }
 stock Error(playerid, string[])
 {
-	SendClientMessageEx(playerid, -1, "(("COL_RED"Wyst¹pi³ b³¹d:"COL_WHITE" %s"COL_WHITE"))", string);
+	SendClientMessageEx(playerid, -1, "(("COL_RED"WystÄ…piÅ‚ bÅ‚Ä…d:"COL_WHITE" %s"COL_WHITE"))", string);
 	return 1;
 }
 stock GetXYInFrontOfPlayer(playerid, &Float:ifx, &Float:ify, Float:distance)
@@ -864,7 +864,7 @@ stock Spam(playerid, spamid = 0, time = 1)
 	if(gracz[playerid][time_spam][spamid] > serwer[time_timestamp])
 	{
 		new str[100];
-		format(str, 100, "(("COL_RED"Wyst¹pi³ b³¹d:"COL_WHITE" Odczekaj %d sekund.))", gracz[playerid][time_spam][spamid]-serwer[time_timestamp]);
+		format(str, 100, "(("COL_RED"WystÄ…piÅ‚ bÅ‚Ä…d:"COL_WHITE" Odczekaj %d sekund.))", gracz[playerid][time_spam][spamid]-serwer[time_timestamp]);
 		ov_SendClientMessage(playerid, -1, str);
 		return 1;
 	}

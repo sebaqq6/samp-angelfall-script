@@ -66,8 +66,8 @@ stock StatusCampfire(playerid)
 	new wynik[64];
 	switch(ognisko[playerid][o_status])
 	{
-		case 1..299: format(wynik, 64, ""COL_ORANGE"Wypalanie "COL_WHITE"(Pozosta≥o %ds)", ognisko[playerid][o_status]);
-		case 300..320: format(wynik, 64, ""COL_GREEN"Rozpalanie "COL_WHITE"(Pozosta≥o %ds)", ognisko[playerid][o_status]-300);
+		case 1..299: format(wynik, 64, ""COL_ORANGE"Wypalanie "COL_WHITE"(Pozosta≈Ço %ds)", ognisko[playerid][o_status]);
+		case 300..320: format(wynik, 64, ""COL_GREEN"Rozpalanie "COL_WHITE"(Pozosta≈Ço %ds)", ognisko[playerid][o_status]-300);
 	}
 	return wynik;
 }

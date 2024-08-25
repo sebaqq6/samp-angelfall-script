@@ -5,7 +5,7 @@ public OnPlayerConnect(playerid)
 	if(IsPlayerNPC(playerid)) return 1;
 	if(playerid > 49) 
 	{
-		Error(playerid, "Serwer jest pe≥ny!");
+		Error(playerid, "Serwer jest pe≈Çny!");
 		Kick(playerid);
 		return 1;
 	}
@@ -31,8 +31,8 @@ public OnPlayerConnect(playerid)
 	SetPVarInt(playerid, "RePM", -1);
 	RemoveBuilding(playerid);
 	ShowPanorama(playerid);
-	SendClientMessage(playerid, -1, ""COL_WHITE"((Polecamy wy≥πczyÊ komunikaty 'Audio Stream: [URL]' za pomocπ komendy: "COL_GREEN"/audiomsg"COL_WHITE"))");
-	SendClientMessage(playerid, -1, "(("COL_GREEN"Dostosuj g≥oúnoúÊ soundtracku"COL_WHITE", wchodzπc w ustawienia düwiÍkowe GTA SA(g≥oúnoúÊ radia).))");
+	SendClientMessage(playerid, -1, ""COL_WHITE"((Polecamy wy≈ÇƒÖczyƒá komunikaty 'Audio Stream: [URL]' za pomocƒÖ komendy: "COL_GREEN"/audiomsg"COL_WHITE"))");
+	SendClientMessage(playerid, -1, "(("COL_GREEN"Dostosuj g≈Ço≈õno≈õƒá soundtracku"COL_WHITE", wchodzƒÖc w ustawienia d≈∫wiƒôkowe GTA SA(g≈Ço≈õno≈õƒá radia).))");
 	PlayAudioStreamForPlayer(playerid, "http:/127.0.0.1/sound/track/logon.mp3");
 	return 1;
 }
@@ -248,7 +248,7 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 		if(GetTickCount() - gracz[playerid][cbug_tick] < interval && GetTickCount() - gracz[playerid][cbug_tick] >= 0)
 		{                              
 			SetPlayerArmedWeapon(playerid, 0);
-			Error(playerid, "Wykryto C-BUG! Strza≥ nie zosta≥ zsynchronizowany.");
+			Error(playerid, "Wykryto C-BUG! Strza≈Ç nie zosta≈Ç zsynchronizowany.");
 			SetTimerEx("UnFreeze", 1000, false, "d", playerid);
 			TogglePlayerControllable(playerid, false);
 			return 0;
@@ -512,7 +512,7 @@ stock TimeOnServer(playerid)
 	}
 	return 1;
 }
-//***********************************************************************************************************System ha≥asu
+//***********************************************************************************************************System ha≈Çasu
 forward GetHalas(playerid);
 public GetHalas(playerid) return gracz[playerid][gen_halas]+1;
 
@@ -686,7 +686,7 @@ stock Process_Weather(playerid)
 	}
 	return 1;
 }
-//****************************************************************************************************************OBS£UGA FADE
+//****************************************************************************************************************OBS≈ÅUGA FADE
 public OnFadeComplete(playerid, beforehold)
 {
 	if(beforehold)
@@ -774,14 +774,14 @@ stock Process_PlayerMarker(playerid)//m - drugi gracz
 			if(gracz[playerid][OrgID] == gracz[m][OrgID] && gracz[playerid][OrgID] && gracz[m][OrgID])//gps grup
 			{
 				if(isvip(m)) SetPlayerMarkerForPlayer(playerid, m, 0xB0B200FF);//VIP, widoczny
-				else SetPlayerMarkerForPlayer(playerid, m, 0x00B403FF);//zielony - cz≥onek grupy
+				else SetPlayerMarkerForPlayer(playerid, m, 0x00B403FF);//zielony - cz≈Çonek grupy
 			}
 			else if(gracz[playerid][gps_hz] == gracz[m][gps_hz] && gracz[playerid][gps] && gracz[m][gps])//gps przedmiot
 			{
 				if(isvip(m)) SetPlayerMarkerForPlayer(playerid, m, 0xB0B200FF);//VIP, widoczny
 				else SetPlayerMarkerForPlayer(playerid, m, 0x727272FF);//siwy, widoczny
 			}
-			else//zmienianie na niewidzialnoúÊ
+			else//zmienianie na niewidzialno≈õƒá
 			{
 				if(isvip(m)) SetPlayerMarkerForPlayer(playerid, m, 0xB0B20000);//VIP
 				else SetPlayerMarkerForPlayer(playerid, m, 0x72727200);//siwy
@@ -794,12 +794,12 @@ stock Process_PlayerMarker(playerid)//m - drugi gracz
 	}
 	return 1;
 }
-//****************************************************************************************************************************g≥Ûd/pragnienie
+//****************************************************************************************************************************g≈Ç√≥d/pragnienie
 stock Process_GlodPragnienie(playerid)
 {
 	if(gracz[playerid][admin_duty]) return 1;
 	if(gracz[playerid][MapperLvl]) return 1;
-		//g≥Ûd
+		//g≈Ç√≥d
 	if(GetPVarInt(playerid, "GProces") < serwer[time_timestamp])
 	{
 		SetPVarInt(playerid, "GProces", serwer[time_timestamp]+10*60);
@@ -814,7 +814,7 @@ stock Process_GlodPragnienie(playerid)
 		}
 		if(gracz[playerid][Glod] < 10)
 		{
-			SendClientMessage(playerid, -1, "(("COL_RED"Jesteú g≥odny! Zjedz coú, inaczej stracisz przytomnoúÊ!"COL_WHITE"))");
+			SendClientMessage(playerid, -1, "(("COL_RED"Jeste≈õ g≈Çodny! Zjedz co≈õ, inaczej stracisz przytomno≈õƒá!"COL_WHITE"))");
 			TakePlayerHP(playerid, 5);
 		}
 		SetBarGlod(playerid, gracz[playerid][Glod]);
@@ -836,7 +836,7 @@ stock Process_GlodPragnienie(playerid)
 		}
 		if(gracz[playerid][Pragn] < 10)
 		{
-			SendClientMessage(playerid, -1, "(("COL_RED"Jesteú spragniony! Wypij coú, inaczej stracisz przytomnoúÊ!"COL_WHITE"))");
+			SendClientMessage(playerid, -1, "(("COL_RED"Jeste≈õ spragniony! Wypij co≈õ, inaczej stracisz przytomno≈õƒá!"COL_WHITE"))");
 			TakePlayerHP(playerid, 5);
 		}
 		SetBarPragn(playerid, gracz[playerid][Pragn]);
@@ -887,7 +887,7 @@ stock Process_KryptaProtect(playerid)
 {
 	
 	if(IsPlayerInBoisko(playerid)) gracz[playerid][in_krypta] = true;
-	else if(IsPlayerInGym(playerid)) gracz[playerid][in_krypta] = true;//si≥ownia
+	else if(IsPlayerInGym(playerid)) gracz[playerid][in_krypta] = true;//si≈Çownia
 	else if(IsPlayerInRangeOfPoint(playerid, 80.0, -1999.7366,-1558.9781,87.9436) && gracz[playerid][PosZ] < 120.0) gracz[playerid][in_krypta] = true;
 	else if(IsPlayerInRangeOfPoint(playerid, 100.0, -2344.9458,-1652.0934,2308.8259)) gracz[playerid][in_krypta] = true;
 	else if(IsPlayerInRangeOfPoint(playerid, 100.0, -1953.9146,-1598.6378,2306.4160)) gracz[playerid][in_krypta] = true;
@@ -1048,7 +1048,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 			if(response)
 			{
 				gracz[playerid][Skin] = modelid;
-				Dialog_Show(playerid, REGEND, DIALOG_STYLE_MSGBOX, ""COL_RED"ª"COL_WHITE" Rejestracja - Zakonczenie", ""COL_WHITE"Czy akceptujesz "COL_RED"regulamin serwera"COL_WHITE" znajdujπcy siÍ na "COL_YELLOW"forum.angelfall.pl"COL_WHITE"?", "TAK", "NIE");
+				Dialog_Show(playerid, REGEND, DIALOG_STYLE_MSGBOX, ""COL_RED"¬ª"COL_WHITE" Rejestracja - Zakonczenie", ""COL_WHITE"Czy akceptujesz "COL_RED"regulamin serwera"COL_WHITE" znajdujƒÖcy siƒô na "COL_YELLOW"forum.angelfall.pl"COL_WHITE"?", "TAK", "NIE");
 			}
 			else
 			{
@@ -1070,7 +1070,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid)
 	}
 	return 1;
 }
-//********************************************************************************************************************WYB”R SKINU
+//********************************************************************************************************************WYB√ìR SKINU
 stock WybierzSkin(playerid)
 {
 	switch(gracz[playerid][Plec])
@@ -1239,9 +1239,9 @@ stock DisablePlayerSpeedCap( playerid )
 stock ShowYMenu(playerid)
 {
 	new str[512];
-	format(str, 512, ""COL_BLUE"ª\t"COL_GREEN"Ekwipunek\t"COL_BLUE"´");
-	format(str, 512, "%s\n"COL_YELLOW"ª\t"COL_EASY"Specjalizacje\t"COL_YELLOW"´", str);
-	Dialog_Show(playerid, YMENU, DIALOG_STYLE_TABLIST, ""COL_RED"ª "COL_GREY"Wybierz akcje:", str, "Wybierz", "Anuluj");
+	format(str, 512, ""COL_BLUE"¬ª\t"COL_GREEN"Ekwipunek\t"COL_BLUE"¬´");
+	format(str, 512, "%s\n"COL_YELLOW"¬ª\t"COL_EASY"Specjalizacje\t"COL_YELLOW"¬´", str);
+	Dialog_Show(playerid, YMENU, DIALOG_STYLE_TABLIST, ""COL_RED"¬ª "COL_GREY"Wybierz akcje:", str, "Wybierz", "Anuluj");
 	return 1;
 }
 Dialog:YMENU(playerid, response, listitem, inputtext[])
@@ -1314,33 +1314,33 @@ stock ShowSkillWindow(playerid)
 {
 	new str[1500];
 	new freep = CalcFreeSkillPoints(playerid);
-	format(str, 1500, ""COL_GREY"Specjalizacja\t"COL_GREY"Przydzielone punkty("COL_BLUE"%d"COL_GREY"/20)\t"COL_GREEN"DostÍpne punkty: "COL_RED"%d"COL_GREY"/20", gracz[playerid][rusznikarstwo]+gracz[playerid][motoryzacja]+gracz[playerid][medycyna], freep);
+	format(str, 1500, ""COL_GREY"Specjalizacja\t"COL_GREY"Przydzielone punkty("COL_BLUE"%d"COL_GREY"/20)\t"COL_GREEN"Dostƒôpne punkty: "COL_RED"%d"COL_GREY"/20", gracz[playerid][rusznikarstwo]+gracz[playerid][motoryzacja]+gracz[playerid][medycyna], freep);
 	if(freep && gracz[playerid][rusznikarstwo] < 20)
 	{
-		format(str, 1500, "%s\n"COL_RED"ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
+		format(str, 1500, "%s\n"COL_RED"¬ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
 	}
-	else if(gracz[playerid][rusznikarstwo] == 20) format(str, 1500, "%s\n"COL_RED"ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
-	else format(str, 1500, "%s\n"COL_RED"ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
+	else if(gracz[playerid][rusznikarstwo] == 20) format(str, 1500, "%s\n"COL_RED"¬ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
+	else format(str, 1500, "%s\n"COL_RED"¬ª "COL_ORANGE" Rusznikarstwo\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][rusznikarstwo]);
 	
 	if(freep && gracz[playerid][motoryzacja] < 20)
 	{
-		format(str, 1500, "%s\n"COL_RED"ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
+		format(str, 1500, "%s\n"COL_RED"¬ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
 	}
-	else if(gracz[playerid][motoryzacja] == 20) format(str, 1500, "%s\n"COL_RED"ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
-	else format(str, 1500, "%s\n"COL_RED"ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
+	else if(gracz[playerid][motoryzacja] == 20) format(str, 1500, "%s\n"COL_RED"¬ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
+	else format(str, 1500, "%s\n"COL_RED"¬ª "COL_DBLUE" Motoryzacja\t"COL_GREEN"%d "COL_GREY"/"COL_RED"11\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][motoryzacja]);
 	
 	if(freep && gracz[playerid][medycyna] < 20)
 	{
-		format(str, 1500, "%s\n"COL_RED"ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][medycyna]);
+		format(str, 1500, "%s\n"COL_RED"¬ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_GREEN"ulepsz"COL_YELLOW"]", str, gracz[playerid][medycyna]);
 	}
-	else if(gracz[playerid][medycyna] == 20) format(str, 1500, "%s\n"COL_RED"ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][medycyna]);
-	else format(str, 1500, "%s\n"COL_RED"ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][medycyna]);
+	else if(gracz[playerid][medycyna] == 20) format(str, 1500, "%s\n"COL_RED"¬ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"max"COL_YELLOW"]", str, gracz[playerid][medycyna]);
+	else format(str, 1500, "%s\n"COL_RED"¬ª "COL_BLUE" Medycyna\t"COL_GREEN"%d "COL_GREY"/"COL_RED"17\t"COL_YELLOW"["COL_RED"ulepsz"COL_YELLOW"]", str, gracz[playerid][medycyna]);
 
-	format(str, 1500, "%s\n"COL_GREY"WiÍcej:", str);
-	format(str, 1500, "%s\n"COL_GREY"SzczegÛ≥y:"COL_ORANGE" Rusznikarstwo ", str);
-	format(str, 1500, "%s\n"COL_GREY"SzczegÛ≥y:"COL_DBLUE" Motoryzacja ", str);
-	format(str, 1500, "%s\n"COL_GREY"SzczegÛ≥y:"COL_BLUE" Medycyna ", str);
-	Dialog_Show(playerid, SKILLUP, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"ª "COL_GREEN"RozwÛj specjalizacji", str, "Wybierz", "Anuluj");
+	format(str, 1500, "%s\n"COL_GREY"Wiƒôcej:", str);
+	format(str, 1500, "%s\n"COL_GREY"Szczeg√≥≈Çy:"COL_ORANGE" Rusznikarstwo ", str);
+	format(str, 1500, "%s\n"COL_GREY"Szczeg√≥≈Çy:"COL_DBLUE" Motoryzacja ", str);
+	format(str, 1500, "%s\n"COL_GREY"Szczeg√≥≈Çy:"COL_BLUE" Medycyna ", str);
+	Dialog_Show(playerid, SKILLUP, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"¬ª "COL_GREEN"Rozw√≥j specjalizacji", str, "Wybierz", "Anuluj");
 	return 1;
 }
 
@@ -1419,135 +1419,135 @@ stock SpecAbout(playerid, spectype)
 	{
 		case 0://rusznikartswo
 		{
-			strcat(spec_about,""COL_RED"ªª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw narzedzi (Bron)"COL_GREY". \n");
+			strcat(spec_about,""COL_RED"¬ª¬ª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw narzedzi (Bron)"COL_GREY". \n");
 			strcat(spec_about," \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 1"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Colt45  \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Desert Eagle \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Winchester M1866 \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Mossberg 500 \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Sawed-off shotgun \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 2"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Mac 10 Ingram \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: TEC-DC9 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 3"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: SPAS-12 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 4"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Hk MP5N \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 5"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Colt45,  \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Desert Eagle \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 6"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Winchester M1866 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 7"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Mossberg 500 \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Sawed-off shotgun \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 8"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: SPAS-12 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 9"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Mac 10 Ingram \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 10"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: TEC-DC9 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 11"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: Hk MP5N \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 12"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: AK-47 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 13"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: AK-47 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 14"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: M4 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 15"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: M4 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 16"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: BAR-10 \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 17"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Naprawa: BAR-10 \n");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"ª "COL_GREEN"Rusznikarstwo"COL_GREY" - SzczegÛ≥y", spec_about,"OK","");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 1"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Colt45  \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Desert Eagle \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Winchester M1866 \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Mossberg 500 \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Sawed-off shotgun \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 2"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Mac 10 Ingram \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: TEC-DC9 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 3"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: SPAS-12 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 4"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Hk MP5N \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 5"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Colt45,  \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Desert Eagle \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 6"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Winchester M1866 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 7"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Mossberg 500 \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Sawed-off shotgun \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 8"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: SPAS-12 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 9"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Mac 10 Ingram \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 10"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: TEC-DC9 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 11"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: Hk MP5N \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 12"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: AK-47 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 13"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: AK-47 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 14"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: M4 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 15"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: M4 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 16"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: BAR-10 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 17"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Naprawa: BAR-10 \n");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"¬ª "COL_GREEN"Rusznikarstwo"COL_GREY" - Szczeg√≥≈Çy", spec_about,"OK","");
 		}
 		case 1://motoryzacja
 		{
-			strcat(spec_about,""COL_RED"ªª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw narzedzi (Pojazd)"COL_GREY". \n");
+			strcat(spec_about,""COL_RED"¬ª¬ª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw narzedzi (Pojazd)"COL_GREY". \n");
 			strcat(spec_about," \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 1"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Prowadzenie niezakodowanych pojazdÛw \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 2"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" MoøliwoúÊ zamykania/otwierania pojazdÛw \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 3"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" MoøliwoúÊ wykopania gracza z pojazdu \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 4"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Diagnostyka pojazdu \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 5"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Remont uk≥adu elektrycznego \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 6"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Remont uk≥adu zasilania \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 7"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Remont uk≥adu smarowania \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 8"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Remont uk≥adu ch≥odzenia \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 9"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Remont uk≥adu korbowego \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 10"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" MoøliwoúÊ podjÍcia prÛby rozkodowania pojazdu \n");
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 11"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Kodowanie pojazdu \n");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"ª "COL_GREEN"Motoryzacja"COL_GREY" - SzczegÛ≥y", spec_about,"OK","");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 1"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Prowadzenie niezakodowanych pojazd√≥w \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 2"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Mo≈ºliwo≈õƒá zamykania/otwierania pojazd√≥w \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 3"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Mo≈ºliwo≈õƒá wykopania gracza z pojazdu \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 4"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Diagnostyka pojazdu \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 5"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Remont uk≈Çadu elektrycznego \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 6"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Remont uk≈Çadu zasilania \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 7"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Remont uk≈Çadu smarowania \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 8"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Remont uk≈Çadu ch≈Çodzenia \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 9"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Remont uk≈Çadu korbowego \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 10"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Mo≈ºliwo≈õƒá podjƒôcia pr√≥by rozkodowania pojazdu \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 11"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Kodowanie pojazdu \n");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"¬ª "COL_GREEN"Motoryzacja"COL_GREY" - Szczeg√≥≈Çy", spec_about,"OK","");
 		}
 		case 2://medycyna
 		{
-			strcat(spec_about,""COL_RED"ªª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw medyczny"COL_GREY". \n");
+			strcat(spec_about,""COL_RED"¬ª¬ª "COL_LIME"Przedmiot specjalizacji:"COL_RED" Zestaw medyczny"COL_GREY". \n");
 			strcat(spec_about," \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 1"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Bandaø \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 1"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Banda≈º \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 2"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Apteczka \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 2"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Apteczka \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 3"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Bandaz elastyczny \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 3"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Bandaz elastyczny \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 4"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie: Duza Apteczka \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 4"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie: Duza Apteczka \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 5"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Uøywanie wszytkich medykamentÛw \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 5"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" U≈ºywanie wszytkich medykament√≥w \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 6"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY"Leczenie 5HP \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 6"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY"Leczenie 5HP \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 7"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Leczenie 10HP \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 7"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Leczenie 10HP \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 8"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Leczenie 20HP \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 8"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Leczenie 20HP \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 9"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Leczenie 80HP \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 9"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Leczenie 80HP \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 10"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop Haps 10 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 10"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop Haps 10 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 11"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop Haps 25 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 11"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop Haps 25 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 12"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop Haps 50 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 12"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop Haps 50 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 13"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop AntiRad 10 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 13"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop AntiRad 10 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 14"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop AntiRad 25 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 14"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop AntiRad 25 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 15"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop AntiRad 50 \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 15"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop AntiRad 50 \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 16"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" Tworzenie: Syrop na wytrzymalosc \n");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 16"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Tworzenie: Syrop na wytrzymalosc \n");
 
-			strcat(spec_about,""COL_LIME"ªª "COL_DBLUE"IloúÊ punktÛw:"COL_RED" 17"COL_GREY": \n");
-			strcat(spec_about,""COL_GREY"ª "COL_EASY" MoøliwoúÊ wybudzenia gracza (jeúli nieprzytomy) \n");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"ª "COL_GREEN"Medycyna"COL_GREY" - SzczegÛ≥y", spec_about,"OK","");
+			strcat(spec_about,""COL_LIME"¬ª¬ª "COL_DBLUE"Ilo≈õƒá punkt√≥w:"COL_RED" 17"COL_GREY": \n");
+			strcat(spec_about,""COL_GREY"¬ª "COL_EASY" Mo≈ºliwo≈õƒá wybudzenia gracza (je≈õli nieprzytomy) \n");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_GREEN"¬ª "COL_GREEN"Medycyna"COL_GREY" - Szczeg√≥≈Çy", spec_about,"OK","");
 		}
 	}
 	return 1;
@@ -1589,7 +1589,7 @@ stock Process_SoundTrack(playerid)
 	}
 	return 1;
 }
-//**************************************************************************************************************wÍdkowanie
+//**************************************************************************************************************wƒôdkowanie
 new fishtimer[MAX_PLAYERS];
 stock StartFish(playerid)
 {
@@ -1642,7 +1642,7 @@ public ProcedureFish(playerid)
 		CreateItemForPlayer(playerid, 80, 1);
 		GiveExp(playerid, 1);
 		LeftNotifyShow(playerid, "Sukces!", "~g~Gratulacje!~w~ Zlowiles rybe!", LN_GREEN);
-		PC_EmulateCommand(playerid, "/me z≥owi≥/a rybÍ.");
+		PC_EmulateCommand(playerid, "/me z≈Çowi≈Ç/a rybƒô.");
 		return 1;
 	}
 	if(GetPVarInt(playerid, "RateFish") == 0)

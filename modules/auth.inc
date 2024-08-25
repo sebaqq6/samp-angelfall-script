@@ -13,13 +13,13 @@ new mQuery[1024];
 stock GetMOTD()
 {
 	new str_motd[2048];
-	strcat(str_motd, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie b³êdy zg³aszaæ administracji! \n");
+	strcat(str_motd, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie bÅ‚Ä™dy zgÅ‚aszaÄ‡ administracji! \n");
 	strcat(str_motd, "Nad czym pracujemy: \n");
-	strcat(str_motd, "» Skrypt questów - 50%% \n");
-	strcat(str_motd, "» Rozszerzenie terenu rozgrywki o Flint County - 10%% \n");
-	strcat(str_motd, "» Akcesoria postaci - 0%% \n");
-	strcat(str_motd, "» Zrzuty - 0%% \n");
-	strcat(str_motd, "» Arena - 0%% \n");
+	strcat(str_motd, "Â» Skrypt questÃ³w - 50%% \n");
+	strcat(str_motd, "Â» Rozszerzenie terenu rozgrywki o Flint County - 10%% \n");
+	strcat(str_motd, "Â» Akcesoria postaci - 0%% \n");
+	strcat(str_motd, "Â» Zrzuty - 0%% \n");
+	strcat(str_motd, "Â» Arena - 0%% \n");
 	strcat(str_motd, "[lista nie jest kompletna] \n");
 	return str_motd;
 }
@@ -27,21 +27,21 @@ stock GetMOTD()
 stock ShowLogin(playerid)  
 {
 	new motd[1024];
-	format(motd, 1024, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie b³êdy zg³aszaæ administracji!\n");
+	format(motd, 1024, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie bÅ‚Ä™dy zgÅ‚aszaÄ‡ administracji!\n");
 	format(motd, 1024, "%s\n", motd);
-	format(temp_string, 512,  "%s"COL_WHITE"Witaj, "COL_BLUE"%s"COL_WHITE"!\n"COL_WHITE"Aby "COL_GREEN"zagraæ"COL_WHITE" musisz siê "COL_BLUE"zalogowaæ"COL_WHITE".", motd, nick(playerid));
-	Dialog_Show(playerid, LOGOWANIE, DIALOG_STYLE_PASSWORD, ""COL_GREEN"»"COL_WHITE" LOGOWANIE - Angel Fall", temp_string, "Zaloguj", "Wyjdz");
+	format(temp_string, 512,  "%s"COL_WHITE"Witaj, "COL_BLUE"%s"COL_WHITE"!\n"COL_WHITE"Aby "COL_GREEN"zagraÄ‡"COL_WHITE" musisz siÄ™ "COL_BLUE"zalogowaÄ‡"COL_WHITE".", motd, nick(playerid));
+	Dialog_Show(playerid, LOGOWANIE, DIALOG_STYLE_PASSWORD, ""COL_GREEN"Â»"COL_WHITE" LOGOWANIE - Angel Fall", temp_string, "Zaloguj", "Wyjdz");
 	return 1;
 }
 
 stock ShowRegister(playerid)  
 {
 	new motd[1024];
-	format(motd, 1024, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie b³êdy zg³aszaæ administracji!\n");
+	format(motd, 1024, ""COL_EASY"Projekt "COL_RED"Angel Fall"COL_EASY" jest jeszcze w fazie BETA! Prosimy wszelkie bÅ‚Ä™dy zgÅ‚aszaÄ‡ administracji!\n");
 	format(motd, 1024, "%s\n", motd);
-	format(temp_string, 512,  "%s"COL_WHITE"Witaj, "COL_BLUE"%s"COL_WHITE"!\n"COL_WHITE"Aby "COL_GREEN"zagraæ"COL_WHITE" musisz siê "COL_BLUE"zarejestrowaæ"COL_WHITE".", motd, nick(playerid));
-	format(temp_string, 512, "%s\n"COL_WHITE"Podaj has³o"COL_RED"(Has³o musi zawieraæ od 4 do 16 znaków.)"COL_WHITE":\n", temp_string);
-	Dialog_Show(playerid, REJESTRACJA, DIALOG_STYLE_INPUT, ""COL_RED"»"COL_WHITE" Rejestracja - Angel Fall", temp_string, "Dalej", "Wyjdz");
+	format(temp_string, 512,  "%s"COL_WHITE"Witaj, "COL_BLUE"%s"COL_WHITE"!\n"COL_WHITE"Aby "COL_GREEN"zagraÄ‡"COL_WHITE" musisz siÄ™ "COL_BLUE"zarejestrowaÄ‡"COL_WHITE".", motd, nick(playerid));
+	format(temp_string, 512, "%s\n"COL_WHITE"Podaj hasÅ‚o"COL_RED"(HasÅ‚o musi zawieraÄ‡ od 4 do 16 znakÃ³w.)"COL_WHITE":\n", temp_string);
+	Dialog_Show(playerid, REJESTRACJA, DIALOG_STYLE_INPUT, ""COL_RED"Â»"COL_WHITE" Rejestracja - Angel Fall", temp_string, "Dalej", "Wyjdz");
 	return 1;
 }
 
@@ -123,11 +123,11 @@ public OnAccountLoad(playerid)
 	GangZoneShowForPlayer(playerid, serwer[gz_hidemap], 0x646464FF);
 	SpawnPlayer(playerid);
 	SyncEQToAmmo(playerid);
-	SendClientMessageEx(playerid, -1, "(("COL_EASY"Zalogowano na postaæ "COL_GREEN"%s "COL_EASY"(UID: %d | Konto: "COL_BLUE"%s"COL_EASY"). Mi³ej rozgrywki!"COL_WHITE"))", nick(playerid), gracz[playerid][UID], gracz[playerid][master_nick]);
+	SendClientMessageEx(playerid, -1, "(("COL_EASY"Zalogowano na postaÄ‡ "COL_GREEN"%s "COL_EASY"(UID: %d | Konto: "COL_BLUE"%s"COL_EASY"). MiÅ‚ej rozgrywki!"COL_WHITE"))", nick(playerid), gracz[playerid][UID], gracz[playerid][master_nick]);
 	new bool:nofade;
 	if(gracz[playerid][AdminLevel])
 	{
-		SendClientMessageEx(playerid, -1, "(("COL_EASY"Posiadasz "COL_GREEN"["COL_RED"%d"COL_GREEN"]"COL_EASY" poziom uprawnieñ. Aby wejœæ na s³u¿bê wpisz: "COL_BLUE"/aduty"COL_WHITE"))", gracz[playerid][AdminLevel]);	
+		SendClientMessageEx(playerid, -1, "(("COL_EASY"Posiadasz "COL_GREEN"["COL_RED"%d"COL_GREEN"]"COL_EASY" poziom uprawnieÅ„. Aby wejÅ›Ä‡ na sÅ‚uÅ¼bÄ™ wpisz: "COL_BLUE"/aduty"COL_WHITE"))", gracz[playerid][AdminLevel]);	
 	}
 	if(gracz[playerid][sobeit_detect])
 	{
@@ -136,7 +136,7 @@ public OnAccountLoad(playerid)
 			nofade = true;
 			Ban_Time(-1, playerid, "Niedozwolone oprogramowanie.", 1095);
 		}
-		else SendClientMessage(playerid, -1, ""COL_RED"[WYKRYCIE]"COL_WHITE" Administratorze, skrypt wykry³ u Ciebie mod s0beit. Pamiêtaj, ¿eby nie u¿ywaæ go do zabawy.");
+		else SendClientMessage(playerid, -1, ""COL_RED"[WYKRYCIE]"COL_WHITE" Administratorze, skrypt wykryÅ‚ u Ciebie mod s0beit. PamiÄ™taj, Å¼eby nie uÅ¼ywaÄ‡ go do zabawy.");
 	}
 	format(temp_string, 128, "~w~Witaj z powrotem~n~~b~%s", nick(playerid));
 	if(!gracz[playerid][WebReg]) GameTextForPlayer(playerid, temp_string, 3000, 1);
@@ -202,7 +202,7 @@ public OnAccountCheck(playerid)
 	}
 	else
 	{
-		Dialog_Show(playerid, WIAD, DIALOG_STYLE_MSGBOX, "Rejestracja - INFO", ""COL_WHITE"Witaj na "COL_GREEN"Angel Fall\n"COL_WHITE"Aby móc graæ na serwerze musisz zarejestrowaæ swoj¹ postaæ przez panel gracza:"COL_GREEN" http://game.angelfall.pl"COL_WHITE".", "OK", "");
+		Dialog_Show(playerid, WIAD, DIALOG_STYLE_MSGBOX, "Rejestracja - INFO", ""COL_WHITE"Witaj na "COL_GREEN"Angel Fall\n"COL_WHITE"Aby mÃ³c graÄ‡ na serwerze musisz zarejestrowaÄ‡ swojÄ… postaÄ‡ przez panel gracza:"COL_GREEN" http://game.angelfall.pl"COL_WHITE".", "OK", "");
 		KickEx(playerid, "Nie znaleziono konta");
 		//ShowRegister(playerid);
 	}
@@ -227,8 +227,8 @@ Dialog:LOGOWANIE(playerid, response, listitem, inputtext[])
 	{
 		SetPVarInt(playerid, "BadPass", GetPVarInt(playerid, "BadPass")+1);
 		if(GetPVarInt(playerid, "BadPass") == 3) return KickEx(playerid, "3/3 bad password.");
-		format(str, 130, ""COL_WHITE"Aby "COL_GREEN"zagraæ"COL_WHITE" musisz siê "COL_BLUE"zalogowaæ"COL_WHITE".\nB³êdnych prób: "COL_RED"%d/3", GetPVarInt(playerid, "BadPass"));
-		Dialog_Show(playerid, LOGOWANIE, DIALOG_STYLE_PASSWORD, ""COL_GREEN"»"COL_WHITE" LOGIN - Angel Fall", str, "Zaloguj", "Wyjdz");
+		format(str, 130, ""COL_WHITE"Aby "COL_GREEN"zagraÄ‡"COL_WHITE" musisz siÄ™ "COL_BLUE"zalogowaÄ‡"COL_WHITE".\nBÅ‚Ä™dnych prÃ³b: "COL_RED"%d/3", GetPVarInt(playerid, "BadPass"));
+		Dialog_Show(playerid, LOGOWANIE, DIALOG_STYLE_PASSWORD, ""COL_GREEN"Â»"COL_WHITE" LOGIN - Angel Fall", str, "Zaloguj", "Wyjdz");
 	}
 	return 1;
 }
@@ -295,7 +295,7 @@ stock ShowBanInfo(playerid, banid, admin[], user[], nadane[], koniec[], powod[],
 {
 	const contstr = 1600;
 	new title[128], content[contstr];
-	format(title, 128, ""COL_GREEN"»"COL_WHITE" BAN INFO"COL_RED"[ID: %d]", banid);
+	format(title, 128, ""COL_GREEN"Â»"COL_WHITE" BAN INFO"COL_RED"[ID: %d]", banid);
 	format(content, contstr, ""COL_GREY"Ban ID:\t\t"COL_RED"%d\n", banid);
 	format(content, contstr, "%s"COL_GREY"Admin:\t\t"COL_RED"%s\n", content, admin);
 	if(compare(user, "NULL"))
@@ -307,14 +307,14 @@ stock ShowBanInfo(playerid, banid, admin[], user[], nadane[], koniec[], powod[],
 		format(content, contstr, "%s"COL_GREY"Konto:\t\t"COL_YELLOW"%s\n", content, user);
 	}
 	format(content, contstr, "%s"COL_GREY"IP:\t\t"COL_YELLOW"%s\n", content, playerip(playerid));
-	format(content, contstr, "%s"COL_GREY"Powód:\t"COL_ORANGE"%s\n", content, powod);
+	format(content, contstr, "%s"COL_GREY"PowÃ³d:\t"COL_ORANGE"%s\n", content, powod);
 	format(content, contstr, "%s"COL_GREY"Data nadania:\t"COL_BLUE"%s\n", content, nadane);
 	format(content, contstr, "%s"COL_GREY"Wygasa:\t"COL_BLUE"%s\n", content, koniec);
 	new day_s, hour_s, minute_s, sec_s;
 	SecToTime(dokonca, day_s, hour_s, minute_s, sec_s);
-	format(content, contstr, "%s"COL_GREY"Pozosta³o:\t"COL_GREEN"%dd, %dh, %dm, %ds\n", content,  day_s, hour_s, minute_s, sec_s);
+	format(content, contstr, "%s"COL_GREY"PozostaÅ‚o:\t"COL_GREEN"%dd, %dh, %dm, %ds\n", content,  day_s, hour_s, minute_s, sec_s);
 	format(content, contstr, "%s"COL_GREY"Napisz apelacje na "COL_GREEN"forum.angelfall.pl\n", content); 
-	format(content, contstr, "%s"COL_GREY"Jeœli chcesz apelowaæ "COL_YELLOW"wciœnij F8(screenshoot jest potrzebny!).\n", content);
+	format(content, contstr, "%s"COL_GREY"JeÅ›li chcesz apelowaÄ‡ "COL_YELLOW"wciÅ›nij F8(screenshoot jest potrzebny!).\n", content);
 	ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, title, content, "Zamknij", "");
 	KickEx(playerid, "Aktywny ban.");
 	return 1;
@@ -476,7 +476,7 @@ Dialog:REJESTRACJA(playerid, response, listitem, inputtext[])
 		case 4..16:
 		{
 			gracz[playerid][Haslo] = udb_hash(inputtext);
-			Dialog_Show(playerid, PLEC, DIALOG_STYLE_LIST, ""COL_RED"»"COL_WHITE" Rejestracja - P³eæ postaci", ""COL_RED"»"COL_WHITE" Mê¿czyzna\n"COL_RED"»"COL_WHITE" Kobieta", "Dalej", "Wyjdz");
+			Dialog_Show(playerid, PLEC, DIALOG_STYLE_LIST, ""COL_RED"Â»"COL_WHITE" Rejestracja - PÅ‚eÄ‡ postaci", ""COL_RED"Â»"COL_WHITE" MÄ™Å¼czyzna\n"COL_RED"Â»"COL_WHITE" Kobieta", "Dalej", "Wyjdz");
 		}
 		default:
 		{
@@ -491,15 +491,15 @@ Dialog:PLEC(playerid, response, listitem, inputtext[])
 	if(!response) return KickEx(playerid, "Click 'Quit'.");
 	if(listitem == 0)
 	{
-		SendClientMessage(playerid, -1, "(("COL_GREY"P³eæ postaci: "COL_GREEN"Mê¿czyzna"COL_WHITE".))");
+		SendClientMessage(playerid, -1, "(("COL_GREY"PÅ‚eÄ‡ postaci: "COL_GREEN"MÄ™Å¼czyzna"COL_WHITE".))");
 		gracz[playerid][Plec] = 1;
-		Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
+		Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"Â»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
 	} 
 	else 
 	{
-		SendClientMessage(playerid, -1, "(("COL_GREY"P³eæ postaci: "COL_GREEN"Kobieta"COL_WHITE".))");
+		SendClientMessage(playerid, -1, "(("COL_GREY"PÅ‚eÄ‡ postaci: "COL_GREEN"Kobieta"COL_WHITE".))");
 		gracz[playerid][Plec] = 2;
-		Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
+		Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"Â»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
 	}
 	return 1;
 }
@@ -515,11 +515,11 @@ Dialog:WIEK(playerid, response, listitem, inputtext[])
 		{
 			gracz[playerid][Wiek] = age;
 			SendClientMessageEx(playerid, -1, "(("COL_GREY"Wiek Twojej postaci: "COL_GREEN"%d"COL_WHITE".))", gracz[playerid][Wiek]);
-			Dialog_Show(playerid, KARNACJA, DIALOG_STYLE_LIST, ""COL_RED"»"COL_WHITE"Rejestracja - Karnacja postaci", ""COL_RED"»"COL_WHITE" Bia³a\n"COL_RED"»"COL_WHITE" ¯ó³ta\n"COL_RED"»"COL_WHITE" Czarna", "Dalej", "Wyjdz");
+			Dialog_Show(playerid, KARNACJA, DIALOG_STYLE_LIST, ""COL_RED"Â»"COL_WHITE"Rejestracja - Karnacja postaci", ""COL_RED"Â»"COL_WHITE" BiaÅ‚a\n"COL_RED"Â»"COL_WHITE" Å»Ã³Å‚ta\n"COL_RED"Â»"COL_WHITE" Czarna", "Dalej", "Wyjdz");
 		}
 		default:
 		{
-			Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
+			Dialog_Show(playerid, WIEK, DIALOG_STYLE_INPUT, ""COL_RED"Â»"COL_WHITE" Rejestracja - Wiek postaci", "Podaj wiek"COL_RED"(16-60)"COL_WHITE":", "Dalej", "Wyjdz");
 		}
 	}
 	return 1;
@@ -532,13 +532,13 @@ Dialog:KARNACJA(playerid, response, listitem, inputtext[])
 	{
 		case 0:
 		{
-			SendClientMessageEx(playerid, -1, "(("COL_GREY"Karnacja Twojej postaci: "COL_GREEN"Bia³a"COL_WHITE".))");
+			SendClientMessageEx(playerid, -1, "(("COL_GREY"Karnacja Twojej postaci: "COL_GREEN"BiaÅ‚a"COL_WHITE".))");
 			gracz[playerid][Karnacja] = 1;
 			WybierzSkin(playerid);
 		}
 		case 1:
 		{
-			SendClientMessageEx(playerid, -1, "(("COL_GREY"Karnacja Twojej postaci: "COL_GREEN"¯ó³ta"COL_WHITE".))");
+			SendClientMessageEx(playerid, -1, "(("COL_GREY"Karnacja Twojej postaci: "COL_GREEN"Å»Ã³Å‚ta"COL_WHITE".))");
 			gracz[playerid][Karnacja] = 2;
 			WybierzSkin(playerid);
 		}
@@ -555,7 +555,7 @@ Dialog:KARNACJA(playerid, response, listitem, inputtext[])
 Dialog:REGEND(playerid, response, listitem, inputtext[])
 {
 	if(!response) return KickEx(playerid, "Click 'Quit'.");
-	SendClientMessageEx(playerid, -1, "(("COL_GREY"Twoja postaæ zosta³a stworzona."COL_GREEN" Zaloguj siê"COL_GREY"!"COL_WHITE"))");
+	SendClientMessageEx(playerid, -1, "(("COL_GREY"Twoja postaÄ‡ zostaÅ‚a stworzona."COL_GREEN" Zaloguj siÄ™"COL_GREY"!"COL_WHITE"))");
 	mq_format("INSERT INTO `Konta` (`Nick`,`Plec`,`Wiek`,`Karnacja`,`Skin`,`Haslo`,`WebReg`) VALUES ('%s','%d','%d','%d','%d','%d','1');", nick(playerid, true), gracz[playerid][Plec], gracz[playerid][Wiek], gracz[playerid][Karnacja], gracz[playerid][Skin], gracz[playerid][Haslo]);
 	mq_send("QueryRegisterEnd", "d", playerid);
 	return 1;

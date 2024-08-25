@@ -14,13 +14,13 @@ stock Market_Init()
 	CreatePickup(1314, 1, -1953.7632,-1607.4365,2306.4160); // pickup urbanka
 	CreatePickup(1314, 1, -1956.0128,-1597.4810,2306.4160); // pickup zlom
 	CreatePickup(1314, 1, -1952.0747,-1614.7474,2306.4160); // pickup daily item
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Luis"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1955.4775,-1586.9419,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Andrew"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1954.2454,-1593.2649,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Emmet"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1951.8801,-1600.9913,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Rudolf"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1949.1616,-1610.1881,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Rachel"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1953.7632,-1607.4365,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Chuck"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1956.0128,-1597.4810,2306.4160, 10.0);
-	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Ashley"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, -1952.0747,-1614.7474,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Luis"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1955.4775,-1586.9419,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Andrew"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1954.2454,-1593.2649,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Emmet"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1951.8801,-1600.9913,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Rudolf"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1949.1616,-1610.1881,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Rachel"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1953.7632,-1607.4365,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Chuck"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1956.0128,-1597.4810,2306.4160, 10.0);
+	CreateDynamic3DTextLabel(""COL_RED"["COL_GREEN"Ashley"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, -1952.0747,-1614.7474,2306.4160, 10.0);
 	return 1;
 }
 
@@ -102,69 +102,69 @@ new Ashley[][4] =
 stock market_Enter(playerid)
 {
 	new str_market[2048];
-	format(str_market, 2048, "Nazwa przedmiotu\tIloœæ\tCena\tAkcja");
+	format(str_market, 2048, "Nazwa przedmiotu\tIloÅ›Ä‡\tCena\tAkcja");
 	if(IsPlayerInRangeOfPoint(playerid, 1.0, -1955.4775,-1586.9419,2306.4160)) // pickup warzywko
 	{
 		for(new m; m < sizeof(Luis); m++)
 		{
-			if(Luis[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Luis[m][0]], Luis[m][1], Luis[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Luis[m][0]], Luis[m][1], Luis[m][2]);
+			if(Luis[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Luis[m][0]], Luis[m][1], Luis[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Luis[m][0]], Luis[m][1], Luis[m][2]);
 		}
-		Dialog_Show(playerid, LUIS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Luis", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, LUIS, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Luis", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1954.2454,-1593.2649,2306.4160)) // pickup miesko
 	{
 		for(new m; m < sizeof(Andrew); m++)
 		{
-			if(Andrew[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Andrew[m][0]], Andrew[m][1], Andrew[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Andrew[m][0]], Andrew[m][1], Andrew[m][2]);
+			if(Andrew[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Andrew[m][0]], Andrew[m][1], Andrew[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Andrew[m][0]], Andrew[m][1], Andrew[m][2]);
 		}
-		Dialog_Show(playerid, ANDREW, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Andrew", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, ANDREW, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Andrew", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1951.8801,-1600.9913,2306.4160)) // pickup bron
 	{
 		for(new m; m < sizeof(Emmet); m++)
 		{
-			if(Emmet[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Emmet[m][0]], Emmet[m][1], Emmet[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Emmet[m][0]], Emmet[m][1], Emmet[m][2]);
+			if(Emmet[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Emmet[m][0]], Emmet[m][1], Emmet[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Emmet[m][0]], Emmet[m][1], Emmet[m][2]);
 		}
-		Dialog_Show(playerid, EMMET, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Emmet", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, EMMET, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Emmet", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1949.1616,-1610.1881,2306.4160)) // pickup medykanty
 	{
 		for(new m; m < sizeof(Rudolf); m++)
 		{
-			if(Rudolf[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Rudolf[m][0]], Rudolf[m][1], Rudolf[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Rudolf[m][0]], Rudolf[m][1], Rudolf[m][2]);
+			if(Rudolf[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Rudolf[m][0]], Rudolf[m][1], Rudolf[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Rudolf[m][0]], Rudolf[m][1], Rudolf[m][2]);
 		}
-		Dialog_Show(playerid, RUDOLF, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Rudolf", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, RUDOLF, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Rudolf", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1953.7632,-1607.4365,2306.4160)) // pickup urbanka
 	{
 		for(new m; m < sizeof(Rachel); m++)
 		{
-			if(Rachel[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Rachel[m][0]], Rachel[m][1], Rachel[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Rachel[m][0]], Rachel[m][1], Rachel[m][2]);
+			if(Rachel[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Rachel[m][0]], Rachel[m][1], Rachel[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Rachel[m][0]], Rachel[m][1], Rachel[m][2]);
 		}
-		Dialog_Show(playerid, RACHEL, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Rachel", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, RACHEL, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Rachel", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1956.0128,-1597.4810,2306.4160)) // pickup zlom
 	{
 		for(new m; m < sizeof(Chuck); m++)
 		{
-			if(Chuck[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Chuck[m][0]], Chuck[m][1], Chuck[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Chuck[m][0]], Chuck[m][1], Chuck[m][2]);
+			if(Chuck[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Chuck[m][0]], Chuck[m][1], Chuck[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Chuck[m][0]], Chuck[m][1], Chuck[m][2]);
 		}
-		Dialog_Show(playerid, CHUCK, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Chuck", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, CHUCK, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Chuck", str_market, "Wybierz", "Anuluj");
 	}
 	else if(IsPlayerInRangeOfPoint(playerid, 1.0, -1952.0747,-1614.7474,2306.4160)) // pickup daily item
 	{
 		for(new m; m < sizeof(Ashley); m++)
 		{
-			if(Ashley[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Ashley[m][0]], Ashley[m][1], Ashley[m][2]);
-			else format(str_market, 2048, "%s\n"COL_BROWN"» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"¿etonów\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Ashley[m][0]], Ashley[m][1], Ashley[m][2]);
+			if(Ashley[m][3]) format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_DBLUE"Sprzedaj"COL_RED"]", str_market, ItemName[Ashley[m][0]], Ashley[m][1], Ashley[m][2]);
+			else format(str_market, 2048, "%s\n"COL_BROWN"Â» "COL_EASY"%s\t"COL_GREEN"%d "COL_GREY"sztuk\t"COL_CYAN"%d "COL_GREY"Å¼etonÃ³w\t"COL_RED"["COL_ORANGE"Kup"COL_RED"]", str_market, ItemName[Ashley[m][0]], Ashley[m][1], Ashley[m][2]);
 		}
-		Dialog_Show(playerid, ASHLEY, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» "COL_GREY"Handel z: "COL_LIME"Ashley", str_market, "Wybierz", "Anuluj");
+		Dialog_Show(playerid, ASHLEY, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» "COL_GREY"Handel z: "COL_LIME"Ashley", str_market, "Wybierz", "Anuluj");
 	}
 	return 1;
 }

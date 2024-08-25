@@ -1,7 +1,7 @@
 stock Init_Objects()
 {
 	new custom_object;
-	//flint conuty - usuniêcie pól
+	//flint conuty - usuniÄ™cie pÃ³l
 	custom_object = CreateDynamicObject(17122, -211.95309, -1543.38281, 4.4920, 0.00000, 0.00000, 0.00000, _, _, _, 700.0, 700.0);
 	SetDynamicObjectMaterial(custom_object, 0, 17122, "cuntwlandse", "grasstype4");
 	custom_object = CreateDynamicObject(17119, -226.96091, -1253.90625, 7.95920, 0.00000, 0.00000, 0.00000, _, _, _, 700.0, 700.0);
@@ -11,7 +11,7 @@ stock Init_Objects()
 	LoadObjectsFromDB();
 	return 1;
 }
-//Funkcja odpowiedzialna za tworzenie obiektów
+//Funkcja odpowiedzialna za tworzenie obiektÃ³w
 stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float:korZ, oworldid = 0, ointeriorid = 0)
 {
 	static render_value = 300;
@@ -51,7 +51,7 @@ stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float
 	{
 		render_value = 100;
 	}
-	else if(mmm == 5291 || mmm == 13591 || mmm == 18248 || mmm == 4571 || mmm == 19486)//z³omowisko
+	else if(mmm == 5291 || mmm == 13591 || mmm == 18248 || mmm == 4571 || mmm == 19486)//zÅ‚omowisko
 	{
 		priority = 1;
 		render_value = 450;
@@ -61,12 +61,12 @@ stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float
 		priority = 1;
 		render_value = 500;
 	}
-	else if(mmm == 3244)//s³upy
+	else if(mmm == 3244)//sÅ‚upy
 	{
 		priority = 1;
 		render_value = 500;
 	}
-	else if(mmm == 12847 || mmm == 7269)//baza za³adunkowa, flint county
+	else if(mmm == 12847 || mmm == 7269)//baza zaÅ‚adunkowa, flint county
 	{
 		priority = 1;
 		render_value = 500;
@@ -76,7 +76,7 @@ stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float
 		priority = 1;
 		render_value = 500;
 	}
-	else if(mmm == 3279)//wojskowe wie¿yczki
+	else if(mmm == 3279)//wojskowe wieÅ¼yczki
 	{
 		priority = 1;
 		render_value = 500;
@@ -86,7 +86,7 @@ stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float
 		priority = 0;
 		render_value = 500;
 	}
-	/*if(GetDistanceBetweenPoints(koX, koY, koZ, -2466.6572,-2493.2800,2309.2158) < 50.0)//wyci¹gacz obiektów
+	/*if(GetDistanceBetweenPoints(koX, koY, koZ, -2466.6572,-2493.2800,2309.2158) < 50.0)//wyciÄ…gacz obiektÃ³w
 	{
 		if(mmm == 2629 || mmm == 2913 || mmm == 2631 || mmm == 3071 || mmm == 3072 || mmm == 2630 || mmm == 2627)
 		{
@@ -98,7 +98,7 @@ stock Object(mmm, Float:koX, Float:koY, Float:koZ, Float:korX, Float:korY, Float
 	if(koZ < 1000.0) CA_CreateObject(mmm, koX, koY, koZ, korX, korY, korZ);
 	return CreateDynamicObject(mmm, koX, koY, koZ, korX, korY, korZ, oworldid, ointeriorid, -1, render_value, render_value, -1, priority);
 }
-//*********************************************************************************************************SYSTEM DYNAMICZNYCH OBIEKTÓW
+//*********************************************************************************************************SYSTEM DYNAMICZNYCH OBIEKTÃ“W
 //CALLBACK ODPOWIEDZIALNY ZA EDYCJE
 public OnPlayerEditDynamicObject(playerid, objectid, response, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz)
 {
@@ -112,7 +112,7 @@ public OnPlayerEditDynamicObject(playerid, objectid, response, Float:x, Float:y,
 		{
 			if(gracz[playerid][MapperLvl] == 1 && IsPlayerInBaseArea(playerid) && IsPointInBaseArea(playerid, x, y, z) && ObjectInfo[uid][oGrupa] == gracz[playerid][OrgID])
 			{
-				// Przenieœ obiekt na pozycjê
+				// PrzenieÅ› obiekt na pozycjÄ™
 				SetDynamicObjectPos(objectid, x, y, z);
 				SetDynamicObjectRot(objectid, rx, ry, rz);
 				// Aktualizowanie zmiennych
@@ -124,14 +124,14 @@ public OnPlayerEditDynamicObject(playerid, objectid, response, Float:x, Float:y,
 				ObjectInfo[uid][oRZ] = rz;
 				// Zapisywanie obiektu
 				SaveObject(uid);
-				// Zakoñcz edycjê obiektu
+				// ZakoÅ„cz edycjÄ™ obiektu
 				PlayerEditObject[playerid] = 0;
-				// Wyœlij informacjê dla gracza
+				// WyÅ›lij informacjÄ™ dla gracza
 				LeftNotifyShow(playerid, "Sukces!", "Obiekt zostal ~g~zapisany~w~.", LN_GREEN);
 			}
 			else if(gracz[playerid][MapperLvl] == 2 && ObjectInfo[uid][oOwner] == GetPlayerUID(playerid))
 			{
-				// Przenieœ obiekt na pozycjê
+				// PrzenieÅ› obiekt na pozycjÄ™
 				SetDynamicObjectPos(objectid, x, y, z);
 				SetDynamicObjectRot(objectid, rx, ry, rz);
 				// Aktualizowanie zmiennych
@@ -143,14 +143,14 @@ public OnPlayerEditDynamicObject(playerid, objectid, response, Float:x, Float:y,
 				ObjectInfo[uid][oRZ] = rz;
 				// Zapisywanie obiektu
 				SaveObject(uid);
-				// Zakoñcz edycjê obiektu
+				// ZakoÅ„cz edycjÄ™ obiektu
 				PlayerEditObject[playerid] = 0;
-				// Wyœlij informacjê dla gracza
+				// WyÅ›lij informacjÄ™ dla gracza
 				LeftNotifyShow(playerid, "Sukces!", "Obiekt zostal ~g~zapisany~w~.", LN_GREEN);
 			}
 			else if(gracz[playerid][MapperLvl] == 3)
 			{
-				// Przenieœ obiekt na pozycjê
+				// PrzenieÅ› obiekt na pozycjÄ™
 				SetDynamicObjectPos(objectid, x, y, z);
 				SetDynamicObjectRot(objectid, rx, ry, rz);
 				// Aktualizowanie zmiennych
@@ -162,15 +162,15 @@ public OnPlayerEditDynamicObject(playerid, objectid, response, Float:x, Float:y,
 				ObjectInfo[uid][oRZ] = rz;
 				// Zapisywanie obiektu
 				SaveObject(uid);
-				// Zakoñcz edycjê obiektu
+				// ZakoÅ„cz edycjÄ™ obiektu
 				PlayerEditObject[playerid] = 0;
-				// Wyœlij informacjê dla gracza
+				// WyÅ›lij informacjÄ™ dla gracza
 				LeftNotifyShow(playerid, "Sukces!", "Obiekt zostal ~g~zapisany~w~.", LN_GREEN);
 			}
 			else
 			{
 				DeleteObject(uid);
-				Error(playerid, "Mo¿esz budowaæ tylko na terenie bazy.");
+				Error(playerid, "MoÅ¼esz budowaÄ‡ tylko na terenie bazy.");
 				PlayerEditObject[playerid] = 0;
 			}
 		}
@@ -181,8 +181,8 @@ public OnPlayerSelectDynamicObject(playerid, objectid, modelid, Float:x, Float:y
 {
 	new searchid = GetObjectIndex(objectid);
 	gracz[playerid][MapperLvl] = GetMapperPremGroup(playerid);
-	if(!searchid) return Error(playerid, "Tego obiektu nie da siê edytowaæ.");
-	if(ObjectInfo[searchid][oBlock] == 1) return Error(playerid, "Ten obiekt jest zablokowany. Nie mo¿esz go edytowaæ.");
+	if(!searchid) return Error(playerid, "Tego obiektu nie da siÄ™ edytowaÄ‡.");
+	if(ObjectInfo[searchid][oBlock] == 1) return Error(playerid, "Ten obiekt jest zablokowany. Nie moÅ¼esz go edytowaÄ‡.");
 	if(gracz[playerid][MapperLvl] == 1 && IsPlayerInBaseArea(playerid) && IsPointInBaseArea(playerid, x, y, z) && ObjectInfo[searchid][oGrupa] == gracz[playerid][OrgID])
 	{
 		PlayerEditObject[playerid] = searchid;
@@ -204,11 +204,11 @@ public OnPlayerSelectDynamicObject(playerid, objectid, modelid, Float:x, Float:y
 	else
 	{
 		PlayerEditObject[playerid] = 0;
-		Error(playerid, "Brak uprawnieñ.");
+		Error(playerid, "Brak uprawnieÅ„.");
 	}
 	return 1;
 }
-//³adowanie obiektów z bazy
+//Å‚adowanie obiektÃ³w z bazy
 stock LoadObjectsFromDB()
 {
 	mysql_pquery(MySQL, "SELECT * FROM `Obiekty`", "LoadObjectDataReceived","");
@@ -257,11 +257,11 @@ public LoadObjectDataReceived()
 		}
 	}
 	fclose(handle);
-	printf("[LOAD] Wczytano %d obiektów z bazy danych.", i);
+	printf("[LOAD] Wczytano %d obiektÃ³w z bazy danych.", i);
 	LoadTexture();
 	return 1;
 }
-//£adowanie tekstur z bazy danych
+//Åadowanie tekstur z bazy danych
 stock LoadTexture()
 {
 	mysql_tquery(MySQL, "SELECT * FROM `Obiekty_textury`","LoadTextureDataReceived","");
@@ -295,7 +295,7 @@ public LoadTextureDataReceived()
 	LoadMaterialText();
 	return 1;
 }
-//£adowanie przerabiania obiektów na napisy...
+//Åadowanie przerabiania obiektÃ³w na napisy...
 stock LoadMaterialText()
 {
 	mysql_tquery(MySQL, "SELECT * FROM `Obiekty_text`","LoadMaterialTextDataReceived","");
@@ -491,19 +491,19 @@ stock GetMapperPremGroup(playerid)
 	else wynik = gracz[playerid][MapperLvl];
 	return wynik;
 }
-//********************************************************************************************************************************KOMENDY DYNAMICZNEGO SYSTEMU OBIEKTÓW
+//********************************************************************************************************************************KOMENDY DYNAMICZNEGO SYSTEMU OBIEKTÃ“W
 CMD:mduty(playerid, params[])
 {
 	if(gracz[playerid][admin_duty] < 1) return 0;
 	if(gracz[playerid][MapperLvl] == 0)
 	{
 		gracz[playerid][MapperLvl] = 2;
-		SendClientMessage(playerid, COLOR_LIGHTGREEN, "[M] "COL_GREEN"Zalogowa³eœ"COL_WHITE" siê na Mapper Duty.");
+		SendClientMessage(playerid, COLOR_LIGHTGREEN, "[M] "COL_GREEN"ZalogowaÅ‚eÅ›"COL_WHITE" siÄ™ na Mapper Duty.");
 	}
 	else
 	{
 		gracz[playerid][MapperLvl] = 0;
-		SendClientMessage(playerid, COLOR_LIGHTGREEN, "[M] "COL_RED"Wylogowa³eœ"COL_WHITE" siê na Mapper Duty.");
+		SendClientMessage(playerid, COLOR_LIGHTGREEN, "[M] "COL_RED"WylogowaÅ‚eÅ›"COL_WHITE" siÄ™ na Mapper Duty.");
 	}
 	return 1;
 }
@@ -516,7 +516,7 @@ new mmc_objects[] =
 
 CMD:mmc(playerid, params[])
 {
-	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieñ.");
+	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieÅ„.");
 	ShowModelSelectionMenuEx(playerid, mmc_objects, sizeof(mmc_objects), "Obiekty postapo", MSEL_GOBJECTS, _, _, 30.0);
 
 	return 1;
@@ -524,20 +524,20 @@ CMD:mmc(playerid, params[])
 
 CMD:mtool(playerid, params[])
 {
-	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieñ.");
+	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieÅ„.");
 	new str_mtool[1024];
-	strcat(str_mtool, ""COL_RED"» "COL_GREY"Ods³oñ mapê i minimapê\n");
-	strcat(str_mtool, ""COL_RED"» "COL_GREY"Ustaw sobie dzieñ i ³adn¹ pogodê\n");
-	strcat(str_mtool, ""COL_RED"» "COL_GREY"Ustaw sobie noc i ³adn¹ pogodê\n");
-	strcat(str_mtool, ""COL_RED"» "COL_GREY"Ustaw oryginaln¹ pogodê\n");
-	strcat(str_mtool, ""COL_RED"» "COL_GREY"Jetpack\n");
-	Dialog_Show(playerid, MTOOL, DIALOG_STYLE_LIST, ""COL_RED"» "COL_BLUE"Narzêdzia mappera", str_mtool, "Wybierz", "Anuluj");
+	strcat(str_mtool, ""COL_RED"Â» "COL_GREY"OdsÅ‚oÅ„ mapÄ™ i minimapÄ™\n");
+	strcat(str_mtool, ""COL_RED"Â» "COL_GREY"Ustaw sobie dzieÅ„ i Å‚adnÄ… pogodÄ™\n");
+	strcat(str_mtool, ""COL_RED"Â» "COL_GREY"Ustaw sobie noc i Å‚adnÄ… pogodÄ™\n");
+	strcat(str_mtool, ""COL_RED"Â» "COL_GREY"Ustaw oryginalnÄ… pogodÄ™\n");
+	strcat(str_mtool, ""COL_RED"Â» "COL_GREY"Jetpack\n");
+	Dialog_Show(playerid, MTOOL, DIALOG_STYLE_LIST, ""COL_RED"Â» "COL_BLUE"NarzÄ™dzia mappera", str_mtool, "Wybierz", "Anuluj");
 	return 1;
 }
 
 Dialog:MTOOL(playerid, response, listitem, inputtext[])
 {
-	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieñ.");
+	if(gracz[playerid][MapperLvl] < 2) return Error(playerid, "Brak uprawnieÅ„.");
 	if(!response) return 1;
 	SendClientMessageEx(playerid, -1, ""COL_RED"(("COL_EASY"Wybrano "COL_GREY"%s"COL_RED"))", inputtext);
 	switch(listitem)
@@ -570,13 +570,13 @@ Dialog:MTOOL(playerid, response, listitem, inputtext[])
 CMD:mc(playerid, params[])
 {
 	gracz[playerid][MapperLvl] = GetMapperPremGroup(playerid);
-	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieñ.");
+	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieÅ„.");
 	if(PlayerEditObject[playerid]) return Error(playerid, "W tej chwili edytujesz inny obiekt.");
-	if(CountObjectsFromDB() >= MAX_OBJECTS) return Error(playerid, "Limit obiektów na serwerze przekroczony!");
+	if(CountObjectsFromDB() >= MAX_OBJECTS) return Error(playerid, "Limit obiektÃ³w na serwerze przekroczony!");
 	new model;
-	if(sscanf(params, "d", model)) return SendClientMessage(playerid, -1, "U¯YJ: /mc [idobiektu]");
-	if(model < 616) return Error(playerid, "B³êdny model.");
-	if(!BaseObjectIsAllowed(model) && gracz[playerid][MapperLvl] == 1) return Error(playerid, "Dostêpne obiekty grup znajdziesz pod "COL_BLUE"/gmc");
+	if(sscanf(params, "d", model)) return SendClientMessage(playerid, -1, "UÅ»YJ: /mc [idobiektu]");
+	if(model < 616) return Error(playerid, "BÅ‚Ä™dny model.");
+	if(!BaseObjectIsAllowed(model) && gracz[playerid][MapperLvl] == 1) return Error(playerid, "DostÄ™pne obiekty grup znajdziesz pod "COL_BLUE"/gmc");
 	new vw = GetPlayerVirtualWorld(playerid);
 	new interior = GetPlayerInterior(playerid);
 	new Float:Pos[3]; // Definiowanie pozycji
@@ -584,21 +584,21 @@ CMD:mc(playerid, params[])
 	GetPlayerPos(playerid, Pos[0], Pos[1], Pos[2]);
 	if(gracz[playerid][MapperLvl] >= 2)
 	{
-		//if(CountObjectsCreatedByPlayer(playerid) >= 500) return SendClientMessage(playerid, -1, "Przekroczona iloœæ stworzonych obiektów(300) dla Ciebie!");
+		//if(CountObjectsCreatedByPlayer(playerid) >= 500) return SendClientMessage(playerid, -1, "Przekroczona iloÅ›Ä‡ stworzonych obiektÃ³w(300) dla Ciebie!");
 		// Tworzenie obiektu
 		new uid = AddObject(model, 0 - gracz[playerid][MapperLvl], gracz[playerid][UID], vw, interior, Pos[0], Pos[1] + 2.0, Pos[2], 0.0, 0.0, 0.0);
 		// Definiowanie zmiennych
 		PlayerEditObject[playerid] = uid;
 		EditDynamicObject(playerid, ObjectInfo[uid][oObject]);///
 		// Informacja o komendach dla gracza
-		SendClientMessageEx(playerid, -1, ""COL_RED"(("COL_EASY"Stworzono obiekt: %d | To twój: %d obiekt | UID: %d"COL_RED"))", model, CountObjectsCreatedByPlayer(playerid), PlayerEditObject[playerid]);
-		SendClientMessage(playerid, -1, "(("COL_GREY"Wskazówka: Wciœnij spacjê, aby móc manewrowaæ kamer¹"COL_WHITE"))");
+		SendClientMessageEx(playerid, -1, ""COL_RED"(("COL_EASY"Stworzono obiekt: %d | To twÃ³j: %d obiekt | UID: %d"COL_RED"))", model, CountObjectsCreatedByPlayer(playerid), PlayerEditObject[playerid]);
+		SendClientMessage(playerid, -1, "(("COL_GREY"WskazÃ³wka: WciÅ›nij spacjÄ™, aby mÃ³c manewrowaÄ‡ kamerÄ…"COL_WHITE"))");
 		// Aktualizowanie pozycji
 		Streamer_Update(playerid);
 	}
 	else if(gracz[playerid][MapperLvl] == 1 && IsPlayerInBaseArea(playerid))
 	{
-		if(GetObjectCreatedPerGroup(playerid) >= 100) return Error(playerid, "Limit obiektów przekroczony (100 max).");
+		if(GetObjectCreatedPerGroup(playerid) >= 100) return Error(playerid, "Limit obiektÃ³w przekroczony (100 max).");
 		// Tworzenie obiektu
 		new uid = AddObject(model, gracz[playerid][OrgID], GetPlayerUID(playerid), vw, interior, Pos[0], Pos[1] + 2.0, Pos[2], 0.0, 0.0, 0.0);
 		// Definiowanie zmiennych
@@ -606,27 +606,27 @@ CMD:mc(playerid, params[])
 		EditDynamicObject(playerid, ObjectInfo[uid][oObject]);
 		// Informacja o komendach dla gracza
 		SendClientMessageEx(playerid, -1, ""COL_RED"(("COL_EASY"Stworzono obiekt: %d | "COL_RED"%d"COL_GREY"/"COL_GREEN"500"COL_EASY" obiekt | UID: %d"COL_RED"))", model, GetObjectCreatedPerGroup(playerid), PlayerEditObject[playerid]);
-		SendClientMessage(playerid, -1, "(("COL_GREY"Wskazówka: Wciœnij spacjê, aby móc manewrowaæ kamer¹"COL_WHITE"))");
+		SendClientMessage(playerid, -1, "(("COL_GREY"WskazÃ³wka: WciÅ›nij spacjÄ™, aby mÃ³c manewrowaÄ‡ kamerÄ…"COL_WHITE"))");
 		// Aktualizowanie pozycji
 		Streamer_Update(playerid);
 	}
 	else
 	{
-		Error(playerid, "Mo¿esz budowaæ tylko na terenie bazy.");
+		Error(playerid, "MoÅ¼esz budowaÄ‡ tylko na terenie bazy.");
 	}
 	return 1;
 }
 CMD:msel(playerid, params[])
 {
 	gracz[playerid][MapperLvl] = GetMapperPremGroup(playerid);
-	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieñ.");
+	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieÅ„.");
 	if(PlayerEditObject[playerid]) return Error(playerid, "W tej chwili edytujesz inny obiekt.");
 	SelectObject(playerid);
 	return 1;
 }
 CMD:mdel(playerid, params[])
 {
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
 	// Pobieranie ID obiektu
 	// Usuwanie obiektu
 	DeleteObject(PlayerEditObject[playerid]);
@@ -640,10 +640,10 @@ CMD:mdel(playerid, params[])
 CMD:mcopy(playerid, params[])
 {
 	gracz[playerid][MapperLvl] = GetMapperPremGroup(playerid);
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
-	if(CountObjectsFromDB() > MAX_OBJECTS) return Error(playerid, "Limit obiektów na serwerze przekroczony!");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
+	if(CountObjectsFromDB() > MAX_OBJECTS) return Error(playerid, "Limit obiektÃ³w na serwerze przekroczony!");
 	new objectid = PlayerEditObject[playerid];
-	new vw = GetPlayerVirtualWorld(playerid); // Definiowanie œwiata
+	new vw = GetPlayerVirtualWorld(playerid); // Definiowanie Å›wiata
 	new interior = GetPlayerInterior(playerid); // Definiowanie interior
 	new Float:Pos[3]; // Definiowanie pozycji
 	new Float:Rot[3]; // Definiowanie pozycji
@@ -672,10 +672,10 @@ CMD:mcopy(playerid, params[])
 CMD:mrx(playerid, params[])
 {
 	new Float: pos;
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
 	if(sscanf(params, "f", pos))
 	{
-		SendClientMessage(playerid, -1, "U¯YJ: /mrx [rotacja X]");
+		SendClientMessage(playerid, -1, "UÅ»YJ: /mrx [rotacja X]");
 		return 1;
 	}
 	else
@@ -702,10 +702,10 @@ CMD:mrx(playerid, params[])
 CMD:mry(playerid, params[])
 {
 	new Float: pos;
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
 	if(sscanf(params, "f", pos))
 	{
-		SendClientMessage(playerid, -1, "U¯YJ: /mry [rotacja Y]");
+		SendClientMessage(playerid, -1, "UÅ»YJ: /mry [rotacja Y]");
 		return 1;
 	}
 	else
@@ -732,10 +732,10 @@ CMD:mry(playerid, params[])
 CMD:mrz(playerid, params[])
 {
 	new Float: pos;
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
 	if(sscanf(params, "f", pos))
 	{
-		SendClientMessage(playerid, -1, "U¯YJ: /mrz [rotacja Z]");
+		SendClientMessage(playerid, -1, "UÅ»YJ: /mrz [rotacja Z]");
 		return 1;
 	}
 	else
@@ -761,12 +761,12 @@ CMD:mrz(playerid, params[])
 }
 CMD:mmat(playerid, params[])
 {
-	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byæ w trakcie edycji obiektu.");
+	if(!PlayerEditObject[playerid]) return Error(playerid, "Musisz byÄ‡ w trakcie edycji obiektu.");
 	new index, type, comm1[256];
 	new query[1024];
 	if(sscanf(params, "ddS()[256]", index, type, comm1))
 	{
-		SendClientMessage(playerid, -1, "U¯YJ: /mmat [index (0 - 15) [0 - tekstura / 1 - napis] [parametry]");
+		SendClientMessage(playerid, -1, "UÅ»YJ: /mmat [index (0 - 15) [0 - tekstura / 1 - napis] [parametry]");
 		return 1;
 	}
 	else
@@ -778,7 +778,7 @@ CMD:mmat(playerid, params[])
 		}
 		if(type != 0 && type != 1)
 		{
-			SendClientMessage(playerid, -1, "Typ nie jest prawid³owy. 0 - tekstura / 1 - napis - Ustaw poprawny typ.");
+			SendClientMessage(playerid, -1, "Typ nie jest prawidÅ‚owy. 0 - tekstura / 1 - napis - Ustaw poprawny typ.");
 			return 1;
 		}
 		if(type) // Napis
@@ -787,7 +787,7 @@ CMD:mmat(playerid, params[])
 			new matsize, fontsize, bold, fontcolor, backcolor, align, fontface[32], text[64];
 			if(sscanf(comm1, "dddxxds[32]s[64]", matsize, fontsize, bold, fontcolor, backcolor, align, fontface, text))
 			{
-				SendClientMessage(playerid, -1, "U¯YJ: /mmat [index (0 - 5)] 1 [matsize] [fontsize] [bold] [fontcolor] [backcolor] [align] [font] [text]");
+				SendClientMessage(playerid, -1, "UÅ»YJ: /mmat [index (0 - 5)] 1 [matsize] [fontsize] [bold] [fontcolor] [backcolor] [align] [font] [text]");
 				return 1;
 			}
 			else
@@ -815,7 +815,7 @@ CMD:mmat(playerid, params[])
 			new modelid, txdname[32], texturename[32], materialcolor;
 			if(sscanf(comm1, "xds[32]s[32]", materialcolor, modelid, txdname, texturename))
 			{
-				SendClientMessage(playerid, -1, "U¯YJ: /mmat [index (0 - 5)] 0 [materialcolor] [modelid] [txdname] [texturename]");
+				SendClientMessage(playerid, -1, "UÅ»YJ: /mmat [index (0 - 5)] 0 [materialcolor] [modelid] [txdname] [texturename]");
 				return 1;
 			}
 			else

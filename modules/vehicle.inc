@@ -63,7 +63,7 @@ CMD:vehdebug(playerid, params[])
 {
 	if(gracz[playerid][AdminLevel] < 4) return 0;
 	new zmienna, wartosc;
-	if(sscanf(params,"dd", zmienna, wartosc)) return SendClientMessage(playerid, -1, ""COL_GREY"U¯YJ: /vehdebug [zmiennaid] [wartosc]");
+	if(sscanf(params,"dd", zmienna, wartosc)) return SendClientMessage(playerid, -1, ""COL_GREY"UÅ»YJ: /vehdebug [zmiennaid] [wartosc]");
 	for(new v; v < WORLD_VEHICLES; v++)
 	{
 		if(IsPlayerInVehicle(playerid, pojazd[v][v_vehicleid]))
@@ -124,7 +124,7 @@ stock Process_Vehicle()
 			}
 			if(pojazd[v][v_enginestatus])
 			{
-				//zu¿ywanie pojazdu...
+				//zuÅ¼ywanie pojazdu...
 				if(pojazd[v][v_paliwo] > 1)
 				{
 					pojazd[v][v_paliwo] -= 1;
@@ -172,7 +172,7 @@ stock Process_Vehicle()
 						pojazd[v][v_temp_engine] += 1;
 					}
 				}
-				//gdy zasoby siê zu¿yj¹, to...
+				//gdy zasoby siÄ™ zuÅ¼yjÄ…, to...
 				if(!pojazd[v][v_uZasilania] || !pojazd[v][v_uElektryczny] || !pojazd[v][v_uKorbowy])
 				{
 					ToggleEngine(v, 0);
@@ -424,12 +424,12 @@ stock vehicle_OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			{
 				new str_vehmenu[512];
 				format(str_vehmenu, 512, ""COL_GREY"Akcja\t"COL_GREY"Status");
-				if(pojazd[v][v_enginestatus]) format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREEN"W³¹cz"COL_WHITE"/"COL_RED"Wy³¹cz"COL_GREY" silnik\t"COL_GREEN"W³¹czony", str_vehmenu);
-				else format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREEN"W³¹cz"COL_WHITE"/"COL_RED"Wy³¹cz"COL_GREY" silnik\t"COL_RED"Wy³¹czony", str_vehmenu);
-				if(!pojazd[v][v_door]) format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREEN"Otwórz"COL_WHITE"/"COL_RED"Zamknij"COL_GREY" drzwi\t"COL_GREEN"Otwarte", str_vehmenu);
-				else format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREEN"Otwórz"COL_WHITE"/"COL_RED"Zamknij"COL_GREY" drzwi\t"COL_RED"Zamkniête", str_vehmenu);
+				if(pojazd[v][v_enginestatus]) format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREEN"WÅ‚Ä…cz"COL_WHITE"/"COL_RED"WyÅ‚Ä…cz"COL_GREY" silnik\t"COL_GREEN"WÅ‚Ä…czony", str_vehmenu);
+				else format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREEN"WÅ‚Ä…cz"COL_WHITE"/"COL_RED"WyÅ‚Ä…cz"COL_GREY" silnik\t"COL_RED"WyÅ‚Ä…czony", str_vehmenu);
+				if(!pojazd[v][v_door]) format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREEN"OtwÃ³rz"COL_WHITE"/"COL_RED"Zamknij"COL_GREY" drzwi\t"COL_GREEN"Otwarte", str_vehmenu);
+				else format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREEN"OtwÃ³rz"COL_WHITE"/"COL_RED"Zamknij"COL_GREY" drzwi\t"COL_RED"ZamkniÄ™te", str_vehmenu);
 				new passangers;
-				for(new p = PlayerPoolSize(); p != -1; p--)//liczenie graczy siedz¹cych w tym pojezdzie
+				for(new p = PlayerPoolSize(); p != -1; p--)//liczenie graczy siedzÄ…cych w tym pojezdzie
 				{
 					if(p == playerid) continue;
 					if(GetPlayerState(p) != PLAYER_STATE_PASSENGER) continue;
@@ -438,18 +438,18 @@ stock vehicle_OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 						passangers++;
 					}
 				}
-				format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_RED"Wykop"COL_GREY" pasa¿era z pojazdu\t"COL_LIME"%d osób", str_vehmenu, passangers);
+				format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_RED"Wykop"COL_GREY" pasaÅ¼era z pojazdu\t"COL_LIME"%d osÃ³b", str_vehmenu, passangers);
 				new combine[6];
 				sscanf(pojazd[v][v_combine], "p<|>dddddd", combine[0], combine[1], combine[2], combine[3], combine[4], combine[5]);
 				if(combine[0] == 1 && combine[1] == 1 && combine[2] == 1 && combine[3] == 1 && combine[4] == 1 && combine[5] == 1)
 				{
-					format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREY"Kodowanie zap³onu\t"COL_GREEN"Odkodowany", str_vehmenu);
+					format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREY"Kodowanie zapÅ‚onu\t"COL_GREEN"Odkodowany", str_vehmenu);
 				}
 				else
 				{
-					format(str_vehmenu, 512, "%s\n"COL_ORANGE"» "COL_GREY"Kodowanie zap³onu\t"COL_RED"Zakodowany", str_vehmenu);
+					format(str_vehmenu, 512, "%s\n"COL_ORANGE"Â» "COL_GREY"Kodowanie zapÅ‚onu\t"COL_RED"Zakodowany", str_vehmenu);
 				}
-				Dialog_Show(playerid, CTRLVEHICLE, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"» "COL_GREY"Panel pojazdu", str_vehmenu, "Wybierz", "Anuluj");
+				Dialog_Show(playerid, CTRLVEHICLE, DIALOG_STYLE_TABLIST_HEADERS, ""COL_BLUE"Â» "COL_GREY"Panel pojazdu", str_vehmenu, "Wybierz", "Anuluj");
 				break;
 			}
 		}
@@ -473,7 +473,7 @@ Dialog:CTRLVEHICLE(playerid, response, listitem, inputtext[])
 						if(!pojazd[v][v_paliwo]) return LeftNotifyShow(playerid, "error", "~r~Brak paliwa~w~.", LN_RED);
 						if(!pojazd[v][v_uZasilania] || !pojazd[v][v_uElektryczny] || !pojazd[v][v_uKorbowy]) return LeftNotifyShow(playerid, "error", "Z tym pojazdem jest cos nie tak, powinen obejrzec go mechanik.", LN_RED);
 						new combine[6];
-						if(sscanf(pojazd[v][v_combine], "p<|>dddddd", combine[0], combine[1], combine[2], combine[3], combine[4], combine[5])) return Error(playerid, "B³¹d krytyczny! Nie odnaleziono kombinacji.");
+						if(sscanf(pojazd[v][v_combine], "p<|>dddddd", combine[0], combine[1], combine[2], combine[3], combine[4], combine[5])) return Error(playerid, "BÅ‚Ä…d krytyczny! Nie odnaleziono kombinacji.");
 						SetCombine(playerid, combine[0], combine[1], combine[2], combine[3], combine[4], combine[5]);
 						SetPVarInt(playerid, "world_vehicleid", v);
 						if(combine[0] == 1 && combine[1] == 1 && combine[2] == 1 && combine[3] == 1 && combine[4] == 1 && combine[5] == 1)
@@ -560,8 +560,8 @@ Dialog:CTRLVEHICLE(playerid, response, listitem, inputtext[])
 								any_passanger++;
 							}
 						}
-						if(any_passanger) Dialog_Show(playerid, KICKPASSG, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"» Wykop"COL_GREY" gracza z pojazdu", kick_passangers, "Kopnij!", "Anuluj");
-						else Dialog_Show(playerid, KICKPASSGN, DIALOG_STYLE_MSGBOX, ""COL_RED"» Wykop"COL_GREY" gracza z pojazdu", ""COL_RED"Nie wykryto"COL_GREY" pasa¿erów w Twoim pojeŸdzie.", "Zamknij", "");
+						if(any_passanger) Dialog_Show(playerid, KICKPASSG, DIALOG_STYLE_TABLIST_HEADERS, ""COL_RED"Â» Wykop"COL_GREY" gracza z pojazdu", kick_passangers, "Kopnij!", "Anuluj");
+						else Dialog_Show(playerid, KICKPASSGN, DIALOG_STYLE_MSGBOX, ""COL_RED"Â» Wykop"COL_GREY" gracza z pojazdu", ""COL_RED"Nie wykryto"COL_GREY" pasaÅ¼erÃ³w w Twoim pojeÅºdzie.", "Zamknij", "");
 						break;
 					}
 				}

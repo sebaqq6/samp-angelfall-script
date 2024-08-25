@@ -13,7 +13,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	{
 		ShowYMenu(playerid);
 	}
-	else if(PRESSED(KEY_NO))//podnoszenie przedmiotów
+	else if(PRESSED(KEY_NO))//podnoszenie przedmiotÃ³w
 	{
 		PickItemForPlayer(playerid);
 	}

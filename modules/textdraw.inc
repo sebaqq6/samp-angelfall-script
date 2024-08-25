@@ -279,7 +279,7 @@ stock LeftNotifyShow(playerid, title[], content[], type = LN_GREY, time = 5)
 			PlayerTextDrawFont(playerid, td_leftann_icon[playerid], 2);
 			PlayerPlaySound(playerid, 1150, 0.0, 0.0, 0.0);
 		}
-		case LN_GREY://grey/ogólno dostepny
+		case LN_GREY://grey/ogÃ³lno dostepny
 		{
 			PlayerTextDrawColor(playerid, td_leftann_title[playerid], -2139062017);
 			PlayerTextDrawColor(playerid, td_leftann_ball[playerid], -2139062017);

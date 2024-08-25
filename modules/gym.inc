@@ -90,8 +90,8 @@ new PLAYER_DUMB_COUNT[MAX_PLAYERS];
 //--------------------------------------------------------
 stock Init_Gym()
 {
-    //SPRZ TY:
-    //≥aweczki:
+    //SPRZƒòTY:
+    //≈Çaweczki:
     CreateObject(2629, -2468.879882, -2489.530029, 2308.209960, 0.000000, 0.000000, 13.899999);
     CreateObject(2629, -2467.149902, -2489.100097, 2308.209960, 0.000000, 0.000000, 13.899999);
     CreateObject(2629, -2465.379882, -2488.659912, 2308.209960, 0.000000, 0.000000, 13.899999);
@@ -102,7 +102,7 @@ stock Init_Gym()
     CreateObject(2631, -2460.570068, -2495.149902, 2308.250000, 0.000000, 0.000000, 13.600000);
     //rowery
     CreateObject(2630, -2468.449951, -2496.540039, 2308.209960, 0.000000, 0.000000, -166.800003);
-    //bieønie
+    //bie≈ºnie
     CreateObject(2627, -2464.179931, -2495.929931, 2308.189941, 0.000000, 0.000000, -166.300003);
     CreateObject(2627, -2466.320068, -2496.449951, 2308.189941, 0.000000, 0.000000, -166.300003);
     //Ruchome
@@ -121,25 +121,25 @@ stock Init_Gym()
     //3dtexty
     for(new o; o != sizeof (bike_pos); o++)
     {
-        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Rowerek"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", -1, bike_pos[o][0],bike_pos[o][1], bike_pos[o][2], 5.0);
+        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Rowerek"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", -1, bike_pos[o][0],bike_pos[o][1], bike_pos[o][2], 5.0);
     }
     for(new o; o != sizeof (dumb_pos); o++)
     {
-        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Hantle"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", -1, dumb_pos[o][0], dumb_pos[o][1], dumb_pos[o][2], 5.0);
+        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Hantle"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", -1, dumb_pos[o][0], dumb_pos[o][1], dumb_pos[o][2], 5.0);
     }
     for(new o; o != sizeof (bench_pos); o++)
     {
-        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}£aweczka"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", -1, bench_pos[o][0], bench_pos[o][1], bench_pos[o][2], 5.0);
+        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}≈Åaweczka"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", -1, bench_pos[o][0], bench_pos[o][1], bench_pos[o][2], 5.0);
     }
     for(new o; o != sizeof (run_machine_pos); o++)
     {
-        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Bieønia"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", -1, run_machine_pos[o][0], run_machine_pos[o][1], run_machine_pos[o][2], 5.0);
+        CreateDynamic3DTextLabel(""COL_EASY"[{50a99a}Bie≈ºnia"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", -1, run_machine_pos[o][0], run_machine_pos[o][1], run_machine_pos[o][2], 5.0);
     }
     return 1;
 }
 stock gym_OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
-    //schodzenie na sprzÍciorÛw
+    //schodzenie na sprzƒôcior√≥w
     if((newkeys & KEY_SECONDARY_ATTACK ) && !(oldkeys & KEY_SECONDARY_ATTACK ))
     {
         if(PLAYER_INTREAM[playerid] == true)
@@ -167,7 +167,7 @@ stock gym_OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
             return 1;
         }
     }
-    //wchodzenie na sprzÍcior
+    //wchodzenie na sprzƒôcior
     if((newkeys & KEY_SECONDARY_ATTACK ) && !( oldkeys & KEY_SECONDARY_ATTACK ))
     {
         for( new o; o != sizeof run_machine_pos; o ++ )

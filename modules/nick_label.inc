@@ -62,7 +62,7 @@ stock GetPlayerStatus(playerid)
 		{
 			case 1..4:
 			{
-				format(status, 128, ""COL_ORANGE"æwiczy");
+				format(status, 128, ""COL_ORANGE"Ä‡wiczy");
 			}
 			case 5..6:
 			{
@@ -70,11 +70,11 @@ stock GetPlayerStatus(playerid)
 			}
 			case 7..8:
 			{
-				format(status, 128, ""COL_ORANGE"uzupe³nia paliwo");
+				format(status, 128, ""COL_ORANGE"uzupeÅ‚nia paliwo");
 			}
 			case 9:
 			{
-				format(status, 128, ""COL_ORANGE"u¿ywa narzêdzi");
+				format(status, 128, ""COL_ORANGE"uÅ¼ywa narzÄ™dzi");
 			}
 			case 10:
 			{
@@ -86,11 +86,11 @@ stock GetPlayerStatus(playerid)
 			}
 			case 12:
 			{
-				format(status, 128, ""COL_ORANGE"u¿ywa przedmiotu");
+				format(status, 128, ""COL_ORANGE"uÅ¼ywa przedmiotu");
 			}
 			case 13:
 			{
-				format(status, 128, ""COL_ORANGE"u¿ywa narzêdzi");
+				format(status, 128, ""COL_ORANGE"uÅ¼ywa narzÄ™dzi");
 			}
 			case 14:
 			{

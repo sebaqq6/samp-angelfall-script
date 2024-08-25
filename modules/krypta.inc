@@ -81,7 +81,7 @@ stock Krypta_Close()
 	MoveDynamicObject(krypta[lampka_z2],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
 	MoveDynamicObject(krypta[lampka_z3],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
 	MoveDynamicObject(krypta[lampka_z4],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
-	//zamykanie bram g³ównych
+	//zamykanie bram gÅ‚Ã³wnych
 	MoveDynamicObject(krypta[brama_w],  -1990.3153, -1573.5389, 90.7107, 1.0);
 	MoveDynamicObject(krypta[brama_z],  -2005.6871, -1582.2386, 90.7107, 1.0);
 	krypta[brama_w_status] = 1;
@@ -103,7 +103,7 @@ stock Krypta_Open()
 	MoveDynamicObject(krypta[lampka_c2],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
 	MoveDynamicObject(krypta[lampka_c3],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
 	MoveDynamicObject(krypta[lampka_c4],  -2003.1154, -1531.6017, 90.9591, 5000.0, 0.0000, 0.0000, 0.0);
-	//otwieranie bram g³ównych
+	//otwieranie bram gÅ‚Ã³wnych
 	MoveDynamicObject(krypta[brama_w],  -1990.3153, -1573.5389, 90.7107, 0.2);
 	MoveDynamicObject(krypta[brama_z],  -2005.6871, -1582.2386, 90.7107, 0.2);
 	krypta[brama_w_status] = 3;
@@ -254,8 +254,8 @@ stock Process_KryptaGate()
 }
 
 //id z db: 11062
-//dó³: -2354.214, -1680.277, 2489.099
-//góra: -2354.214, -1680.277, 2903.651
+//dÃ³Å‚: -2354.214, -1680.277, 2489.099
+//gÃ³ra: -2354.214, -1680.277, 2903.651
 stock Process_KryptaWinda()
 {
 	if(krypta[winda_status])
@@ -264,7 +264,7 @@ stock Process_KryptaWinda()
 		new Float:actual_speed;
 		Streamer_GetFloatData(STREAMER_TYPE_OBJECT, WINDAID, E_STREAMER_MOVE_SPEED, actual_speed);
 		Streamer_GetFloatData(STREAMER_TYPE_OBJECT, WINDAID, E_STREAMER_Z, winda_wysokosc);
-		if(krypta[winda_status] == 1)//porusza sie w dó³
+		if(krypta[winda_status] == 1)//porusza sie w dÃ³Å‚
 		{
 			if(procent(2903.651-winda_wysokosc, 2903.651-2489.099) < 50)
 			{
@@ -278,7 +278,7 @@ stock Process_KryptaWinda()
 				MoveDynamicObject(WINDAID, -2354.214, -1680.277, 2489.099, actual_speed, 0.0, 0.0, 0.0);
 			}
 		}
-		else if(krypta[winda_status] == 2)//porusza sie w góre
+		else if(krypta[winda_status] == 2)//porusza sie w gÃ³re
 		{
 			if(procent(2903.651-winda_wysokosc, 2903.651-2489.099) > 50)
 			{
@@ -728,32 +728,32 @@ public Process_Tutorial(playerid, step)
 	return 1;
 }
 /*
-Hey! Wake up! - Hej! Obudziæ siê!
-I am artificial intelligence fallout shelter. In short AFIS. - Jestem sztuczn¹ inteligencj¹ krypty. W skrócie AFIS.
+Hey! Wake up! - Hej! ObudziÄ‡ siÄ™!
+I am artificial intelligence fallout shelter. In short AFIS. - Jestem sztucznÄ… inteligencjÄ… krypty. W skrÃ³cie AFIS.
 Pulse rate normal. - Puls w normie.
-If you hear me, approach glass door. - Jeœli mnie s³yszysz, podejdŸ do szklanych drzwi.
-Level of calcium, chloride, magnesium, phosphorus, potassium, sodium, iron, zinc, copper, manganese, molybdenum, iodine, fluorine, selenium, chromium is in normal. - Poziom wapnia, chloru, magnezu, fosforu, potasu, sodu, ¿elaza, cynku, miedzi, manganu, molibdenu, jodu, fluoru, selenu, chromu jest w normie.
-Appears to me, that your brain works OK. - Wydaje mi siê, ¿e Twój mózg dzia³a dobrze.
-Okay, now listen to me. - Okej, teraz mnie s³uchaj.
-In my opinion, you should try more. - Moim zdaniem, powinieneœ/powinnaœ siê postaraæ bardziej.
-I hope you are well and didn't do anything wrong yourself. - Mam nadziejê, ¿e czujesz siê dobrze i nie zrobi³eœ/zrobi³aœ sobie nic z³ego.
-Your hibernation time is over. Welcome to the real world, sleepyhead. - Czas Twojej hibernacji siê skoñczy³. Witaj w prawdziwym œwiecie, œpiochu.
+If you hear me, approach glass door. - JeÅ›li mnie sÅ‚yszysz, podejdÅº do szklanych drzwi.
+Level of calcium, chloride, magnesium, phosphorus, potassium, sodium, iron, zinc, copper, manganese, molybdenum, iodine, fluorine, selenium, chromium is in normal. - Poziom wapnia, chloru, magnezu, fosforu, potasu, sodu, Å¼elaza, cynku, miedzi, manganu, molibdenu, jodu, fluoru, selenu, chromu jest w normie.
+Appears to me, that your brain works OK. - Wydaje mi siÄ™, Å¼e TwÃ³j mÃ³zg dziaÅ‚a dobrze.
+Okay, now listen to me. - Okej, teraz mnie sÅ‚uchaj.
+In my opinion, you should try more. - Moim zdaniem, powinieneÅ›/powinnaÅ› siÄ™ postaraÄ‡ bardziej.
+I hope you are well and didn't do anything wrong yourself. - Mam nadziejÄ™, Å¼e czujesz siÄ™ dobrze i nie zrobiÅ‚eÅ›/zrobiÅ‚aÅ› sobie nic zÅ‚ego.
+Your hibernation time is over. Welcome to the real world, sleepyhead. - Czas Twojej hibernacji siÄ™ skoÅ„czyÅ‚. Witaj w prawdziwym Å›wiecie, Å›piochu.
 Keep going. - Tak trzymaj.
-Great. - Œwietnie.
-Not bad. - NieŸle.
-You are retarded? - Jesteœ upoœledzony?
-First test, you have to pave the way to the top platform and then overcome it. Begin. - Pierwszy test. Musisz utorowaæ sobie drogê do górnej platformy, a nastêpnie j¹ pokonaæ. Zaczynaj.
+Great. - Åšwietnie.
+Not bad. - NieÅºle.
+You are retarded? - JesteÅ› upoÅ›ledzony?
+First test, you have to pave the way to the top platform and then overcome it. Begin. - Pierwszy test. Musisz utorowaÄ‡ sobie drogÄ™ do gÃ³rnej platformy, a nastÄ™pnie jÄ… pokonaÄ‡. Zaczynaj.
 Waking in progress... - Budzenie w toku...
-Before I let you go, you have to pass several tests, so I could evaluate your mental and physical health. - Zanim pozwolê Ci odejœæ, musisz przejœæ kilka testów, ¿ebym mog³a oceniæ Twoje zdrowie fizyczne i psychiczne.
-OK, behind next doors you will find a treat. You have to raise it and eat. Good luck. - Okej, za nastêpnymi drzwiami znajdziesz smako³yk. Podnieœ go i zjedz. Powodzenia.
-Better life is waiting for you. - Lepsze ¿ycie czeka na Ciebie.
-Shelter will be opened in an hour. - Krypta zostanie otwarta za godzinê.
-Shelter was successful open. - Krypta zosta³a pomyœlnie otwarta.
-Shelter was successful closed. - Krypta zosta³a pomyœlnie zamkniêta.
-5 minutes left for shelter being closed. - Zosta³o piêæ minut do zamkniêcia krypty.
+Before I let you go, you have to pass several tests, so I could evaluate your mental and physical health. - Zanim pozwolÄ™ Ci odejÅ›Ä‡, musisz przejÅ›Ä‡ kilka testÃ³w, Å¼ebym mogÅ‚a oceniÄ‡ Twoje zdrowie fizyczne i psychiczne.
+OK, behind next doors you will find a treat. You have to raise it and eat. Good luck. - Okej, za nastÄ™pnymi drzwiami znajdziesz smakoÅ‚yk. PodnieÅ› go i zjedz. Powodzenia.
+Better life is waiting for you. - Lepsze Å¼ycie czeka na Ciebie.
+Shelter will be opened in an hour. - Krypta zostanie otwarta za godzinÄ™.
+Shelter was successful open. - Krypta zostaÅ‚a pomyÅ›lnie otwarta.
+Shelter was successful closed. - Krypta zostaÅ‚a pomyÅ›lnie zamkniÄ™ta.
+5 minutes left for shelter being closed. - ZostaÅ‚o piÄ™Ä‡ minut do zamkniÄ™cia krypty.
 In the next test, you will be in a passageway
-with four points in different colors. Your task is to stand on the RED point. Begin. - W kolejnym teœcie, bêdziesz w korytarzu z czterema punktami w ró¿nych kolorach. Twoim zadaniem jest stan¹æ na CZERWONYM punkcie. Zaczynaj.
-Congratulations, test results are positive. Exit opened. - Gratulacje, wynik testów jest pozytywny. Wyjœcie jest otwarte.
-You can't enter here. - Nie mo¿esz tam wejœæ.
+with four points in different colors. Your task is to stand on the RED point. Begin. - W kolejnym teÅ›cie, bÄ™dziesz w korytarzu z czterema punktami w rÃ³Å¼nych kolorach. Twoim zadaniem jest stanÄ…Ä‡ na CZERWONYM punkcie. Zaczynaj.
+Congratulations, test results are positive. Exit opened. - Gratulacje, wynik testÃ³w jest pozytywny. WyjÅ›cie jest otwarte.
+You can't enter here. - Nie moÅ¼esz tam wejÅ›Ä‡.
 Yes, now eat it. - Tak, teraz zjedz to.
 */

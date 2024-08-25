@@ -56,7 +56,7 @@ public QCheckDailyQuest(playerid, questid)
 	mq_getdata();
 	if(rekordy)
 	{
-		ActorTalk(playerid, quest[questid][q_actor_name], ""COL_GREY"Przykro mi, podj¹³eœ siê ju¿ dzisiejszego zadania. "COL_GREEN"Wróæ jutro"COL_GREY" po nastêpne...");
+		ActorTalk(playerid, quest[questid][q_actor_name], ""COL_GREY"Przykro mi, podjÄ…Å‚eÅ› siÄ™ juÅ¼ dzisiejszego zadania. "COL_GREEN"WrÃ³Ä‡ jutro"COL_GREY" po nastÄ™pne...");
 	}
 	else
 	{
@@ -81,7 +81,7 @@ public QCheckDailyQuest(playerid, questid)
 stock ActorTalk(playerid, aName[], content[])
 {
 	new str_header[128];
-	format(str_header, 128, "{0362a2}» "COL_CYAN"%s"COL_GREY" mówi:", aName);
+	format(str_header, 128, "{0362a2}Â» "COL_CYAN"%s"COL_GREY" mÃ³wi:", aName);
 	Dialog_Show(playerid, QTALK, DIALOG_STYLE_MSGBOX, str_header, content, "Okej", "Wyjdz");
 	return 1;
 }
@@ -96,23 +96,23 @@ public QuestStart(playerid, questid)
 	{
 		case 1:
 		{
-			strcat(str_talk, ""COL_GREY"Czeœæ jestem "QCOL_A"Noah"COL_GREY", jak zapewne zd¹¿y³eœ/aœ zauwa¿yæ próbujemy prowadziæ normalne ¿ycie. \n");
-			strcat(str_talk, ""COL_GREY"Nie odda tego jak ¿yliœmy przed Apokalips¹, ale choæ odrobinê chcemy to odzwierciedliæ. \n");
-			strcat(str_talk, ""COL_GREY"W krypcie mieszkaj¹ doroœli jak i dzieci. Dzieci siê nudz¹, a doroœli pracuj¹ do póŸnych godzin. \n");
-			strcat(str_talk, ""COL_GREY"Przyda³oby siê jakoœ zaj¹æ tymi ma³ymi brzd¹cami, prawda? Haha... \n");
-			strcat(str_talk, ""COL_GREY"Kojarzysz pewnie masê zniszczonych pude³ek, s¹ one z tektury która jest idealnym pochodnym \n");
-			strcat(str_talk, ""COL_GREY"materia³em od papieru, walaj¹ siê one wszedzie, a nikt tego nie chce zbieraæ. Czas to zmieniæ! \n");
-			strcat(str_talk, ""COL_GREY"Dzieci wkoñcu bêd¹ mia³y na czym sobie rysowaæ, a doroœli pisaæ pamiêtniki czy nawet próbowaæ \n");
-			strcat(str_talk, ""COL_GREY"swoich si³ w literaturze. \n");
+			strcat(str_talk, ""COL_GREY"CzeÅ›Ä‡ jestem "QCOL_A"Noah"COL_GREY", jak zapewne zdÄ…Å¼yÅ‚eÅ›/aÅ› zauwaÅ¼yÄ‡ prÃ³bujemy prowadziÄ‡ normalne Å¼ycie. \n");
+			strcat(str_talk, ""COL_GREY"Nie odda tego jak Å¼yliÅ›my przed ApokalipsÄ…, ale choÄ‡ odrobinÄ™ chcemy to odzwierciedliÄ‡. \n");
+			strcat(str_talk, ""COL_GREY"W krypcie mieszkajÄ… doroÅ›li jak i dzieci. Dzieci siÄ™ nudzÄ…, a doroÅ›li pracujÄ… do pÃ³Åºnych godzin. \n");
+			strcat(str_talk, ""COL_GREY"PrzydaÅ‚oby siÄ™ jakoÅ› zajÄ…Ä‡ tymi maÅ‚ymi brzdÄ…cami, prawda? Haha... \n");
+			strcat(str_talk, ""COL_GREY"Kojarzysz pewnie masÄ™ zniszczonych pudeÅ‚ek, sÄ… one z tektury ktÃ³ra jest idealnym pochodnym \n");
+			strcat(str_talk, ""COL_GREY"materiaÅ‚em od papieru, walajÄ… siÄ™ one wszedzie, a nikt tego nie chce zbieraÄ‡. Czas to zmieniÄ‡! \n");
+			strcat(str_talk, ""COL_GREY"Dzieci wkoÅ„cu bÄ™dÄ… miaÅ‚y na czym sobie rysowaÄ‡, a doroÅ›li pisaÄ‡ pamiÄ™tniki czy nawet prÃ³bowaÄ‡ \n");
+			strcat(str_talk, ""COL_GREY"swoich siÅ‚ w literaturze. \n");
 		}
 	}
 	strcat(str_talk, " \n");
 	strcat(str_talk, " \n"); 
-	format(str_talk, 2048, "%s{09a4d1}» "COL_RED"Zadanie {09a4d1}«\n"COL_GREY" %s\n", str_talk, quest[questid][q_opis]);
+	format(str_talk, 2048, "%s{09a4d1}Â» "COL_RED"Zadanie {09a4d1}Â«\n"COL_GREY" %s\n", str_talk, quest[questid][q_opis]);
 	strcat(str_talk, " \n"); 
-	strcat(str_talk,"{09a4d1}» "COL_GREEN"Nagroda {09a4d1}«\n");
-	if(quest[questid][q_nagroda_exp]) format(str_talk, 2048, "%s{f85818}»"COL_GREEN" +{6f3e9c}%d EXP\n", str_talk, quest[questid][q_nagroda_exp]);
-	if(quest[questid][q_nagroda_item]) format(str_talk, 2048, "%s{f85818}»{ffa500} %d sztuk"COL_GREY" przedmiotu:{a5a971} %s\n", str_talk, quest[questid][q_nagroda_item_count], ItemName[quest[questid][q_nagroda_item]]);
+	strcat(str_talk,"{09a4d1}Â» "COL_GREEN"Nagroda {09a4d1}Â«\n");
+	if(quest[questid][q_nagroda_exp]) format(str_talk, 2048, "%s{f85818}Â»"COL_GREEN" +{6f3e9c}%d EXP\n", str_talk, quest[questid][q_nagroda_exp]);
+	if(quest[questid][q_nagroda_item]) format(str_talk, 2048, "%s{f85818}Â»{ffa500} %d sztuk"COL_GREY" przedmiotu:{a5a971} %s\n", str_talk, quest[questid][q_nagroda_item_count], ItemName[quest[questid][q_nagroda_item]]);
 	ActorTalk(playerid, quest[questid][q_actor_name], str_talk);
 	return 1;
 }

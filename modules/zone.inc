@@ -1,7 +1,7 @@
 /*
 minimum 3 osoby do przejmowania terenu danej grupy
-gdy obca grupa znajdzie sie w tej samej iloœci jest pauzowane przejmowanie
-przejmowanie trwa przez 30 minut (tyle musi znajdowaæ sie grupa na danym terenie)
+gdy obca grupa znajdzie sie w tej samej iloÅ›ci jest pauzowane przejmowanie
+przejmowanie trwa przez 30 minut (tyle musi znajdowaÄ‡ sie grupa na danym terenie)
 */
 
 
@@ -241,7 +241,7 @@ public AskDBForZoneData()
 			{
 				for(new s; s < MAX_ZONES; s++)
 				{
-					if(strefa[s][przejmowanie]==gid) //grupa byla w trakcie przejmowania, ale prawdopodobnie ktos zginal i juz nie spelnia tych warunkow, wiec przerywamy imprezê
+					if(strefa[s][przejmowanie]==gid) //grupa byla w trakcie przejmowania, ale prawdopodobnie ktos zginal i juz nie spelnia tych warunkow, wiec przerywamy imprezÄ™
 					{
 						if(strefa[s][przejmowanie_time]>5*60) //wlasciciele zostali powiadomieni, wiec trzeba odwolac alarm
 						{
@@ -255,7 +255,7 @@ public AskDBForZoneData()
 			}
 			if(strefa[sid][przejmowanie]) //strefa jest przez kogos przejmowana
 			{
-				if(strefa[sid][przejmowanie]!= gid)//strefa jest przejmowana przez inna grupê
+				if(strefa[sid][przejmowanie]!= gid)//strefa jest przejmowana przez inna grupÄ™
 				{
 					if(strefa[sid][st_owner]== gid)//grupa ktora znajduje sie w strefie to wlasciciele
 					{
@@ -266,7 +266,7 @@ public AskDBForZoneData()
 						//scm, inna grupa juz przejmuje ta strefe, sprobuj pozniej lub wymorduj ich
 					}
 				}
-				else //strefa przejmowana przez aktualna grupe w pêtli, podbijamy czas itp
+				else //strefa przejmowana przez aktualna grupe w pÄ™tli, podbijamy czas itp
 				{
 					strefa[sid][przejmowanie_time]+=60;
 					if(strefa[sid][przejmowanie_time]>30*60)

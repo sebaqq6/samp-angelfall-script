@@ -28,7 +28,7 @@ new baza_allowedObjects[] =
 
 stock Init_BazyGrup()
 {
-	//³adowanie baz:
+	//Å‚adowanie baz:
 	baza_chilliad_0();
 	baza_bob_1();
 
@@ -55,7 +55,7 @@ public QLoadBaseGroup()
 			i++; 
 		}
 	}
-	//przygotowanie bramy, pickupów itd baz:
+	//przygotowanie bramy, pickupÃ³w itd baz:
 	new str[512];
 	for(new b; b < MAX_BAZ; b++)
 	{
@@ -64,12 +64,12 @@ public QLoadBaseGroup()
 		if(baza[b][b_gate_model]) baza[b][b_gate_id] = CreateDynamicObject(baza[b][b_gate_model], baza[b][b_gate_close][0], baza[b][b_gate_close][1], baza[b][b_gate_close][2], baza[b][b_gate_close][3], baza[b][b_gate_close][4], baza[b][b_gate_close][5]);
 		CreateDynamicPickup(1254, 1, baza[b][b_pickup][0], baza[b][b_pickup][1], baza[b][b_pickup][2]);
 		CreateDynamicPickup(1277, 1, baza[b][b_magazyn][0], baza[b][b_magazyn][1], baza[b][b_magazyn][2]);
-		CreateDynamic3DTextLabel(""COL_RED"> "COL_CYAN" Magazyn "COL_RED" <\n"COL_EASY"["COL_LIME"U¿ycie: klawisz H"COL_EASY"]", -1, baza[b][b_magazyn][0], baza[b][b_magazyn][1], baza[b][b_magazyn][2], 10.0, _, _,  1);
-		if(baza[b][b_owner]) format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"Zajêta"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie:"COL_WHITE" /baza"COL_EASY"]", b);
+		CreateDynamic3DTextLabel(""COL_RED"> "COL_CYAN" Magazyn "COL_RED" <\n"COL_EASY"["COL_LIME"UÅ¼ycie: klawisz H"COL_EASY"]", -1, baza[b][b_magazyn][0], baza[b][b_magazyn][1], baza[b][b_magazyn][2], 10.0, _, _,  1);
+		if(baza[b][b_owner]) format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"ZajÄ™ta"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie:"COL_WHITE" /baza"COL_EASY"]", b);
 		else 
 		{
 			DeleteObjectFromBase(b);
-			format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_GREEN"Wolna"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie:"COL_WHITE" /baza"COL_EASY"]", b);
+			format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_GREEN"Wolna"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie:"COL_WHITE" /baza"COL_EASY"]", b);
 			mq_format("DELETE FROM `items_bazy` WHERE `baseid`='%d';", b);
 			mq_send("QDeleteItems");
 		}
@@ -164,7 +164,7 @@ stock BaseObjectIsAllowed(model)
 
 stock DeleteObjectFromBase(baza_id)
 {
-	for(new i; i < MAX_OBJECTS; i++)//usuwanie obiektów z bazy, jeœli wolna
+	for(new i; i < MAX_OBJECTS; i++)//usuwanie obiektÃ³w z bazy, jeÅ›li wolna
 	{
 		if(ObjectInfo[i][oGrupa] <= 0) continue;
 		if(IsPointInDynamicArea(baza[baza_id][b_area_id], ObjectInfo[i][oX], ObjectInfo[i][oY], ObjectInfo[i][oZ]))
@@ -188,31 +188,31 @@ stock Baza_CloseGate(baza_id)
 }
 
 //new baza_id = GetGroupBaseID(groupid);
-//if(baza_id != -1) return Error(playerid, "Twoja grupa posiada ju¿ bazê.");
+//if(baza_id != -1) return Error(playerid, "Twoja grupa posiada juÅ¼ bazÄ™.");
 CMD:baza(playerid, params[])
 {
 	new groupid = gracz[playerid][OrgID];
-	if(!groupid) return Error(playerid, "Nie nale¿ysz do grupy.");
-	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byæ liderem.");
+	if(!groupid) return Error(playerid, "Nie naleÅ¼ysz do grupy.");
+	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byÄ‡ liderem.");
 	new pickBazaID = PickupGetBaseID(playerid);
-	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie mo¿esz u¿yæ tej komendy.");
+	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie moÅ¼esz uÅ¼yÄ‡ tej komendy.");
 	new group_base = GetGroupBaseID(groupid);
 	new str_baza[1024];
 	new str_header[128];
-	format(str_header, 128, ""COL_CYAN"»"COL_GREY" Baza grupowa "COL_RED"["COL_GREY"ID: "COL_CYAN"%d"COL_RED"]", pickBazaID);
+	format(str_header, 128, ""COL_CYAN"Â»"COL_GREY" Baza grupowa "COL_RED"["COL_GREY"ID: "COL_CYAN"%d"COL_RED"]", pickBazaID);
 	if(group_base == -1)
 	{
-		format(str_baza, 1024, ""COL_RED"» "COL_GREEN"Kup bazê"COL_GREY"["COL_YELLOW"%d "COL_CYAN"¿etonów"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", baza[pickBazaID][b_price]);
-		format(str_baza, 1024, "%s\n"COL_RED"» "COL_GREEN"Kup bazê"COL_GREY"["COL_YELLOW"300 "COL_YELLOW"¿p"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", str_baza);
+		format(str_baza, 1024, ""COL_RED"Â» "COL_GREEN"Kup bazÄ™"COL_GREY"["COL_YELLOW"%d "COL_CYAN"Å¼etonÃ³w"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", baza[pickBazaID][b_price]);
+		format(str_baza, 1024, "%s\n"COL_RED"Â» "COL_GREEN"Kup bazÄ™"COL_GREY"["COL_YELLOW"300 "COL_YELLOW"Å¼p"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", str_baza);
 		Dialog_Show(playerid, BAZAMENU, DIALOG_STYLE_LIST, str_header, str_baza, "Wybierz", "Anuluj");
 	}
 	else if(group_base == pickBazaID) 
 	{
-		format(str_baza, 1024, ""COL_RED"» "COL_GREEN"Przed³u¿ wa¿noœæ bazy"COL_GREY"["COL_YELLOW"%d "COL_CYAN"¿etonów"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", baza[pickBazaID][b_price]);
-		format(str_baza, 1024, "%s\n"COL_RED"» "COL_GREEN"Przed³u¿ wa¿noœæ bazy"COL_GREY"["COL_YELLOW"300 "COL_YELLOW"¿p"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", str_baza);
+		format(str_baza, 1024, ""COL_RED"Â» "COL_GREEN"PrzedÅ‚uÅ¼ waÅ¼noÅ›Ä‡ bazy"COL_GREY"["COL_YELLOW"%d "COL_CYAN"Å¼etonÃ³w"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", baza[pickBazaID][b_price]);
+		format(str_baza, 1024, "%s\n"COL_RED"Â» "COL_GREEN"PrzedÅ‚uÅ¼ waÅ¼noÅ›Ä‡ bazy"COL_GREY"["COL_YELLOW"300 "COL_YELLOW"Å¼p"COL_GREY"]["COL_RED"20 dni"COL_GREY"]", str_baza);
 		Dialog_Show(playerid, BAZAMENU, DIALOG_STYLE_LIST, str_header, str_baza, "Wybierz", "Anuluj");
 	}
-	else Error(playerid, "Twoja grupa posiada ju¿ bazê.");
+	else Error(playerid, "Twoja grupa posiada juÅ¼ bazÄ™.");
 	return 1;
 }
 
@@ -239,10 +239,10 @@ forward QBuyBase(playerid);
 public QBuyBase(playerid)
 {
 	new groupid = gracz[playerid][OrgID];
-	if(!groupid) return Error(playerid, "Nie nale¿ysz do grupy.");
-	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byæ liderem.");
+	if(!groupid) return Error(playerid, "Nie naleÅ¼ysz do grupy.");
+	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byÄ‡ liderem.");
 	new pickBazaID = PickupGetBaseID(playerid);
-	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie mo¿esz tego zrobiæ.");
+	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie moÅ¼esz tego zrobiÄ‡.");
 	new group_base = GetGroupBaseID(groupid);
 	mq_getdata();
 	if(rekordy)
@@ -270,7 +270,7 @@ public QBuyBase(playerid)
 				mq_send("QBuyBaseComplete");
 				LeftNotifyShow(playerid, "Sukces!", "Baza zostala ~g~zakupiona~w~ na ~y~20 dni~w~. Zawsze mozesz ja przedluzyc w ten sam sposob co zakupiles. Aby sprawdzic czas wygasniecia bazy wpisz ~y~/gpanel~w~.", LN_GREEN, 15);
 				new str[512];
-				format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"Zajêta"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie:"COL_WHITE" /baza"COL_EASY"]", pickBazaID);
+				format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"ZajÄ™ta"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie:"COL_WHITE" /baza"COL_EASY"]", pickBazaID);
 				UpdateDynamic3DTextLabelText(baza[pickBazaID][b_label], -1, str);
 			}
 		}
@@ -282,10 +282,10 @@ forward QBuyBaseGold(playerid);
 public QBuyBaseGold(playerid)
 {
 	new groupid = gracz[playerid][OrgID];
-	if(!groupid) return Error(playerid, "Nie nale¿ysz do grupy.");
-	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byæ liderem.");
+	if(!groupid) return Error(playerid, "Nie naleÅ¼ysz do grupy.");
+	if(!gracz[playerid][SzefORG]) return Error(playerid, "Musisz byÄ‡ liderem.");
 	new pickBazaID = PickupGetBaseID(playerid);
-	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie mo¿esz tego zrobiæ.");
+	if(pickBazaID == -1) return Error(playerid, "W tym miejscu nie moÅ¼esz tego zrobiÄ‡.");
 	new group_base = GetGroupBaseID(groupid);
 	mq_getdata();
 	if(rekordy)
@@ -294,7 +294,7 @@ public QBuyBaseGold(playerid)
 		new id = cache_get_field_content_int(0, "id");
 		if(group_base == pickBazaID)
 		{
-			if(gracz[playerid][gold] < 300) return Error(playerid, "Za ma³o ¿etonów premium.");
+			if(gracz[playerid][gold] < 300) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 			gracz[playerid][gold] -= 300;
 			mq_format("UPDATE `Konta` SET `gold`='%d' WHERE `id`='%d';", gracz[playerid][gold], gracz[playerid][UID]);
 			mq_send("QBuyBaseGold");
@@ -306,7 +306,7 @@ public QBuyBaseGold(playerid)
 		}
 		else if(group_base == -1)
 		{
-			if(gracz[playerid][gold] < 300) return Error(playerid, "Za ma³o ¿etonów premium.");
+			if(gracz[playerid][gold] < 300) return Error(playerid, "Za maÅ‚o Å¼etonÃ³w premium.");
 			gracz[playerid][gold] -= 300;
 			mq_format("UPDATE `Konta` SET `gold`='%d' WHERE `id`='%d';", gracz[playerid][gold], gracz[playerid][UID]);
 			mq_send("QBuyBaseGold");
@@ -316,7 +316,7 @@ public QBuyBaseGold(playerid)
 			mq_send("QBuyBaseComplete");
 			LeftNotifyShow(playerid, "Sukces!", "Baza zostala ~g~zakupiona~w~ na ~y~20 dni~w~. Zawsze mozesz ja przedluzyc w ten sam sposob co zakupiles. Aby sprawdzic czas wygasniecia bazy wpisz ~y~/gpanel~w~.", LN_GREEN, 15);
 			new str[512];
-			format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"Zajêta"COL_RED"]\n"COL_EASY"["COL_LIME"U¿ycie:"COL_WHITE" /baza"COL_EASY"]", pickBazaID);
+			format(str, 512, ""COL_RED"["COL_WHITE"Baza grupowa(id: %d) - "COL_RED"ZajÄ™ta"COL_RED"]\n"COL_EASY"["COL_LIME"UÅ¼ycie:"COL_WHITE" /baza"COL_EASY"]", pickBazaID);
 			UpdateDynamic3DTextLabelText(baza[pickBazaID][b_label], -1, str);
 		}
 	}
@@ -326,7 +326,7 @@ public QBuyBaseGold(playerid)
 CMD:gmc(playerid, params[])
 {
 	gracz[playerid][MapperLvl] = GetMapperPremGroup(playerid);
-	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieñ.");
+	if(!gracz[playerid][MapperLvl]) return Error(playerid, "Brak uprawnieÅ„.");
 	ShowModelSelectionMenuEx(playerid, baza_allowedObjects, sizeof(baza_allowedObjects), "Dostepne obiekty", MSEL_GOBJECTS, _, _, 30.0);
 	return 1;
 }
@@ -347,13 +347,13 @@ stock MagazynShow(playerid)
 stock ListItemsMagazyn(playerid)
 {
 	new group_base = GetGroupBaseID(gracz[playerid][OrgID]);
-	if(group_base == -1) return Error(playerid, "Brak uprawnieñ.");
+	if(group_base == -1) return Error(playerid, "Brak uprawnieÅ„.");
 	for(new eq_select_info:r; r < eq_select_info; r++)
 	{
 		eq_select[playerid][r] = 0;
 	}
-	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","Jesteœ ciê¿ko ranny - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
-	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","Jesteœ w trybie kombinacji - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
+	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","JesteÅ› ciÄ™Å¼ko ranny - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
+	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","JesteÅ› w trybie kombinacji - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
 	SyncZetony(playerid);
 	//mq_format("SELECT * FROM `items_bazy` WHERE `baseid`='%d' ORDER BY `used` DESC, `id` ASC;", gracz[playerid][UID]);
 	mq_format("SELECT * FROM `items_bazy` WHERE `baseid`='%d';", group_base);
@@ -364,14 +364,14 @@ stock ListItemsMagazyn(playerid)
 forward ShowItemsMagazynDB(playerid);
 public ShowItemsMagazynDB(playerid)
 {
-	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","Jesteœ ciê¿ko ranny - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
-	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","Jesteœ w trybie kombinacji - nie mo¿esz przegl¹daæ/u¿ywaæ przedmiotów.","OK","");
+	if(gracz[playerid][BWTime]) return MessageGUI(playerid,"Informacja","JesteÅ› ciÄ™Å¼ko ranny - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
+	if(InCombineMode(playerid)) return MessageGUI(playerid,"Informacja","JesteÅ› w trybie kombinacji - nie moÅ¼esz przeglÄ…daÄ‡/uÅ¼ywaÄ‡ przedmiotÃ³w.","OK","");
 	new t_id, t_itemid, t_count, t_cdn, t_cdn_max;
 	mq_getdata();
 	if(rekordy)
 	{
 		new i;
-		format(list_items, 4000, "UID\tNazwa przedmiotu\tIloœæ\tKondycja");
+		format(list_items, 4000, "UID\tNazwa przedmiotu\tIloÅ›Ä‡\tKondycja");
 		while(i < rekordy)
 		{
 			t_id = cache_get_field_content_int(i, "id");
@@ -387,7 +387,7 @@ public ShowItemsMagazynDB(playerid)
 			i++;
 		}
 		new titlestr[110];
-		format(titlestr, 110, ""COL_WHITE"Magazyn - ["COL_BLUE"Zu¿yte sloty: "COL_RED"%d"COL_WHITE"/"COL_GREEN"%d"COL_WHITE"]", rekordy, GetMagazynSize());
+		format(titlestr, 110, ""COL_WHITE"Magazyn - ["COL_BLUE"ZuÅ¼yte sloty: "COL_RED"%d"COL_WHITE"/"COL_GREEN"%d"COL_WHITE"]", rekordy, GetMagazynSize());
 		Dialog_Show(playerid, MAGAZYN, DIALOG_STYLE_TABLIST_HEADERS, titlestr, list_items, "Wybierz", "Anuluj");
 	}
 	else
@@ -412,7 +412,7 @@ Dialog:MAGAZYN(playerid, response, listitem, inputtext[])
 	eq_select[playerid][s_count] = cache_get_field_content_int(0, "count");
 	eq_select[playerid][s_cdn] = cache_get_field_content_int(0, "cdn");
 	eq_select[playerid][s_cdn_max] = cache_get_field_content_int(0, "cdn_max");
-	Dialog_Show(playerid, MGAKCJA, DIALOG_STYLE_LIST, TitleMagazyn_SelectItem(playerid), "1. "COL_GREEN"Wyci¹gnij", "Wybierz", "Wróæ");
+	Dialog_Show(playerid, MGAKCJA, DIALOG_STYLE_LIST, TitleMagazyn_SelectItem(playerid), "1. "COL_GREEN"WyciÄ…gnij", "Wybierz", "WrÃ³Ä‡");
 	cache_delete(itemquery);
 	return 1;
 }
@@ -420,7 +420,7 @@ Dialog:MAGAZYN(playerid, response, listitem, inputtext[])
 Dialog:MGAKCJA(playerid, response, listitem, inputtext[])
 {
 	new group_base = GetGroupBaseID(gracz[playerid][OrgID]);
-	if(group_base == -1) return Error(playerid, "Brak uprawnieñ.");
+	if(group_base == -1) return Error(playerid, "Brak uprawnieÅ„.");
 	if(!response) return ListItemsMagazyn(playerid);
 	switch(listitem)
 	{
@@ -432,7 +432,7 @@ Dialog:MGAKCJA(playerid, response, listitem, inputtext[])
 			}
 			else
 			{
-				Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyci¹gn¹æ?", "Wyrzuæ", "Wróæ");
+				Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyciÄ…gnÄ…Ä‡?", "WyrzuÄ‡", "WrÃ³Ä‡");
 			}
 		}
 	}
@@ -442,12 +442,12 @@ Dialog:MGAKCJA(playerid, response, listitem, inputtext[])
 Dialog:MGDROP(playerid, response, listitem, inputtext[])
 {
 	new group_base = GetGroupBaseID(gracz[playerid][OrgID]);
-	if(group_base == -1) return Error(playerid, "Brak uprawnieñ.");
+	if(group_base == -1) return Error(playerid, "Brak uprawnieÅ„.");
 	if(!response) return ListItemsMagazyn(playerid);
 	new ilosc = strval(inputtext);
 	if(ilosc < 1 || ilosc > 5000)
 	{
-		Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyci¹gn¹æ?\n"COL_RED"B³¹d! Niepoprawna iloœæ towaru(min: 1 | max: 5000).", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyciÄ…gnÄ…Ä‡?\n"COL_RED"BÅ‚Ä…d! Niepoprawna iloÅ›Ä‡ towaru(min: 1 | max: 5000).", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	else if(eq_select[playerid][s_count] >= ilosc)
 	{
@@ -459,7 +459,7 @@ Dialog:MGDROP(playerid, response, listitem, inputtext[])
 	}
 	else
 	{
-		Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyci¹gn¹æ?\n"COL_RED"B³¹d! Brak takiej iloœci towaru.", "Wyrzuæ", "Wróæ");
+		Dialog_Show(playerid, MGDROP, DIALOG_STYLE_INPUT, TitleMagazyn_SelectItem(playerid), "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"COL_BLACK".\n"COL_WHITE"Ile sztuk przedmiotu chcesz wyciÄ…gnÄ…Ä‡?\n"COL_RED"BÅ‚Ä…d! Brak takiej iloÅ›ci towaru.", "WyrzuÄ‡", "WrÃ³Ä‡");
 	}
 	return 1;
 }
@@ -498,7 +498,7 @@ stock CreateItemForMagazyn(playerid, item_id, item_count, item_cdn = 100, item_c
 }
 
 
-stock RemoveItemFromMagazynEx(playerid, t_id, item_count)//wed³ug ID
+stock RemoveItemFromMagazynEx(playerid, t_id, item_count)//wedÅ‚ug ID
 {
 	new group_base = GetGroupBaseID(gracz[playerid][OrgID]);
 	if(group_base == -1) return 0;
@@ -510,7 +510,7 @@ stock RemoveItemFromMagazynEx(playerid, t_id, item_count)//wed³ug ID
 		new t_count = cache_get_field_content_int(0, "count");
 		if(item_count > t_count)
 		{
-			MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+			MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 			cache_delete(itemquery,MySQL);
 			return 0;
 		} 
@@ -529,7 +529,7 @@ stock RemoveItemFromMagazynEx(playerid, t_id, item_count)//wed³ug ID
 			return 1;
 		}
 	}
-	MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloœci towaru!","OK","");
+	MessageGUI(playerid,"Informacja","Nie posiadasz tyle iloÅ›ci towaru!","OK","");
 	cache_delete(itemquery,MySQL);
 	return 0;
 }
@@ -537,7 +537,7 @@ stock RemoveItemFromMagazynEx(playerid, t_id, item_count)//wed³ug ID
 stock TitleMagazyn_SelectItem(playerid)
 {
 	new titlestr[200];
-	format(titlestr, 200, ""COL_WHITE"Magazyn - ["COL_RED"%s"COL_WHITE"]["COL_GREEN"Iloœæ: "COL_RED"%d"COL_WHITE"]", ItemName[eq_select[playerid][s_itemid]], eq_select[playerid][s_count]);
+	format(titlestr, 200, ""COL_WHITE"Magazyn - ["COL_RED"%s"COL_WHITE"]["COL_GREEN"IloÅ›Ä‡: "COL_RED"%d"COL_WHITE"]", ItemName[eq_select[playerid][s_itemid]], eq_select[playerid][s_count]);
 	return titlestr;
 }
 

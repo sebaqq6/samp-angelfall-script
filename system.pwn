@@ -18,56 +18,56 @@
 #include "includes/physics.inc"
 #include "includes/merrandom.inc"
 #include "includes/mSelection.inc"
-//********************MODU£Y*****************************
+//********************MODUÅY*****************************
 #include "modules/define.inc"//Definicje.
-#include "modules/ram.inc"//Szufladki dla danych na których pracuje skrypt
-#include "modules/auth.inc"//Baza danych/Autoryzacja u¿ytkownika
+#include "modules/ram.inc"//Szufladki dla danych na ktÃ³rych pracuje skrypt
+#include "modules/auth.inc"//Baza danych/Autoryzacja uÅ¼ytkownika
 #include "modules/utils.inc"//Przydatne funkcje
 #include "modules/textdraw.inc"//Textdrawy
 #include "modules/items.inc"//Przedmioty
 #include "modules/admin.inc"//Komendy admina
-#include "modules/chat.inc"//Obs³uga czatu
+#include "modules/chat.inc"//ObsÅ‚uga czatu
 #include "modules/inventory.inc"//System ekwipunku
-#include "modules/item_probably.inc"//Modu³ odpowiadajacy za prawdopodobienistwo stworzenia przedmiotu na mapie.
-#include "modules/loot.inc"//Modu³ odpowiedzialny za rozrzut przedmiotów na mapie
-#include "modules/useitem.inc"//U¿ycie przedmiotu
+#include "modules/item_probably.inc"//ModuÅ‚ odpowiadajacy za prawdopodobienistwo stworzenia przedmiotu na mapie.
+#include "modules/loot.inc"//ModuÅ‚ odpowiedzialny za rozrzut przedmiotÃ³w na mapie
+#include "modules/useitem.inc"//UÅ¼ycie przedmiotu
 #include "modules/player.inc"//Operacje na graczu
-#include "modules/keys.inc"//Obs³uga klawiszy
-#include "modules/damage.inc"//Obs³uga DMG/HP
-#include "modules/removebuiliding.inc"//Modu³ usuwaj¹cy obiekty GTA SA
-#include "modules/objects.inc"//Modu³ odpowiadaj¹cy za obiekty 
-#include "modules/krypta.inc"//Modu³ odpowiadaj¹cy za funckjonowanie krypty
-#include "modules/football.inc"//Pi³ka no¿na
-#include "modules/doors.inc"//Obs³uga wejœæ
+#include "modules/keys.inc"//ObsÅ‚uga klawiszy
+#include "modules/damage.inc"//ObsÅ‚uga DMG/HP
+#include "modules/removebuiliding.inc"//ModuÅ‚ usuwajÄ…cy obiekty GTA SA
+#include "modules/objects.inc"//ModuÅ‚ odpowiadajÄ…cy za obiekty 
+#include "modules/krypta.inc"//ModuÅ‚ odpowiadajÄ…cy za funckjonowanie krypty
+#include "modules/football.inc"//PiÅ‚ka noÅ¼na
+#include "modules/doors.inc"//ObsÅ‚uga wejÅ›Ä‡
 #include "modules/ognisko.inc"//System ogniska
-#include "modules/nick_label.inc"//Modu³ odpowiadaj¹cy6 za nicki nad g³owami graczy
-#include "modules/exp.inc"//Modu³ odpowiadaj¹cy za doœwiadczenie w grze
-#include "modules/zombie.inc"//Modu³ odpowiadaj¹cy za szwêdaczy
-#include "modules/commands.inc"//Wszystkie inne komendy, które nie mog¹ znaleŸæ siê w danym module
-#include "modules/fadelabels.inc"//Modu³ odpowiadaj¹cy za zanikaj¹ce 3d texty
-#include "modules/gym.inc"//Modu³ obs³ugujacy si³ownie.
-#include "modules/combine_mode.inc"//Modu³ obs³ugujacy tryb kombinacji.
-#include "modules/vehicle.inc"//Modu³ obs³ugujacy pojazdy.
-#include "modules/group.inc"//Modu³ obs³ugujacy grupy.
-#include "modules/sms.inc"//Modu³ obs³uguj¹cy mikrop³atnoœci.
-#include "modules/market.inc"//Modu³ obs³uguj¹cy halê targow¹.
-#include "modules/apartamenty.inc"//Modu³ obs³uguj¹cy apartamenty.
-#include "modules/bazy.inc"//Modu³ obs³uguj¹cy bazy grup.
-#include "modules/zone.inc"//Modu³ obs³uguj¹cy strefy.
-//#include "modules/quest.inc"//Modu³ obs³uguj¹cy questy - INCOMPLETE
+#include "modules/nick_label.inc"//ModuÅ‚ odpowiadajÄ…cy6 za nicki nad gÅ‚owami graczy
+#include "modules/exp.inc"//ModuÅ‚ odpowiadajÄ…cy za doÅ›wiadczenie w grze
+#include "modules/zombie.inc"//ModuÅ‚ odpowiadajÄ…cy za szwÄ™daczy
+#include "modules/commands.inc"//Wszystkie inne komendy, ktÃ³re nie mogÄ… znaleÅºÄ‡ siÄ™ w danym module
+#include "modules/fadelabels.inc"//ModuÅ‚ odpowiadajÄ…cy za zanikajÄ…ce 3d texty
+#include "modules/gym.inc"//ModuÅ‚ obsÅ‚ugujacy siÅ‚ownie.
+#include "modules/combine_mode.inc"//ModuÅ‚ obsÅ‚ugujacy tryb kombinacji.
+#include "modules/vehicle.inc"//ModuÅ‚ obsÅ‚ugujacy pojazdy.
+#include "modules/group.inc"//ModuÅ‚ obsÅ‚ugujacy grupy.
+#include "modules/sms.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy mikropÅ‚atnoÅ›ci.
+#include "modules/market.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy halÄ™ targowÄ….
+#include "modules/apartamenty.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy apartamenty.
+#include "modules/bazy.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy bazy grup.
+#include "modules/zone.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy strefy.
+//#include "modules/quest.inc"//ModuÅ‚ obsÅ‚ugujÄ…cy questy - INCOMPLETE
 //*******************BRUDNOPIS***************************
 /*
 - Admin Jail 
 - awanse na czacie globalnym
-- osi¹gniecia - pierwszy raz zrobi³eœ taki 
+- osiÄ…gniecia - pierwszy raz zrobiÅ‚eÅ› taki 
 
-- soundtrack przywróc
+- soundtrack przywrÃ³c
 - Strefy (gangzone)
-- grupy dostoswaæ
-- bazy dodaæ
+- grupy dostoswaÄ‡
+- bazy dodaÄ‡
 - nowa krypta
 - opisy
-- dla admina cmd na dodawanie itemków
+- dla admina cmd na dodawanie itemkÃ³w
 - komenda na szeptanie
 */
 //*********************SKRYPT*****************************
@@ -124,18 +124,18 @@ public OnGameModeInit()
 	//Init_Quest();
 	serwer[gz_hidemap] = GangZoneCreate(-2966.18, -2931.147, 81.74512, -513.8265);
 	serwer[game_field] = CreateDynamicPolygon(game_field_data);
-	CreateDynamic3DTextLabel("***sprawny dystrybutor***\n"COL_WHITE"(("COL_EASY"/tankuj lub u¿yj kanistra"COL_WHITE"))", 0x765898FF, -1607.9446,-2717.4119,48.5391, 3.0);
-	CreateDynamic3DTextLabel("***sprawny dystrybutor***\n"COL_WHITE"(("COL_EASY"/tankuj lub u¿yj kanistra"COL_WHITE"))", 0x765898FF, -11.9189,-2522.2725,36.6555, 3.0);
-	CreateDynamic3DTextLabel(""COL_RED"(("COL_EASY"Naprawdê, poœwiêæ chwilê na "COL_GREEN"/pomoc"COL_LIME" -> "COL_GREEN"Opis rozgrywki"COL_EASY"\n"COL_EASY"Bêdzie Ci ³atwiej zacz¹æ grê."COL_RED"))", 0x765898FF, -2350.1819,-1632.1136,2310.4917, 5.0, _, _, 1);
-	CreateDynamic3DTextLabel(""COL_RED"(("COL_ORANGE"ChodŸ na "COL_CYAN"C"COL_ORANGE" aby generowaæ najmniejszy ha³as.\nSpowoduje to, ¿e szwêdacze nie bêd¹ Ciê s³yszeæ,"COL_RED"))", 0x765898FF, -1995.1685,-1594.2118,87.3582, 10.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1365.1147,-2000.5859,1.8554, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1506.7386,-2312.7712,1.8554, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1520.9185,-2223.4324,2.4344, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -2701.3765,-2197.5000,1.2692, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1643.8407,-1682.8496,1.6915, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1241.6897,-2526.8713,1.6894, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -1803.0276,-2766.0796,1.4611, 6.0);
-	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub u¿yj wêdki"COL_WHITE"))", 0x765898FF, -381.9236,-1852.0017,1.9192, 6.0);
+	CreateDynamic3DTextLabel("***sprawny dystrybutor***\n"COL_WHITE"(("COL_EASY"/tankuj lub uÅ¼yj kanistra"COL_WHITE"))", 0x765898FF, -1607.9446,-2717.4119,48.5391, 3.0);
+	CreateDynamic3DTextLabel("***sprawny dystrybutor***\n"COL_WHITE"(("COL_EASY"/tankuj lub uÅ¼yj kanistra"COL_WHITE"))", 0x765898FF, -11.9189,-2522.2725,36.6555, 3.0);
+	CreateDynamic3DTextLabel(""COL_RED"(("COL_EASY"NaprawdÄ™, poÅ›wiÄ™Ä‡ chwilÄ™ na "COL_GREEN"/pomoc"COL_LIME" -> "COL_GREEN"Opis rozgrywki"COL_EASY"\n"COL_EASY"BÄ™dzie Ci Å‚atwiej zaczÄ…Ä‡ grÄ™."COL_RED"))", 0x765898FF, -2350.1819,-1632.1136,2310.4917, 5.0, _, _, 1);
+	CreateDynamic3DTextLabel(""COL_RED"(("COL_ORANGE"ChodÅº na "COL_CYAN"C"COL_ORANGE" aby generowaÄ‡ najmniejszy haÅ‚as.\nSpowoduje to, Å¼e szwÄ™dacze nie bÄ™dÄ… CiÄ™ sÅ‚yszeÄ‡,"COL_RED"))", 0x765898FF, -1995.1685,-1594.2118,87.3582, 10.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1365.1147,-2000.5859,1.8554, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1506.7386,-2312.7712,1.8554, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1520.9185,-2223.4324,2.4344, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -2701.3765,-2197.5000,1.2692, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1643.8407,-1682.8496,1.6915, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1241.6897,-2526.8713,1.6894, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -1803.0276,-2766.0796,1.4611, 6.0);
+	CreateDynamic3DTextLabel("***molo***\n"COL_WHITE"(("COL_EASY"/wedkuj lub uÅ¼yj wÄ™dki"COL_WHITE"))", 0x765898FF, -381.9236,-1852.0017,1.9192, 6.0);
 	CreateDynamicMapIcon(-1365.1147,-2000.5859,1.8554, 9, -1, _, _, _, 1000.0, MAPICON_GLOBAL);//molo
 	CreateDynamicMapIcon(-1506.7386,-2312.7712,1.8554, 9, -1, _, _, _, 1000.0, MAPICON_GLOBAL);//molo
 	CreateDynamicMapIcon(-1520.9185,-2223.4324,2.4344, 9, -1, _, _, _, 1000.0, MAPICON_GLOBAL);//molo
@@ -148,7 +148,7 @@ public OnGameModeInit()
 	CreateDynamicMapIcon(-1999.7366, -1558.9781, 87.9436, 31, -1, _, _, _, 9000.0, MAPICON_GLOBAL);//krypta
 	//prezenty
 	//pick_prezent = CreatePickup(19056, 1, -1969.0687,-1608.3618,88.5833);
-	//czyszczenie przedmiotów z count == 0
+	//czyszczenie przedmiotÃ³w z count == 0
 	DelZeroItems();
 	ImportItems();
 	print("****************POSTAPO SUCCESS LOAD****************");
@@ -180,8 +180,8 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 			mq_format("UPDATE `Konta` SET `prezent`='1' WHERE `id`='%d';", gracz[playerid][UID]);
 			mq_send("QPrezentUpdate");
 			strcat(info_prezent, ""COL_GREY"Dostajesz od nas w prezencie {8100db}+150 EXP"COL_GREY"!");
-			strcat(info_prezent, "\n"COL_GREY"Wszystkiego dobrego z okazji nadchodz¹cych œwi¹t ¿yczy Ekipa {f12f2f}Angel Fall"COL_GREY"!");
-			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_RED"» "COL_GREEN"Prezent otrzymany!", info_prezent, "Zamknij", "");
+			strcat(info_prezent, "\n"COL_GREY"Wszystkiego dobrego z okazji nadchodzÄ…cych Å›wiÄ…t Å¼yczy Ekipa {f12f2f}Angel Fall"COL_GREY"!");
+			ShowPlayerDialog(playerid, INFO_DIALOG, DIALOG_STYLE_MSGBOX, ""COL_RED"Â» "COL_GREEN"Prezent otrzymany!", info_prezent, "Zamknij", "");
 		}
 	}*/
 	return 1;
@@ -191,13 +191,13 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 CMD:autorzy(playerid, params[])
 {
 	new autorzy[512];
-	strcat(autorzy,""COL_GREY"Programista PAWN(& C++), w³aœciciel projektu, prowadz¹cy:"COL_RED" sebaqq6 \n");
-	strcat(autorzy,""COL_GREY"Programista PHP, wspó³w³aœciciel projektu, admin techniczny:"COL_RED" czerwony03 \n");
-	strcat(autorzy,""COL_GREY"Obiekter, wspó³w³aœciciel projektu, pomoc przy mechanice rozgrywki:"COL_RED" Requeim\n");
+	strcat(autorzy,""COL_GREY"Programista PAWN(& C++), wÅ‚aÅ›ciciel projektu, prowadzÄ…cy:"COL_RED" sebaqq6 \n");
+	strcat(autorzy,""COL_GREY"Programista PHP, wspÃ³Å‚wÅ‚aÅ›ciciel projektu, admin techniczny:"COL_RED" czerwony03 \n");
+	strcat(autorzy,""COL_GREY"Obiekter, wspÃ³Å‚wÅ‚aÅ›ciciel projektu, pomoc przy mechanice rozgrywki:"COL_RED" Requeim\n");
 	strcat(autorzy,""COL_GREY"Credtis:"COL_BLUE" Julia, iDAKU, Policjant, Jase\n");
 	strcat(autorzy,""COL_GREY"Nasze oficjalne forum : "COL_LIME"http://forum.angelfall.pl\n");
-	strcat(autorzy,""COL_GREEN"\t\t\t\t\t\t\t\t\tMi³ej gry! :)\n");
-	MessageGUIEx(playerid, "Osoby, które zaanga¿owa³y siê w projekt AngelFall", autorzy);
+	strcat(autorzy,""COL_GREEN"\t\t\t\t\t\t\t\t\tMiÅ‚ej gry! :)\n");
+	MessageGUIEx(playerid, "Osoby, ktÃ³re zaangaÅ¼owaÅ‚y siÄ™ w projekt AngelFall", autorzy);
 	return 1;
 }
 
@@ -448,7 +448,7 @@ stock Process_ServerRestart()
 	{
 		printf("[SERVER_RESTART]Rozpoczynam procedure nocnego restartu serwera...");
 		serwer[cooldown_restart] = 65;
-		SendClientMessageToAllEx(-1, ""COL_RED"-|{fb9800} Za "COL_WHITE"%d{fb9800} sekund nast¹pi restart serwera. Powód: "COL_WHITE"Jest godzina: %02d:%02d{fb9800} "COL_RED"|-", serwer[cooldown_restart], serwer[time_hour], serwer[time_minute]);
+		SendClientMessageToAllEx(-1, ""COL_RED"-|{fb9800} Za "COL_WHITE"%d{fb9800} sekund nastÄ…pi restart serwera. PowÃ³d: "COL_WHITE"Jest godzina: %02d:%02d{fb9800} "COL_RED"|-", serwer[cooldown_restart], serwer[time_hour], serwer[time_minute]);
 	}
 	return 1;
 }
@@ -538,7 +538,7 @@ CMD:boisko(playerid, params[])
 CMD:car(playerid, params[])
 {
 	new carid, k[2];
-	if(sscanf(params,"ddd", carid, k[0], k[1])) return SendClientMessage(playerid, -1, ""COL_GREY"U¯YJ: /car [carid] [k1] [k2] [pozycje x,y,z]");
+	if(sscanf(params,"ddd", carid, k[0], k[1])) return SendClientMessage(playerid, -1, ""COL_GREY"UÅ»YJ: /car [carid] [k1] [k2] [pozycje x,y,z]");
 	if(carid < 400 || carid > 611) return 1;
 	new vid = CreateVehicle(carid, gracz[playerid][PosX]+3, gracz[playerid][PosY]+3, gracz[playerid][PosZ], 0, k[0], k[1], 1000);
 	SetVehicleParamsEx(vid, 1, 1, 0, 0, 0, 0, 0);
@@ -562,21 +562,21 @@ CMD:showmm(playerid, params[])
 CMD:vipcheck(playerid, params[])
 {
 	SendClientMessage(playerid, -1, "sprawdzam");
-	if(isvip(playerid)) SendClientMessage(playerid, -1, "jesteœ vipem");
+	if(isvip(playerid)) SendClientMessage(playerid, -1, "jesteÅ› vipem");
 	return 1;
 }
 
 CMD:itemls(playerid, params[])
 {
 	new Float:lsPos[3];
-	lsPos[0] = 2078.5173;//oœ X
+	lsPos[0] = 2078.5173;//oÅ› X
 	lsPos[1] = -2486.1628;
 	lsPos[2] = 13.5469;
 	for(new x; x < MAX_ITEMS; x++)
 	{
 		if(ObjectItem[x] == -1) continue;
 		CreateItemForWorld(x, 1, 2000, 2000, lsPos[0], lsPos[1], lsPos[2], 0, 0);
-		lsPos[0] -= 1.5;//oœ X
+		lsPos[0] -= 1.5;//oÅ› X
 	}
 	SendClientMessage(playerid, -1, "Done");
 	return 1;
@@ -593,13 +593,13 @@ CMD:itemls(playerid, params[])
 	new mmat;
 	while(fread(handle, buf)) 
 	{
-		if(sscanf(buf, "p<|>ddddddffffffd", id, model, idgrupa, uid, World, InteriorEx, x, y, z, rx, ry, rz, mmat)) return printf("fatalny b³¹d kurwa!!!!!!");
+		if(sscanf(buf, "p<|>ddddddffffffd", id, model, idgrupa, uid, World, InteriorEx, x, y, z, rx, ry, rz, mmat)) return printf("fatalny bÅ‚Ä…d kurwa!!!!!!");
 		mq_format("INSERT INTO `samp_prp`.`Obiekty` (`id`, `model`, `idgrupa`, `uid`, `World`, `InteriorEx`, `x`, `y`, `z`, `rx`, `ry`, `rz`, `mmat`) VALUES ('%d', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%d');", id, model, idgrupa, uid, World, InteriorEx, x, y, z, rx, ry, rz, mmat);
 		mq_send("QImportObjects");
 		counter++;
 	}
 	fclose(handle);
-	SendClientMessageEx(playerid, -1, "Import zakonczony(%d rekordów)...", counter);
+	SendClientMessageEx(playerid, -1, "Import zakonczony(%d rekordÃ³w)...", counter);
 	return 1;
 }
 */

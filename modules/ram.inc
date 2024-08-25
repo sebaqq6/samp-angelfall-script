@@ -229,7 +229,7 @@ enum krypta_info
 };
 
 new krypta[krypta_info];
-//WEJŒCIA
+//WEJÅšCIA
 enum door_info
 {
     d_id,

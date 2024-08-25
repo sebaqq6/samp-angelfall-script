@@ -29,9 +29,9 @@ public LoadDoorsFromDB()
 			door[fid][d_bZ] = cache_get_field_content_float(i, "bZ");
 			door[fid][d_pickupA] = CreateDynamicPickup(PICKUP_MODEL, 1, door[fid][d_aX], door[fid][d_aY], door[fid][d_aZ]);
 			door[fid][d_pickupB] = CreateDynamicPickup(PICKUP_MODEL, 1, door[fid][d_bX], door[fid][d_bY], door[fid][d_bZ]);
-			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", fid);
+			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", fid);
 			door[fid][d_labelA] = CreateDynamic3DTextLabel(temp_string, -1, door[fid][d_aX], door[fid][d_aY], door[fid][d_aZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
-			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", fid);
+			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", fid);
 			door[fid][d_labelB] = CreateDynamic3DTextLabel(temp_string, -1, door[fid][d_bX], door[fid][d_bY], door[fid][d_bZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
 			i++;
 		}
@@ -53,7 +53,7 @@ CMD:doorset(playerid, params[])
 {
 	if(gracz[playerid][admin_duty] < 3) return 0;
 	new doorid, point;
-	if(sscanf(params,"dc", doorid, point)) return SendClientMessage(playerid, -1, ""COL_GREY"UØYJ: /doorset [doorid(wpisz "COL_RED"-1"COL_GREEN" aby zrobiÊ NOWE"COL_GREEN" drzwi)] [punkt: A-B, aby usunπÊ drzwi: X]");
+	if(sscanf(params,"dc", doorid, point)) return SendClientMessage(playerid, -1, ""COL_GREY"U≈ªYJ: /doorset [doorid(wpisz "COL_RED"-1"COL_GREEN" aby zrobiƒá NOWE"COL_GREEN" drzwi)] [punkt: A-B, aby usunƒÖƒá drzwi: X]");
 	if(doorid == -1)
 	{
 		mq_format("INSERT INTO `doors` VALUES (NULL, '1', '%f', '%f', '%f', '%f', '%f', '%f');", gracz[playerid][PosX], gracz[playerid][PosY], gracz[playerid][PosZ], gracz[playerid][PosX], gracz[playerid][PosY], gracz[playerid][PosZ]);
@@ -70,14 +70,14 @@ CMD:doorset(playerid, params[])
 		door[fid][d_bZ] = gracz[playerid][PosZ];
 		door[fid][d_pickupA] = CreateDynamicPickup(PICKUP_MODEL, 1, door[fid][d_aX], door[fid][d_aY], door[fid][d_aZ]);
 		door[fid][d_pickupB] = CreateDynamicPickup(PICKUP_MODEL, 1, door[fid][d_bX], door[fid][d_bY], door[fid][d_bZ]);
-		format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", fid);
+		format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", fid);
 		door[fid][d_labelA] = CreateDynamic3DTextLabel(temp_string, -1, door[fid][d_aX], door[fid][d_aY], door[fid][d_aZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
-		format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", fid);
+		format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", fid);
 		door[fid][d_labelB] = CreateDynamic3DTextLabel(temp_string, -1, door[fid][d_bX], door[fid][d_bY], door[fid][d_bZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
 		SendClientMessageEx(playerid, -1, "[DOORS] "COL_GREEN"Stworzono nowe drzwi!"COL_WHITE" ID: %d", fid);
 		return 1;
 	}
-	if(!door[doorid][d_status]) return SendClientMessageEx(playerid, -1, "[DOORS] "COL_RED"Drzwi o ID: %d nie istniejπ! Aby stworzyÊ nowe drzwi wpisz:"COL_WHITE" /doorset -1 %c", doorid, point);
+	if(!door[doorid][d_status]) return SendClientMessageEx(playerid, -1, "[DOORS] "COL_RED"Drzwi o ID: %d nie istniejƒÖ! Aby stworzyƒá nowe drzwi wpisz:"COL_WHITE" /doorset -1 %c", doorid, point);
 	switch(point)
 	{
 		case 'A', 'a':
@@ -88,7 +88,7 @@ CMD:doorset(playerid, params[])
 			DestroyDynamicPickup(door[doorid][d_pickupA]);
 			DestroyDynamic3DTextLabel(door[doorid][d_labelA]);
 			door[doorid][d_pickupA] = CreateDynamicPickup(PICKUP_MODEL, 1, door[doorid][d_aX], door[doorid][d_aY], door[doorid][d_aZ]);
-			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", doorid);
+			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dA"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", doorid);
 			door[doorid][d_labelA] = CreateDynamic3DTextLabel(temp_string, -1, door[doorid][d_aX], door[doorid][d_aY], door[doorid][d_aZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
 			mq_format("UPDATE `doors` SET `aX`='%f', `aY`='%f', `aZ`='%f' WHERE `id`='%d';", door[doorid][d_aX], door[doorid][d_aY], door[doorid][d_aZ], door[doorid][d_id]);
 			mq_send("QUpdateDoorA");
@@ -102,7 +102,7 @@ CMD:doorset(playerid, params[])
 			DestroyDynamicPickup(door[doorid][d_pickupB]);
 			DestroyDynamic3DTextLabel(door[doorid][d_labelB]);
 			door[doorid][d_pickupB] = CreateDynamicPickup(PICKUP_MODEL, 1, door[doorid][d_bX], door[doorid][d_bY], door[doorid][d_bZ]);
-			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wejúcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"Uøycie: klawisz ENTER"COL_EASY"]", doorid);
+			format(temp_string, 128, ""COL_EASY"[{8b8b8b}Wej≈õcie ID: %dB"COL_EASY"]\n"COL_EASY"["COL_LIME"U≈ºycie: klawisz ENTER"COL_EASY"]", doorid);
 			door[doorid][d_labelB] = CreateDynamic3DTextLabel(temp_string, -1, door[doorid][d_bX], door[doorid][d_bY], door[doorid][d_bZ], LABEL_DRAWDISTANCE, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 1);
 			mq_format("UPDATE `doors` SET `bX`='%f', `bY`='%f', `bZ`='%f' WHERE `id`='%d';", door[doorid][d_bX], door[doorid][d_bY], door[doorid][d_bZ], door[doorid][d_id]);
 			mq_send("QUpdateDoorB");
@@ -116,7 +116,7 @@ CMD:doorset(playerid, params[])
 			DestroyDynamic3DTextLabel(door[doorid][d_labelA]);
 			DestroyDynamicPickup(door[doorid][d_pickupB]);
 			DestroyDynamic3DTextLabel(door[doorid][d_labelB]);
-			SendClientMessageEx(playerid, -1, "[DOORS]"COL_RED" Drzwi o ID: %d - USUNI TE!", doorid);
+			SendClientMessageEx(playerid, -1, "[DOORS]"COL_RED" Drzwi o ID: %d - USUNIƒòTE!", doorid);
 			for(new door_info:r; r < door_info; r++)
 			{
 				door[doorid][r] = 0;
@@ -124,7 +124,7 @@ CMD:doorset(playerid, params[])
 		}
 		default:
 		{
-			SendClientMessageEx(playerid, -1, "[DOORS] "COL_EASY"Wprowadü punkt do ustawienia: A/B. "COL_RED"Aby usunπÊ drzwi: X");
+			SendClientMessageEx(playerid, -1, "[DOORS] "COL_EASY"Wprowad≈∫ punkt do ustawienia: A/B. "COL_RED"Aby usunƒÖƒá drzwi: X");
 		}
 	}
 	return 1;
